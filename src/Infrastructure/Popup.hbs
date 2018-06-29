@@ -1,0 +1,63 @@
+{{#if feature.properties.url}}
+	<div class="flexContainerColumn">
+		{{UrlWebcam feature.properties.url false}}
+	</div>
+{{/if}}
+
+{{#if feature.properties.name}}
+	<div>
+		<span class="propLabel">{{i18n.name}}: </span>
+		<span class="propValue">{{feature.properties.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.infrastructureType}}
+	<div>
+		<span class="propLabel">{{i18n.infrastructureType}}: </span>
+		<span class="propValue">{{lang feature.properties.infrastructureType}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.code}}
+	<div>
+		<span class="propLabel">{{i18n.code}}: </span>
+		<span class="propValue">{{feature.properties.code}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.geometry.coordinates}}
+	<div>
+		<span class="propLabel">Lon:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[0] 5}}  </span>
+		<span class="propLabel">Lat:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[1] 5}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.description}}
+	<div>
+		<span class="propLabel">{{i18n.description}}: </span>
+		<span class="propValue">{{breaklines feature.properties.description}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.remark}}
+	<div>
+		<span class="propLabel">{{i18n.note}}: </span>
+		<span class="propValue">{{breaklines feature.properties.remark}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.date}}
+	<div>
+		<span class="propLabel">{{i18n.date}}: </span>
+		<span class="propValue">{{Date feature.properties.date}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.updated}}
+	<div>
+		<span class="propLabel">{{i18n.updated}}: </span>
+		<span class="propValue">{{DateTime feature.properties.updated}}</span>
+	</div>
+{{/if}}

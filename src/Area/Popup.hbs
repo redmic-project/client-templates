@@ -1,0 +1,48 @@
+{{#if feature.properties.name}}
+	<div>
+		<span class="propLabel">{{i18n.name}}: </span>
+		<span class="propValue">{{feature.properties.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.areaType}}
+	<div>
+		<span class="propLabel">{{i18n.areaType}}: </span>
+		<span class="propValue">{{lang feature.properties.areaType}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.code}}
+	<div>
+		<span class="propLabel">{{i18n.code}}: </span>
+		<span class="propValue">{{feature.properties.code}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.areaClassification}}
+	<div>
+		<span class="propLabel">{{i18n.areaClassification}}: </span>
+	</div>
+	{{Classifications feature.properties.areaClassification}}
+{{/if}}
+
+{{#if feature.properties.description}}
+	<div>
+		<span class="propLabel">{{i18n.description}}: </span>
+		<span class="propValue">{{breaklines feature.properties.description}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.remark}}
+	<div>
+		<span class="propLabel">{{i18n.note}}: </span>
+		<span class="propValue">{{breaklines feature.properties.remark}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.updated}}
+	<div>
+		<span class="propLabel">{{i18n.updated}}: </span>
+		<span class="propValue">{{DateTime feature.properties.updated}}</span>
+	</div>
+{{/if}}

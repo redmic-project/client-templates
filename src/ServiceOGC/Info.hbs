@@ -1,0 +1,83 @@
+<div class="content">
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.protocols}}
+				{{ProtocolsServiceOGC data.protocols i18n}}
+			{{/if}}
+			{{#if data.name}}
+				<div class="row rowDest">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.nameLayer}}">{{i18n.nameLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.name}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.srs}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.srs}}">{{i18n.srs}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{Keyword data.srs}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.formats}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.formats}}">{{i18n.formats}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{ArrayString data.formats}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.styleLayer}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.styleLayer}}">{{i18n.styleLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.styleLayer.name}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.keyword}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.keywords}}">{{i18n.keywords}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{Keyword data.keyword}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.abstractLayer}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.abstractLayer}}">{{i18n.abstractLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.abstractLayer}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.contact}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.contact}}">{{i18n.contact}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowFlex">
+						{{#if data.contact.organization}}<p>{{data.contact.organization}}</p>{{/if}}
+						{{#if data.contact.name}}<p>{{data.contact.name}}</p>{{/if}}
+						{{#if data.contact.address}}<p>{{data.contact.address}}</p>{{/if}}
+						{{#if data.contact.email}}<p>{{Email data.contact.email}}</p>{{/if}}
+						{{#if data.contact.phone}}<p>{{data.contact.phone}}</p>{{/if}}
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

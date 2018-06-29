@@ -1,0 +1,24 @@
+<div>
+	<form class="form-horizontal">
+		{{#if parameterColumns}}
+			<div data-redmic-type="select" data-redmic-model="columns/0"
+				data-redmic-props="
+					label: 'column',
+					idProperty: 'value',
+					propertyPath: 'columns',
+					target: 'relationData',
+					omitRequest: true
+			"></div>
+		{{/if}}
+
+		<div data-redmic-type="select" data-redmic-model="dataDefinitionId"
+			data-redmic-props="
+				idProperty: 'id',
+				label: 'parameter',
+				labelAttr: 'name',
+				propertyPath: 'parameter',
+				target: 'relationData',
+				omitRequest: true
+		"></div>
+	</form>
+</div>

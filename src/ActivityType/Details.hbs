@@ -1,0 +1,42 @@
+<div class='scrollWrapper'>
+	<div class="detailsView">
+		<div class="detailsRow">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="detailsTitle">
+					<span>{{data.name}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="detailsRowTop">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.featureInvolved}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.featureInvolved}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.activityField}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.activityField.name}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.description}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{breaklines data.description}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

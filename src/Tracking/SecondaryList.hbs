@@ -1,0 +1,98 @@
+<span class='spanTemplate'>
+	{{#if shownOption.animal}}
+		{{#if data.properties.element}}
+			{{#if data.properties.element.taxon}}
+				<div>
+					<span class="propValue">
+						{{#if data.properties.element.taxon.scientificName}}
+							<span class="scientificName">{{data.properties.element.taxon.scientificName}}</span>
+						{{/if}}
+						{{#if data.properties.element.taxon.authorship}}
+							<span class="authorship">{{data.properties.element.taxon.authorship}}</span>
+						{{/if}}
+					</span>
+				</div>
+			{{/if}}
+			{{#if data.properties.element.platformType}}
+				<div>
+					<span class="propValue">
+
+					</span>
+				</div>
+			{{/if}}
+		{{/if}}
+	{{/if}}
+	{{#if data.geometry.coordinates}}
+		<span class='subtitle'>
+			{{bold i18n.x}}: {{toFixed data.geometry.coordinates.[0] 5}}
+		</span>
+		<span class='subtitle'>
+			{{bold i18n.y}}: {{toFixed data.geometry.coordinates.[1] 5}}
+		</span>
+	{{/if}}
+	{{#if data.properties.date}}
+		<span class='subtitle'>
+			{{bold i18n.date}}: {{DateTime data.properties.date}}
+		</span>
+	{{/if}}
+	{{#if data.properties.device}}
+		<span class='subtitle'>
+			{{bold i18n.device}}: {{data.properties.device.name}}
+		</span>
+	{{/if}}
+	{{#if data.properties.qFlag}}
+		<span class='subtitle'>
+			{{bold i18n.qFlag}}: {{data.properties.qFlag}}
+		</span>
+	{{/if}}
+	{{#if data.properties.vFlag}}
+		<span class='subtitle'>
+			{{bold i18n.vFlag}}: {{data.properties.vFlag}}
+		</span>
+	{{/if}}
+	{{#if data.properties.signalQuality}}
+		<span class='subtitle'>
+			{{bold i18n.signalQuality}}: {{data.properties.signalQuality}}
+		</span>
+	{{/if}}
+	{{#if data.properties.argosId}}
+		<span class='subtitle'>
+			{{bold i18n.argosId}}: {{data.properties.argosId}}
+		</span>
+	{{/if}}
+	{{#if data.properties.speedKph}}
+		<span class='subtitle'>
+			{{bold i18n.speed}}: {{toFixed data.properties.speedKph 3}} {{i18n.kilometersPerHourAbbr}}
+		</span>
+	{{/if}}
+	{{#if data.properties.hours}}
+		<span class='subtitle'>
+			{{bold i18n.timeSincePrevious}}: {{TimeCumulative data.properties.hours 'seconds' i18n}}
+		</span>
+	{{/if}}
+	{{#if data.properties.lastDistanceKm}}
+		<span class='subtitle'>
+			{{bold i18n.lastDistanceKm}}: {{toFixed data.properties.lastDistanceKm 3}} {{i18n.kilometersAbbr}}
+		</span>
+	{{/if}}
+	{{#if data.properties.passDuration}}
+		<span class='subtitle'>
+			{{bold i18n.passDuration}}: {{TimeCumulative data.properties.passDuration 'seconds' i18n}}
+		</span>
+	{{/if}}
+	{{#if data.properties.cumulativeKm}}
+		<span class='subtitle'>
+			{{bold i18n.cumulativeKm}}: {{toFixed data.properties.cumulativeKm 3}} {{i18n.kilometersAbbr}}
+		</span>
+	{{/if}}
+	{{#if data.properties.cumulativeTime}}
+		<span class='subtitle'>
+			{{bold i18n.cumulativeTime}}: {{TimeCumulative data.properties.cumulativeTime 'seconds' i18n}}
+		</span>
+	{{/if}}
+	{{#if data.properties.locationClass}}
+		<span class='subtitle'>
+			{{bold i18n.locationClass}}: {{data.properties.locationClass}}
+		</span>
+	{{/if}}
+</span>

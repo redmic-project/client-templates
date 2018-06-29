@@ -1,0 +1,14 @@
+<ul class="objectClassification">
+	{{#each data.object}}
+		<li class="objectClassification">
+			{{this.name}}
+			<ul class="objectClassificationDetails">
+				{{#each (reverse this.classification)}}
+					<li class="objectClassificationDetails">
+						{{ChkIsNull this.objectType.name}}
+					</li>
+				{{/each}}
+			</ul>
+		</li>
+	{{/each}}
+</ul>

@@ -1,0 +1,24 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.taxon.scientificName}} {{ChkIsNull data.taxon.authorship}}'>
+		{{data.id}} - 
+		<span class='scientificName'>{{ChkIsNull data.taxon.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.taxon.authorship}} </span>
+	</span>
+	{{#if data.startDate}}
+		<span class='subtitle'>
+			{{i18n.date}}: {{Date data.startDate}}
+			{{#if data.endDate}}
+				 - {{Date data.endDate}}
+
+			{{/if}}
+		</span>
+	{{/if}}
+	<span class='subtitle' title='[Lng:{{data.coordinates.[0]}} - Lat:{{data.coordinates.[1]}}]'>
+		Lng: {{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}{{Depth data.z i18n}}
+	</span>
+	{{#if data.remark}}
+		<span class='subtitle'>
+			{{ChkIsNull data.remark}}
+		</span>
+	{{/if}}
+</span>

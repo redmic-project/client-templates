@@ -1,0 +1,101 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.taxon.scientificName}} {{ChkIsNull data.taxon.authorship}}'>
+		<span class='scientificName'>{{ChkIsNull data.taxon.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.taxon.authorship}} </span>
+	</span>
+	<span class='subtitle' title='[Lng:{{data.coordinates.[0]}} - Lat:{{data.coordinates.[1]}}]'>
+		[Lng:{{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}{{Depth data.z i18n}}]
+	</span>
+	<div {{ExpandOrCollapse}}>
+{{#if data.collectorName}}
+	<div>
+		<span class="propLabel">{{i18n.collectorName}}: </span>
+		<span class="propValue">{{data.collectorName}}</span>
+	</div>
+{{/if}}
+
+{{#if data.startDate}}
+	<div>
+		<span class="propLabel">{{i18n.startDate}}: </span>
+		<span class="propValue">{{DateTime data.startDate}}</span>
+	</div>
+{{/if}}
+
+{{#if data.endDate}}
+	<div>
+		<span class="propLabel">{{i18n.endDate}}: </span>
+		<span class="propValue">{{DateTime data.endDate}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.geometry.coordinates}}
+	<div>
+		<span class="propLabel">Lon:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[0] 5}}  </span>
+		<span class="propLabel">Lat:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[1] 5}}</span>
+	</div>
+{{/if}}
+
+	<div>
+		<span class="propLabel">{{i18n.depth}}: </span>
+		<span class="propValue">{{IsValidZ data.z}}</span>
+	</div>
+
+{{#if data.deviation}}
+	<div>
+		<span class="propLabel">{{i18n.deviation}}: </span>
+		<span class="propValue">{{data.deviation}} m</span>
+	</div>
+{{/if}}
+
+{{#if data.radius}}
+	<div>
+		<span class="propLabel">{{i18n.radius}}: </span>
+		<span class="propValue">{{data.radius}} m</span>
+	</div>
+{{/if}}
+
+{{#if data.activity.activityType.name}}
+	<div>
+		<span class="propLabel">{{i18n.activityType}}: </span>
+		<span class="propValue">{{data.activity.activityType.name}}</span>
+	</div>
+{{/if}}
+
+{{#if data.activity.name}}
+	<div>
+		<span class="propLabel">{{i18n.activity}}: </span>
+		<span class="propValue">{{data.activity.name}}</span>
+	</div>
+{{/if}}
+
+{{#if data.confidence}}
+	<div>
+		<span class="propLabel">{{i18n.location}}: </span>
+		<span class="propValue">{{lang data.confidence}}</span>
+	</div>
+{{/if}}
+
+{{#if data.speciesConfidence}}
+	<div>
+		<span class="propLabel">{{i18n.identification}}: </span>
+		<span class="propValue">{{lang data.speciesConfidence}}</span>
+	</div>
+{{/if}}
+
+{{#if data.specimenCount}}
+	<div>
+		<span class="propLabel">{{i18n.specimenCount}}: </span>
+		<span class="propValue">{{data.specimenCount}}</span>
+	</div>
+{{/if}}
+
+{{#if data.remark}}
+	<div>
+		<span class="propLabel">{{i18n.note}}: </span>
+		<span class="propValue">{{data.remark}}</span>
+	</div>
+{{/if}}
+	</div>
+</span>

@@ -1,0 +1,16 @@
+<div class="speciesDetailsTitle">
+	<span>
+		{{GroupIcon data.groupIcon}}
+	</span>
+	<span>
+		<h1 class="header">
+			<span class='scientificName'>{{data.scientificName}}</span>
+			{{#if data.authorship}}
+				<span>{{data.authorship}}</span>
+			{{/if}}
+		</h1>
+		{{#if data.ancestors}}
+			<h4>{{ancestorsSpecies data.ancestors}}</h4>
+		{{/if}}
+	</span>
+</div>

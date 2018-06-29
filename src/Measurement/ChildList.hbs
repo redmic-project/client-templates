@@ -1,0 +1,136 @@
+<div class="containerDetails fWidth">
+	<div class="content">
+		<div class="grid">
+			<div class="contentGrid">
+				{{#if data.contact}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.contact}}">{{i18n.contact}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>
+								{{SafeUrl (concat '/admin/contact-info/' data.contact.id)
+									(concat data.contact.firstName ' ' data.contact.surname)
+									i18n.contact}}
+							</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.contactRole}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.contactRole}}">{{i18n.contactRole}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.contactRole.name}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.description}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.description}}">{{i18n.description}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.description}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.unit}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.unit}}">{{i18n.unit}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.unit.name}} ({{data.unit.acronym}})</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.device}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.device}}">{{i18n.device}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.device.name}}{{#if data.device.model}} ({{data.device.model}}){{/if}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.deviation}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.deviation}}">{{i18n.deviation}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.deviation}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.minValue}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.minValue}}">{{i18n.minValue}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.minValue}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.maxValue}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.maxValue}}">{{i18n.maxValue}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.maxValue}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.significantDigits}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.significantDigits}}">{{i18n.significantDigits}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{data.significantDigits}}</p>
+						</div>
+					</div>
+				{{/if}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.derivedData}}">{{i18n.derivedData}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{showBoolean data.derivedData}}</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.isSerial}}">{{i18n.isSerial}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{showBoolean data.isSerial}}</p>
+					</div>
+				</div>
+				{{#if data.isSerial}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.isRegularity}}">{{i18n.isRegularity}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{showBoolean data.isRegularity}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{i18n.timeInterval}}">{{i18n.timeInterval}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{TimeCumulative data.timeInterval 'milliseconds' i18n}}</p>
+						</div>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>

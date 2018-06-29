@@ -1,0 +1,14 @@
+<span class='spanTemplate'>
+	{{#if data.unit}}
+		<span class='title' title='{{ChkIsNull data.name}} - {{ChkIsNull data.unit}}'>
+			<span class='name'>{{ChkIsNull data.name}} - {{ChkIsNull data.unit}}</span>
+		</span>
+	{{else}}
+		<span class='title' title='{{ChkIsNull data.name}}'>
+			<span class='name'>{{ChkIsNull data.name}}</span>
+		</span>
+		<span class='subtitle' title='{{ChkIsNull data.code}}'>
+			{{ChkIsNull data.code}}
+		</span>
+	{{/if}}
+</span>

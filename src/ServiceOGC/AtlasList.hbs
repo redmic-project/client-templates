@@ -1,0 +1,13 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		{{#if data.alias}}
+				<span class='name'>{{ChkIsNull data.alias}}</span>
+		{{else}}
+			{{#if data.urlSource}}
+				<span class='name'>{{ChkIsNull data.title}}</span>
+			{{else}}
+				<span class='name'>{{ChkIsNull data.name}}</span>
+			{{/if}}
+		{{/if}}
+	</span>
+</span>

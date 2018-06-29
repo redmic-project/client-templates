@@ -1,0 +1,16 @@
+<div class="content">
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.method}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.method}}">{{i18n.method}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.method}}</p>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

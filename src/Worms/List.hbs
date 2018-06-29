@@ -1,0 +1,27 @@
+<span class='spanTemplate'>
+	<span class='title inlineRow' title='{{ChkIsNull data.scientificname}} {{ChkIsNull data.authority}}'>
+		<span class='scientificName'>{{ChkIsNull data.scientificname}} </span>
+		<span class='name'>{{ChkIsNull data.authority}} </span>
+		<div class="contentGrid">
+			{{#if data.AphiaID}}
+				<div class="row">
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<span>
+							{{#if data.url}}
+								<a href={{data.url}} target='_blank' class='noDecoratedLink' title='worms'>
+									{{data.AphiaID}}
+								</a>
+							{{else}}
+								{{data.AphiaID}}
+							{{/if}}
+
+							{{#if data.status}}
+								 - {{data.status}}
+							{{/if}}
+						</span>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</span>
+</span>

@@ -1,0 +1,15 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.name}} </span>
+	</span>
+	{{#if data.model}}
+		<span class='subtitle'>
+			<span class='name'>{{ChkIsNull data.model}} </span>
+		</span>
+	{{/if}}
+	{{#if data.platform}}
+		<span class='subtitle'>
+			{{ChkIsNull data.platform.name}}
+		</span>
+	{{/if}}
+</span>

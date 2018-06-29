@@ -1,0 +1,9 @@
+{{ImageDetailsPublic data.image}}
+<span class='spanTemplate'>
+	<span class='title'>{{ChkIsNull data.name}}</span>
+	<span class='subtitle'>
+		{{#if data.organisation}}
+			{{ChkIsNull data.organisation.name}}
+		{{/if}}
+	</span>
+</span>

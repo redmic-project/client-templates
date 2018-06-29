@@ -1,0 +1,56 @@
+<div class="content">
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.email}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.email}}">{{i18n.email}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{Email data.email}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.mobile}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.mobile}}">{{i18n.mobile}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.mobile}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.phone}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.phone}}">{{i18n.phone}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.phone}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.updated}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.updated}}">{{i18n.updated}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{DateTime data.updated}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.note}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.note}}">{{i18n.note}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.note}}</p>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

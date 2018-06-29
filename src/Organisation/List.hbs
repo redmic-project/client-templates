@@ -1,0 +1,16 @@
+{{ImageDetailsPublic data.logo}}
+<span class='spanTemplate'>
+	<span class='title'>{{ChkIsNull data.name}}</span>
+	<span class='subtitle'>
+		{{#if data.acronym}}
+			{{ChkIsNull data.acronym}}
+		{{/if}}
+
+		{{#if data.organisationType}}
+			{{#if data.acronym}}
+				 | 
+			{{/if}}
+			{{lang data.organisationType}}
+		{{/if}}
+	</span>
+</span>

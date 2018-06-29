@@ -1,0 +1,67 @@
+<div class='scrollWrapper'>
+	<div class="detailsView">
+		<div class="detailsRow">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="detailsTitle">
+					<span>{{data.name}}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.metricGroup}}</legend>
+					<div class="detailsValue">
+						<span>{{data.metricGroup.name}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.parameterUnit}}</legend>
+					<div class="detailsValue">
+						<span>{{data.parameterUnit}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.acronym}}</legend>
+					<div class="detailsValue">
+						<span>{{data.acronym}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.description}}</legend>
+					<div class="detailsValue">
+						<span>{{breaklines data.description}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.device}}</legend>
+					<div class="detailsValue">
+						<span>{{data.device.name}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+	</div>
+</div>

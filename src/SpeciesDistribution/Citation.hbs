@@ -1,0 +1,53 @@
+<span class='spanTemplate'>
+	{{#if data.properties.misidentification}}
+		<div>
+			<span class="propValue">
+				{{#if data.properties.misidentification.taxon.scientificName}}
+					<span class="scientificName">{{data.properties.misidentification.taxon.scientificName}}</span>
+				{{/if}}
+				{{#if data.properties.misidentification.taxon.authorship}}
+					<span class="authorship">{{data.properties.misidentification.taxon.authorship}}</span>
+				{{/if}}
+			</span>
+		</div>
+		<div>
+			<span>{{bold i18n.misidentificationPopup}}: </span>
+			<span class="scientificName">{{data.properties.taxon.scientificName}}</span>
+			<span class="authorship">{{data.properties.taxon.authorship}}</span>
+		</div>
+	{{/if}}
+	{{#if data.geometry.coordinates}}
+		<span>{{bold i18n.x}}: {{toFixed data.geometry.coordinates.[0] 5}}  </span>
+		<span>{{bold i18n.y}}: {{toFixed data.geometry.coordinates.[1] 5}}  </span>
+	{{/if}}
+	{{#if data.properties.collectorName}}
+		<span>{{bold i18n.collectorName}}: {{data.properties.collectorName}}</span>
+	{{/if}}
+	{{#if data.properties.startDate}}
+		<span>{{bold i18n.startDate}}: {{DateTime data.properties.startDate}}</span>
+	{{/if}}
+	{{#if data.properties.endDate}}
+		<span>{{bold i18n.endDate}}: {{DateTime data.properties.endDate}}</span>
+	{{/if}}
+
+	<span>{{bold i18n.depth}}: {{IsValidZ data.properties.z}}</span>
+
+	{{#if data.properties.radius}}
+		<span>{{bold i18n.radius}}: {{data.properties.radius}} m.</span>
+	{{/if}}
+	{{#if data.properties.deviation}}
+		<span>{{bold i18n.deviation}}: {{data.properties.deviation}} m.</span>
+	{{/if}}
+	{{#if data.properties.confidence}}
+		<span>{{bold i18n.location}}: {{lang data.properties.confidence}}</span>
+	{{/if}}
+	{{#if data.properties.speciesConfidence}}
+		<span>{{bold i18n.identification}}: {{lang data.properties.speciesConfidence}}</span>
+	{{/if}}
+	{{#if data.properties.specimenCount}}
+		<span>{{bold i18n.specimenCount}}: {{data.properties.specimenCount}}</span>
+	{{/if}}
+	{{#if data.properties.remark}}
+		<span>{{bold i18n.note}}: {{data.properties.remark}}</span>
+	{{/if}}
+</span>

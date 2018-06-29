@@ -1,0 +1,14 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.name}}</span>
+	</span>
+	<span class='subtitle'>
+		{{lang data.parameterType}}
+		{{#if data.acronym}}
+			 - {{data.acronym}}
+		{{/if}}
+		{{#if data.units}}
+			 - {{listSeparate data.units ", " "unit"}}
+		{{/if}}
+	</span>
+</span>

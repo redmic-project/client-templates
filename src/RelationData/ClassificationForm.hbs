@@ -1,0 +1,41 @@
+<div>
+	<form class="form-horizontal">
+		<div data-redmic-type="select" data-redmic-model="columns/0"
+			data-redmic-props="
+				label: 'column',
+				idProperty: 'value',
+				propertyPath: 'columns',
+				target: 'relationData',
+				omitRequest: true
+		"></div>
+
+		<fieldset>
+			<legend>{{i18n.selectClassification}}</legend>
+
+			{{#each classifications}}
+				<div data-redmic-type="selectOnListPopup" data-redmic-model="{{this.model}}"
+					data-redmic-props="
+						deleteOnClear: true,
+						label: '{{this.label}}',
+						template: 'templates/DomainList',
+						idProperty: 'path',
+						placeHolder: 'classificationPlaceHolderInput',
+						title: '{{this.label}}',
+						target: 'objectType',
+						contentPopupConfig: {
+							filterConfig: {
+								initQuery: {
+									terms: {
+										'parentPath': '{{this.classificationType}}'
+									}
+								}
+							},
+							browserConfig: {
+								pathLengthMinChildren: {{PathLength this.classificationType 1}}
+							}
+						}
+				"></div>
+			{{/each}}
+		</fieldset>
+	</form>
+</div>

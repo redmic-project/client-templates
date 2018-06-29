@@ -1,0 +1,11 @@
+<div class="chartTooltipContent">
+	<div class="categoryName">
+		{{data.titleValue}}
+	</div>
+	{{#each data.layers}}
+		<div class="categoryValue">
+			<i class="colorIndicator" style="color: {{this.color}}"></i>
+			{{#if this.percentage}}{{this.percentage}} % | {{/if}}{{this.value}} {{this.param}}
+		</div>
+	{{/each}}
+</div>

@@ -1,0 +1,9 @@
+{{Image this.logo}}
+<span class='spanTemplate'>
+	<span class='title'>{{this.name}} ({{this.acronym}})</span>
+	<span class='subtitle'>
+		{{this.address}}
+		{{#if this.address}}{{#if this.country}} - {{/if}}{{/if}}
+		{{lang this.country}}
+	</span>
+</span>

@@ -1,0 +1,11 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.method}}</span>
+	</span>
+	<span class='subtitle'>
+		{{Date data.date}}
+		{{#if data.method}}
+			 - {{breaklines data.data}}
+		{{/if}}
+	</span>
+</span>

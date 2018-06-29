@@ -1,0 +1,12 @@
+<span class='spanTemplate'>
+	<span>
+		<b>{{Date data.admissionDate}}</b> - 
+		{{i18n.destiny}}: <b>{{lang data.destiny}}</b>
+	</span>
+	<span class='subtitle'>
+		{{#if data.releaseDate}}
+			<b>{{Date data.releaseDate}}</b> - 
+		{{/if}}
+		{{i18n.ending}}: <b>{{lang data.ending}}</b>
+	</span>
+</span>

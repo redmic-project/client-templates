@@ -1,0 +1,21 @@
+{{GroupIcon data.groupIcon}}
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='scientificName'>{{ChkIsNull this.scientificName}} </span>
+		{{#if this.authorship}}
+			<span class='name'>{{ChkIsNull this.authorship}}</span>
+		{{/if}}
+	</span>
+	<span class='subtitle'>
+		{{#if this.aphia}}
+			[{{this.aphia}}]
+		{{/if}}
+		{{#if this.commonName}}
+			 {{ChkIsNull this.commonName}}
+			{{#if this.status}}
+				 -
+			{{/if}}
+		{{/if}}
+		 {{Status this.status}}
+	</span>
+</span>

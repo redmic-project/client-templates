@@ -1,0 +1,143 @@
+{{#if feature.properties.misidentification}}
+	<div>
+		<span class="propValue">
+			{{#if feature.properties.misidentification.taxon.scientificName}}
+				<span class="scientificName">{{feature.properties.misidentification.taxon.scientificName}}</span>
+			{{/if}}
+			{{#if feature.properties.misidentification.taxon.authorship}}
+				<span class="authorship">{{feature.properties.misidentification.taxon.authorship}}</span>
+			{{/if}}
+		</span>
+	</div>
+	<div>
+		<span>{{i18n.misidentificationPopup}} </span>
+		<span class="scientificName">{{feature.properties.taxon.scientificName}}</span>
+		<span class="authorship">{{feature.properties.taxon.authorship}}</span>
+	</div>
+{{else if feature.properties.taxon}}
+	<div>
+		<span class="propValue">
+			{{#if feature.properties.taxon.scientificName}}
+				<span class="scientificName">{{feature.properties.taxon.scientificName}}</span>
+			{{/if}}
+			{{#if feature.properties.taxon.authorship}}
+				<span class="authorship">{{feature.properties.taxon.authorship}}</span>
+			{{/if}}
+		</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.taxon}}
+	{{#if feature.properties.taxon.validAs}}
+		<div>
+			<span class="propLabel">{{i18n.validAs}}: </span>
+			{{#if feature.properties.taxon.validAs.scientificName}}
+				<a {{Href '/catalog/species-info/' feature.properties.taxon.validAs.id}} class='cursive'>
+					{{feature.properties.taxon.validAs.scientificName}}
+				</a>
+			{{/if}}
+			{{#if feature.properties.taxon.validAs.authorship}}
+				<span>{{feature.properties.taxon.validAs.authorship}}</span>
+			{{/if}}
+		</div>
+	{{/if}}
+{{/if}}
+
+{{#if feature.properties.collectorName}}
+	<div>
+		<span class="propLabel">{{i18n.collectorName}}: </span>
+		<span class="propValue">{{feature.properties.collectorName}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.date}}
+	<div>
+		<span class="propLabel">{{i18n.date}}: </span>
+		<span class="propValue">{{Date feature.properties.date}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.startDate}}
+	<div>
+		<span class="propLabel">{{i18n.startDate}}: </span>
+		<span class="propValue">{{DateTime feature.properties.startDate}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.endDate}}
+	<div>
+		<span class="propLabel">{{i18n.endDate}}: </span>
+		<span class="propValue">{{DateTime feature.properties.endDate}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.geometry.coordinates}}
+	<div>
+		<span class="propLabel">Lon:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[0] 5}}  </span>
+		<span class="propLabel">Lat:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[1] 5}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.z}}
+	<div>
+		<span class="propLabel">{{i18n.depth}}: </span>
+		<span class="propValue">{{feature.properties.z}} m</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.deviation}}
+	<div>
+		<span class="propLabel">{{i18n.deviation}}: </span>
+		<span class="propValue">{{feature.properties.deviation}} m</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.radius}}
+	<div>
+		<span class="propLabel">{{i18n.radius}}: </span>
+		<span class="propValue">{{feature.properties.radius}} m</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.activity.activityType.name}}
+	<div>
+		<span class="propLabel">{{i18n.activityType}}: </span>
+		<span class="propValue">{{feature.properties.activity.activityType.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.activity.name}}
+	<div>
+		<span class="propLabel">{{i18n.activity}}: </span>
+		<span class="propValue">{{feature.properties.activity.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.confidence}}
+	<div>
+		<span class="propLabel">{{i18n.location}}: </span>
+		<span class="propValue">{{lang feature.properties.confidence}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.speciesConfidence}}
+	<div>
+		<span class="propLabel">{{i18n.identification}}: </span>
+		<span class="propValue">{{lang feature.properties.speciesConfidence}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.remark}}
+	<div>
+		<span class="propLabel">{{i18n.note}}: </span>
+		<span class="propValue">{{breaklines feature.properties.remark}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.activity.documents.[0].url}}
+	<div>
+		<span class="propValue">{{PDFHref feature.properties.activity.documents.[0].id i18n.viewDocument feature.properties.activity.documents.[0].title}}</span>
+	</div>
+{{/if}}

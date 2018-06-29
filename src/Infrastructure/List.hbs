@@ -1,0 +1,14 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.name}}'>
+		<span class='name'>{{ChkIsNull data.name}}</span>
+	</span>
+	<span class='subtitle' title='{{data.code}}'>
+		{{data.code}}
+	</span>
+	<span class='subtitle' title='{{lang data.infrastructureType}}'>
+		{{lang data.infrastructureType}}
+	</span>
+	<span class='subtitle' title='[Lng:{{data.coordinates.[0]}} - Lat:{{data.coordinates.[1]}}]'>
+		[Lng:{{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}{{Depth data.z i18n}}]
+	</span>
+</span>

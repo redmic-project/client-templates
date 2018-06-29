@@ -1,0 +1,17 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		{{data.contact.firstName}} {{data.contact.surname}}
+	</span>
+	<span class='subtitle'>
+		{{data.organisation.acronym}} - {{lang data.role}}
+	</span>
+	<span class='subtitle'>
+		{{#if data.startDate}}
+			{{Date data.startDate}} - 
+		{{/if}}
+
+		{{#if data.endDate}}
+			{{Date data.endDate}}
+		{{/if}}
+	</span>
+</span>

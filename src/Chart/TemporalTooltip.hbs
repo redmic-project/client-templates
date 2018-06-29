@@ -1,0 +1,11 @@
+<div class="chartTooltipContent">
+	<div class="horizontalValue">
+		{{DateTime data.horizontalValue}}
+	</div>
+	{{#each data.layers}}
+		<div class="verticalValue">
+			<i class="colorIndicator" style="color: {{this.color}}"></i>
+			{{this.value}} {{this.param}} {{this.count}}
+		</div>
+	{{/each}}
+</div>

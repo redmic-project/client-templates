@@ -1,0 +1,11 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.scientificName}} {{ChkIsNull data.authorship}}'>
+		<span class='scientificName'>{{ChkIsNull data.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.authorship}}</span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.registers.length}}
+			Nº reg {{data.registers.length}}
+		{{/if}}
+	</span>
+</span>

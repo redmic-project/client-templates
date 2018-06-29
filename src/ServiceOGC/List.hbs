@@ -1,0 +1,28 @@
+{{#if data.urlSource}}
+	{{ImageDetailsPublic data.image "imageLayerList"}}
+{{/if}}
+<span class='spanTemplate'>
+	<span class='title'>
+		{{#if data.alias}}
+				<span class='name'>{{ChkIsNull data.alias}}</span>
+		{{else}}
+			{{#if data.urlSource}}
+				<span class='name'>{{ChkIsNull data.title}}</span>
+			{{else}}
+				<span class='name'>{{ChkIsNull data.name}}</span>
+			{{/if}}
+		{{/if}}
+	</span>
+	<span class='subtitle subTitleFlex'>
+	{{#if data.themeInspire}}
+		<span class='subtitleIcon'>
+			{{GroupIconInspire data.themeInspire.code i18n true}}
+		</span>
+	{{/if}}
+	<span class=''>
+		{{#if data.protocols}}
+				{{Array data.protocols ' - ' 'type'}}
+		{{/if}}
+	</span>
+	</span>
+</span>

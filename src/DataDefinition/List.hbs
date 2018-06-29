@@ -1,0 +1,17 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		{{ChkIsNull data.parameter.name}} - {{ChkIsNull data.unit.name}}
+	</span>
+	<span class='subtitle'>
+		{{ChkIsNull data.device.name}}
+	</span>
+	<span class='subtitle'>
+		{{i18n.zDepthAltitude}}: {{data.z}}
+	</span>
+
+	{{#if data.isSerial}}
+		<span class='subtitle'>
+			{{i18n.timeInterval}}: {{TimeCumulative data.timeInterval 'milliseconds' i18n}}
+		</span>
+	{{/if}}
+</span>

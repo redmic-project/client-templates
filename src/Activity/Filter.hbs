@@ -1,0 +1,16 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull this.name}} </span>
+	</span>
+	<span class='subtitle'>
+		{{#if this.code}}
+			{{this.code}}
+		{{/if}}
+		{{#if this.activityType}}
+			{{#if this.code}}
+			 | 
+			{{/if}}
+			{{lang this.activityType}}
+		{{/if}}
+	</span>
+</span>

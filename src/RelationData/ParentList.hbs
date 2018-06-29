@@ -1,0 +1,36 @@
+<span class='spanTemplate'>
+
+	{{#if data.columns}}
+		<span class='title'>
+			{{ChkIsNull data.columns}}
+		</span>
+	{{/if}}
+
+	{{#if data.coordinates}}
+		<span class='title'>
+			[{{ChkIsNull data.coordinates}}]
+		</span>
+	{{/if}}
+
+	<span class='subtitle'>
+		{{i18n.type}}: {{TranslateUncapitalize i18n data.type}}
+	</span>
+
+	{{#if data.format}}
+		<span class='subtitle'>
+			{{ChkIsNull data.format}}
+		</span>
+	{{/if}}
+
+	{{#if data.dataDefinitionName}}
+		<span class='subtitle'>
+			{{ChkIsNull data.dataDefinitionName}}
+		</span>
+	{{/if}}
+
+	{{#if data.deviceId}}
+		<span class='subtitle'>
+			{{ChkIsNull data.deviceId}}
+		</span>
+	{{/if}}
+</span>

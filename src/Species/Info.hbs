@@ -1,0 +1,206 @@
+<div class="content">
+	<div class="containerImageDetails">
+		{{ImageDetailsPublic data.image false}}
+	</div>
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.aphia}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.aphia}}">{{i18n.aphia}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>
+							{{#if data.worms}}
+								<a href={{data.worms}} target='_blank' class='noDecoratedLink' title='{{i18n.worms}}'>
+									{{data.aphia}}
+								</a>
+							{{else}}
+								{{data.aphia}}
+							{{/if}}
+						</p>
+					</div>
+				</div>
+			{{/if}}
+			<div class="row">
+				<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+					<span title="{{i18n.updated}}">{{i18n.updated}}</span>
+				</div>
+				<div class="{{RowColSpeciesCatalog 'right'}}">
+					<p>
+						{{#if data.updated}}
+							{{DateTime data.updated}}
+						{{/if}}
+					</p>
+				</div>
+			</div>
+			{{#if data.status}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.status}}">{{i18n.status}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						{{Status data.status}}
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.commonName}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.commonName}}">{{i18n.commonName}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{data.commonName}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.ancestors}}
+				<div class="row classification">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.classification}}">{{i18n.classification}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{ancestorsSpecies data.ancestors}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.validAs}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.synonymOf}}">{{i18n.synonymOf}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>
+							<a {{Href '/catalog/species-info/' data.validAs.id}} class='cursive'>
+								{{data.validAs.scientificName}}
+							</a>
+							<span> {{data.validAs.authorship}} </span>
+						</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.popularNames}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.popularNames}}">{{i18n.popularNames}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{Keyword data.popularNames}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.note}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.note}}">{{i18n.note}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{breaklines data.note}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			<div class="row detailsRowSeparator"></div>
+
+			{{#if data.origin}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.origin}}">{{i18n.origin}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.origin}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.endemicity}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.endemicity}}">{{i18n.endemicity}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.endemicity}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.permanence}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.permanence}}">{{i18n.permanence}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.permanence}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.ecology}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.ecology}}">{{i18n.ecology}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.ecology}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.trophicRegime}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.trophic-regime}}">{{i18n.trophic-regime}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.trophicRegime}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.interest}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.interest}}">{{i18n.interest}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}}">
+						<p>{{lang data.interest}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.canaryProtection}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.canaryProtection}}">{{i18n.canaryProtection}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}} contentWithIcon">
+						<p>{{lang data.canaryProtection}}</p>
+						{{#if data.canaryCatalogue}}
+							<a href="{{data.canaryCatalogue}}" target="_blank" class="fa fa-file-pdf-o"></a>
+						{{/if}}
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.spainProtection}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.spainProtection}}">{{i18n.spainProtection}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}} contentWithIcon">
+						<p>{{lang data.spainProtection}}</p>
+						{{#if data.spainCatalogue}}
+							<a href="{{data.spainCatalogue}}" target="_blank" class="fa fa-file-pdf-o"></a>
+						{{/if}}
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.euProtection}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColSpeciesCatalog 'left'}}">
+						<span title="{{i18n.euProtection}}">{{i18n.euProtection}}</span>
+					</div>
+					<div class="{{RowColSpeciesCatalog 'right'}} contentWithIcon">
+						<p>{{lang data.euProtection}}</p>
+						{{#if data.euDirective}}
+							<a href="{{data.euDirective}}" target="_blank" class="fa fa-file-pdf-o"></a>
+						{{/if}}
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

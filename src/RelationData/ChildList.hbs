@@ -1,0 +1,9 @@
+<span class='spanTemplate'>
+	{{#if data.classifications}}
+		{{#each data.classifications}}
+			<span class='subtitle'>
+				<span class='title'>&#8226;</span> {{Parents this 'parent' 'name'}}
+			</span>
+		{{/each}}
+	{{/if}}
+</span>

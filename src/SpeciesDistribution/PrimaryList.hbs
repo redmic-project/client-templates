@@ -1,0 +1,22 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.parent.scientificName}} {{ChkIsNull data.parent.authorship}}'>
+		<span class='scientificName'>{{ChkIsNull data.parent.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.parent.authorship}}</span>
+	</span>
+	<span class='subtitle'>
+		<span class='name'>{{ChkIsNull data.parent.commonName}} </span>
+	</span>
+	{{#if data.parent.validAs}}
+		<span class="propValue">
+			<span>{{i18n.validAs}}: </span>
+			<span class='scientificName title'>{{ChkIsNull data.parent.validAs.scientificName}}</span>
+			<span class='name title'>{{ChkIsNull data.parent.validAs.authorship}}</span>
+		</span>
+	{{/if}}
+	{{#if data.parent.misidentification}}
+		<span>{{i18n.containsMisidentification}}</span>
+	{{/if}}
+	<span class='subtitle'>
+		({{data.children.length}} {{i18n.elements}})
+	</span>
+</span>

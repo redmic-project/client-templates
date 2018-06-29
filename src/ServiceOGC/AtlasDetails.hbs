@@ -1,0 +1,10 @@
+<div>
+	<div>
+		{{#if data.description}}
+			{{data.description}}
+		{{else}}
+			{{data.title}}
+		{{/if}}
+	</div>
+	<div class="hrefInTooltip"><a href="{{data.href}}" d-state-url="true">{{i18n.seeDetails}}</a></div>
+</div>

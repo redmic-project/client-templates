@@ -1,0 +1,18 @@
+{{#if data.icon}}
+	<span class='notificationIcon
+		{{#if data.iconClass}}
+			{{data.iconClass}}
+		{{/if}}
+	'>
+		{{GroupIcon data.icon}}
+	</span>
+{{/if}}
+<span class='spanTemplate'>
+	<span class=''>
+		{{ChkIsNull data.description}}
+	</span>
+	<span class='subtitle'>
+		{{DateTime data.data.updated}}
+	</span>
+	{{Progress data}}
+</span>

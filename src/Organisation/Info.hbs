@@ -1,0 +1,113 @@
+<div class="content">
+	<div class="containerImageDetails">
+		{{ImageDetailsPublic data.logo}}
+	</div>
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.acronym}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.acronym}}">{{i18n.acronym}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.acronym}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.organisationType}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.organisationType}}">{{i18n.organisationType}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{lang data.organisationType}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.description}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.description}}">{{i18n.description}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.description}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.address}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.address}}">{{i18n.address}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.address}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.country}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.country}}">{{i18n.country}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{lang data.country}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.phone}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.phone}}">{{i18n.phone}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.phone}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.email}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.email}}">{{i18n.email}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{Email data.email}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.webpage}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.webpage}}">{{i18n.webpage}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>
+							<a href={{data.webpage}} target='_blank' class='noDecoratedLink' title='{{i18n.webpage}}'>
+								{{data.webpage}}
+							</a>
+						</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.updated}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.updated}}">{{i18n.updated}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{DateTime data.updated}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.note}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.note}}">{{i18n.note}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.note}}</p>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

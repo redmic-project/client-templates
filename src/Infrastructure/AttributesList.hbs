@@ -1,0 +1,14 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{lang data.attributeType}}'>
+		<span class='name'>{{lang data.attributeType}}</span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.startDate}}
+			{{Date data.startDate}} - 
+		{{/if}}
+
+		{{#if data.endDate}}
+			{{Date data.endDate}}
+		{{/if}}
+	</span>
+</span>

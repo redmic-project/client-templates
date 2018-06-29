@@ -1,0 +1,9 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.taxon.scientificName}} {{ChkIsNull data.taxon.authorship}}'>
+		<span class='scientificName'>{{ChkIsNull data.taxon.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.taxon.authorship}} </span>
+	</span>
+	<span class='subtitle' title='[Lng:{{data.coordinates.[0]}} - Lat:{{data.coordinates.[1]}}]'>
+		Lng: {{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}{{Depth data.z i18n}}
+	</span>
+</span>

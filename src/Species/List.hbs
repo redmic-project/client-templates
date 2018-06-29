@@ -1,0 +1,20 @@
+<span class='spanIcon'>
+	{{GroupIcon data.groupIcon}}
+</span>
+<span class='spanTemplate'>
+	<span class='title' title='{{ChkIsNull data.scientificName}} {{ChkIsNull data.authorship}}'>
+		<span class='scientificName'>{{ChkIsNull data.scientificName}} </span>
+		<span class='name'>{{ChkIsNull data.authorship}}</span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.aphia}}
+			[{{data.aphia}}]
+		{{/if}}
+		{{#if data.commonName}}
+			{{ChkIsNull data.commonName}}
+			 - 
+		{{/if}}
+		{{Status data.status}}
+		{{PrintProperty data 'peculiarity.popularNames.suggest' ' - '}}
+	</span>
+</span>

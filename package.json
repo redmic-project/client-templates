@@ -1,0 +1,46 @@
+{
+  "name": "Templates",
+  "version": "0.10.1",
+  "author": "Observatorio Ambiental Granadilla",
+  "homepage": "https://redmic.es",
+  "description": "Plantillas de Handlebars para REDMIC",
+  "contributors": [
+    {
+      "name": "Ignacio Lorenzo García",
+      "email": "nacho@oag-fundacion.org"
+    },
+    {
+      "name": "Pedro E. Trujillo Brito",
+      "email": "pedro@redmic.es"
+    },
+    {
+      "name": "Noel Alonso Expósito",
+      "email": "noel@redmic.es"
+    },
+    {
+      "name": "Carlos Alberto González Carballo",
+      "email": "carlos@redmic.es"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.redmic.net/redmic-client/templates.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-git": "^1.0.4",
+    "grunt-shell": "^2.1.0",
+    "handlebars": "^4.0.6",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "engines": {
+    "node": ">=4.4",
+    "npm": ">=3.10"
+  },
+  "license": "ISC"
+}

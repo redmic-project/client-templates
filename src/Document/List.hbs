@@ -1,0 +1,21 @@
+<span class='spanTemplate'>
+	{{#if shownOption.code}}
+		<span class='subtitle'>
+			{{ChkIsNull data.code}}
+		</span>
+	{{/if}}
+	<span class='subtitle'>
+		{{#if data.author}}
+			{{ChkIsNull data.author}}
+		{{/if}}
+		{{#if data.year}}
+			 ({{ChkIsNull data.year}})
+		{{/if}}
+		{{#if data.documentType}}
+			 | {{lang data.documentType}}
+		{{/if}}
+	</span>
+	<span class='title'>
+		{{ChkIsNull data.title}}
+	</span>
+</span>

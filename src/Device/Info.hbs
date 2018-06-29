@@ -1,0 +1,129 @@
+<div class='scrollWrapper'>
+	<div class="detailsView">
+		<div class="detailsRow">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="detailsTitle">
+					<span>{{data.name}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="detailsRowTop">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.name}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.name}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.model}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.model}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.serialNumber}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.serialNumber}}</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.deviceType}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{data.deviceType.name}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.acquisitionDate}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{Date data.acquisitionDate}}</span>
+					</div>
+				</div>
+
+				<div class="detailsTextRow">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 detailsLabel">
+						{{i18n.manufacturedDate}}
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 detailsValue">
+						<span>{{Date data.manufacturedDate}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.description}}</legend>
+					<div class="detailsValue">
+						<span>{{breaklines data.description}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.note}}</legend>
+					<div class="detailsValue">
+						<span>{{breaklines data.note}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.calibrations}}</legend>
+					<div class="detailsValue">
+						<span>{{Array data.calibrations ';' 'calibrations' 'data'}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.document}}</legend>
+					<div class="detailsValue">
+						<span>{{data.document.title}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="detailsRowTop">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<fieldset>
+					<legend>{{i18n.platform}}</legend>
+					<div class="detailsValue">
+						<span>{{data.platform.name}}</span>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+	</div>
+</div>

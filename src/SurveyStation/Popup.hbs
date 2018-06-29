@@ -1,0 +1,18 @@
+{{#if feature.properties.site.name}}
+	<div>
+		<span class="propLabel">{{i18n.name}}: </span>
+		<span class="propValue">{{feature.properties.site.name}}</span>
+	</div>
+{{/if}}
+{{#if feature.properties.site.code}}
+	<div>
+		<span class="propLabel">{{i18n.code}}: </span>
+		<span class="propValue">{{feature.properties.site.code}}</span>
+	</div>
+{{/if}}
+{{#if feature.properties.site.description}}
+	<div>
+		<span class="propLabel">{{i18n.description}}: </span>
+		<span class="propValue">{{breaklines feature.properties.site.description}}</span>
+	</div>
+{{/if}}

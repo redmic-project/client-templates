@@ -1,0 +1,89 @@
+<div class="content">
+	<div class="containerImageDetails">
+		{{ImageDetailsPublic data.image}}
+	</div>
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.acronym}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.acronym}}">{{i18n.acronym}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.acronym}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.platformType}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.platformType}}">{{i18n.platformType}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{lang data.platformType}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.description}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.description}}">{{i18n.description}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.description}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.contactPhone}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.contactPhone}}">{{i18n.contactPhone}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.contactPhone}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.licence}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.licence}}">{{i18n.licence}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.licence}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.seawebcode}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.seawebcode}}">{{i18n.seawebcode}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{data.seawebcode}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.updated}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.updated}}">{{i18n.updated}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{DateTime data.updated}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.note}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.note}}">{{i18n.note}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.note}}</p>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

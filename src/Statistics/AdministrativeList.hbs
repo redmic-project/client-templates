@@ -1,0 +1,20 @@
+<span class='spanTemplate spanTemplateStatistic'>
+	<span class='title'>
+		<span class='name'>{{Translate i18n data.name false true}}</span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.data.open}}
+			<span class='rightColOne'>
+				{{i18n.opened}}: {{data.data.open}}
+			</span>
+			<span class='rightColSeparator'> | </span>
+			<span class='rightColTwo'>
+				{{i18n.closed}}: {{data.data.close}}
+			</span>
+		{{else}}
+			<span class='rightColTwo'>
+				Total: {{data.data}}
+			</span>
+		{{/if}}
+	</span>
+</span>

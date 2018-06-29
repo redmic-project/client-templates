@@ -1,0 +1,24 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.parent.name}}</span>
+	</span>
+	<span class='title'>
+		<span class="propValue">
+			{{#if data.parent.taxon}}
+				{{#if data.parent.taxon.scientificName}}
+					<span class="scientificName">{{data.parent.taxon.scientificName}}</span>
+				{{/if}}
+				{{#if data.parent.taxon.authorship}}
+					<span class="authorship">{{data.parent.taxon.authorship}}</span>
+				{{/if}}
+			{{/if}}
+			{{#if data.organisation}}
+				<span class="">{{data.parent.organisation.name}}</span>
+				{{data.organisation.name}}
+			{{/if}}
+		</span>
+	</span>
+	<span class='subtitle'>
+		({{data.children.length}} {{i18n.elements}})
+	</span>
+</span>
