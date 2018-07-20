@@ -221,7 +221,6 @@ module.exports = function(grunt) {
 				, 'dist/ProtocolsSet.js': 'src/Protocols/Set.hbs'
 
 				, 'dist/WhatIsRedmicLongTermChallenge.js': 'src/WhatIsRedmic/LongTermChallenge.hbs'
-				, 'dist/WhatIsRedmicLogicalDataModel.js': 'src/WhatIsRedmic/LogicalDataModel.hbs'
 				, 'dist/WhatIsRedmicSystemArchitecture.js': 'src/WhatIsRedmic/SystemArchitecture.hbs'
 				, 'dist/WhatIsRedmicInfoType.js': 'src/WhatIsRedmic/InfoType.hbs'
 				, 'dist/WhatIsRedmicUserType.js': 'src/WhatIsRedmic/UserType.hbs'
