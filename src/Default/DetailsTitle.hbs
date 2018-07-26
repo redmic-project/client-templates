@@ -1,9 +1,5 @@
 <div class="header">
-	<h1>
-		{{#if data.title}}
-			{{data.title}}
-		{{else}}
-			{{data.name}}
-		{{/if}}
+	<h1 title='{{DetailsTitle data}}'>
+		{{DetailsTitle data}}
 	</h1>
 </div>

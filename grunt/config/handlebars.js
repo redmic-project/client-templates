@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 				amd: ['templates'],
 				compilerOptions: {
 					knownHelpers: {
+						DetailsTitle: true,
 						PropertiesAtlas: true,
 						StartEnd: true,
 						TimeCumulative: true,
