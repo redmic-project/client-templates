@@ -5,7 +5,7 @@
 	<span class='subtitle'>
 		{{ChkIsNull data.name_en}}
 		{{#if data.code}}
-			 - {{data.code}}
+			 - {{ChkIsNull data.code}}
 		{{/if}}
 	</span>
 </span>
