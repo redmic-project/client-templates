@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 				amd: ['templates'],
 				compilerOptions: {
 					knownHelpers: {
+						DetailsTitle: true,
 						PropertiesAtlas: true,
 						StartEnd: true,
 						TimeCumulative: true,
@@ -82,7 +83,6 @@ module.exports = function(grunt) {
 				, 'dist/ActivityInfo.js': 'src/Activity/Info.hbs'
 				, 'dist/ActivityList.js': 'src/Activity/List.hbs'
 				, 'dist/ActivityFilter.js': 'src/Activity/Filter.hbs'
-				, 'dist/ActivityTitle.js': 'src/Activity/Title.hbs'
 				, 'dist/ActivityTypeInfo.js': 'src/ActivityType/Info.hbs'
 				, 'dist/ActivityTypeList.js': 'src/ActivityType/List.hbs'
 				, 'dist/ActivityTypeDetails.js': 'src/ActivityType/Details.hbs'
@@ -118,7 +118,6 @@ module.exports = function(grunt) {
 				, 'dist/DocumentNotAvailable.js': 'src/Document/NotAvailable.hbs'
 				, 'dist/DocumentInfo.js': 'src/Document/Info.hbs'
 				, 'dist/DocumentList.js': 'src/Document/List.hbs'
-				, 'dist/DocumentTitle.js': 'src/Document/Title.hbs'
 				, 'dist/DeviceInfo.js': 'src/Device/Info.hbs'
 				, 'dist/DeviceList.js': 'src/Device/List.hbs'
 				, 'dist/DataDefinitionInfo.js': 'src/DataDefinition/Info.hbs'
@@ -221,7 +220,6 @@ module.exports = function(grunt) {
 				, 'dist/ProtocolsSet.js': 'src/Protocols/Set.hbs'
 
 				, 'dist/WhatIsRedmicLongTermChallenge.js': 'src/WhatIsRedmic/LongTermChallenge.hbs'
-				, 'dist/WhatIsRedmicLogicalDataModel.js': 'src/WhatIsRedmic/LogicalDataModel.hbs'
 				, 'dist/WhatIsRedmicSystemArchitecture.js': 'src/WhatIsRedmic/SystemArchitecture.hbs'
 				, 'dist/WhatIsRedmicInfoType.js': 'src/WhatIsRedmic/InfoType.hbs'
 				, 'dist/WhatIsRedmicUserType.js': 'src/WhatIsRedmic/UserType.hbs'

@@ -3,8 +3,11 @@
 		<span class='name'>{{lang data}}</span>
 	</span>
 	<span class='subtitle'>
+		{{ChkIsNull data.name_en}}
+	</span>
+	<span class='subtitle'>
 		{{#if data.code}}
-			{{data.code}}
+			{{ChkIsNull data.code}}
 		{{/if}}
 	</span>
 </span>
