@@ -1,3 +1,11 @@
+{{#if feature.properties.site.dashboard}}
+	<div class="flexContainerColumn">
+		<a href=/viewer/real-time-dashboard/{{feature.id}} target='_blank'>
+			<i class='paddingContainerWebcam fa fa-link'></i>
+			{{i18n.goToDashboard}}
+		</a>
+	</div>
+{{/if}}
 {{#if feature.properties.site.name}}
 	<div>
 		<span class="propLabel">{{i18n.name}}: </span>
