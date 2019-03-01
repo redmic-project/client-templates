@@ -1,8 +1,8 @@
 {
   "name": "Templates",
-  "version": "0.10.1",
-  "author": "Observatorio Ambiental Granadilla",
-  "homepage": "https://redmic.es",
+  "version": "0.11.0",
+  "author": "REDMIC",
+  "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Plantillas de Handlebars para REDMIC",
   "contributors": [
     {
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://git.redmic.net/redmic-client/templates.git"
+    "url": "https://gitlab.com/redmic-project/client/templates.git"
   },
   "private": true,
   "devDependencies": {

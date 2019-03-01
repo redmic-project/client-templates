@@ -183,6 +183,7 @@ module.exports = function(grunt) {
 				, 'dist/SurveyStationPopup.js': 'src/SurveyStation/Popup.hbs'
 				, 'dist/SurveyStationList.js': 'src/SurveyStation/List.hbs'
 				, 'dist/SurveyStationDataList.js': 'src/SurveyStation/DataList.hbs'
+				, 'dist/SurveyStationDashboard.js': 'src/SurveyStation/Dashboard.hbs'
 
 				, 'dist/ObjectCollectionPopup.js': 'src/ObjectCollection/Popup.hbs'
 				, 'dist/ObjectCollectionList.js': 'src/ObjectCollection/List.hbs'
