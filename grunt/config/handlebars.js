@@ -234,6 +234,8 @@ module.exports = function(grunt) {
 				, 'dist/GenericViewerLayerList.js': 'src/GenericViewer/LayerList.hbs'
 
 				, 'dist/ActivityCategoriesNoExist.js': 'src/ActivityCategories/NoExist.hbs'
+
+				, 'dist/RealTimeInfo.js': 'src/RealTime/Info.hbs'
 			}
 		}
 	});
