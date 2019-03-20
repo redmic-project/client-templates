@@ -1,0 +1,25 @@
+{{#if feature.properties.name}}
+	<div>
+		<span class="propLabel">{{i18n.name}}: </span>
+		<span class="propValue">{{feature.properties.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.code}}
+	<div>
+		<span class="propLabel">{{i18n.code}}: </span>
+		<span class="propValue">{{feature.properties.code}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.geometry.coordinates}}
+	<div>
+		<span class="propLabel">{{i18n.latitude}}: </span>
+		<span class="propValue">{{feature.geometry.coordinates.[1]}}</span>
+	</div>
+	<div>
+		<span class="propLabel">{{i18n.longitude}}: </span>
+		<span class="propValue">{{feature.geometry.coordinates.[0]}}</span>
+	</div>
+{{/if}}
+

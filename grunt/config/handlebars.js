@@ -210,6 +210,7 @@ module.exports = function(grunt) {
 				, 'dist/RelationDataParameterForm.js': 'src/RelationData/ParameterForm.hbs'
 
 				, 'dist/SiteInfo.js': 'src/Site/Info.hbs'
+				, 'dist/SitePopup.js': 'src/Site/Popup.hbs'
 				, 'dist/MeasurementChildList.js': 'src/Measurement/ChildList.hbs'
 				, 'dist/MeasurementParentList.js': 'src/Measurement/ParentList.hbs'
 
