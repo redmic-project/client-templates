@@ -210,6 +210,7 @@ module.exports = function(grunt) {
 				, 'dist/RelationDataParameterForm.js': 'src/RelationData/ParameterForm.hbs'
 
 				, 'dist/SiteInfo.js': 'src/Site/Info.hbs'
+				, 'dist/SitePopup.js': 'src/Site/Popup.hbs'
 				, 'dist/MeasurementChildList.js': 'src/Measurement/ChildList.hbs'
 				, 'dist/MeasurementParentList.js': 'src/Measurement/ParentList.hbs'
 
@@ -234,6 +235,8 @@ module.exports = function(grunt) {
 				, 'dist/GenericViewerLayerList.js': 'src/GenericViewer/LayerList.hbs'
 
 				, 'dist/ActivityCategoriesNoExist.js': 'src/ActivityCategories/NoExist.hbs'
+
+				, 'dist/RealTimeInfo.js': 'src/RealTime/Info.hbs'
 			}
 		}
 	});
