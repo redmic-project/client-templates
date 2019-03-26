@@ -1,19 +1,6 @@
 <div class="content">
-	<div class="containerImageDetails">
-		{{ImageDetailsPublic data.image}}
-	</div>
 	<div class="grid">
 		<div class="contentGrid">
-			{{#if data.description}}
-				<div class="row">
-					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span title="{{i18n.description}}">{{i18n.description}}</span>
-					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{breaklines data.description}}</p>
-					</div>
-				</div>
-			{{/if}}
 			{{#if data.activityName}}
 				<div class="row">
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
@@ -28,19 +15,38 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.platformName}}
+			{{#if data.description}}
 				<div class="row">
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span>{{i18n.platform}}</span>
+						<span title="{{i18n.description}}">{{i18n.description}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>
-							<a href="{{data.platformUrl}}" title="{{i18n.goToPlatform}}">
-								{{data.platformName}}
-							</a>
-						</p>
+						<p>{{breaklines data.description}}</p>
 					</div>
 				</div>
+			{{/if}}
+			{{#if data.platforms}}
+				{{#each data.platforms}}
+					{{#if this.platform}}
+						{{#if this.platform.name}}
+							<div class="row">
+								<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+									<span>{{../i18n.platform}}</span>
+								</div>
+								<div class="{{RowColActivityCatalog 'right'}}">
+									<p>
+										<a href="{{this.platform.url}}" title="{{../i18n.goToPlatform}}">
+											{{this.platform.name}}
+										</a>
+									</p>
+								</div>
+							</div>
+						{{/if}}
+						<div class="containerImageDetails">
+							{{ImageDetailsPublic this.platform.image}}
+						</div>
+					{{/if}}
+				{{/each}}
 			{{/if}}
 		</div>
 	</div>
