@@ -142,11 +142,14 @@ define([
 			var content = '',
 				classRow = 'paddingItemInRow';
 
-			if (i18n[key] && value) {
+			if (value !== null && value !== undefined) {
 
-				content += '<span class="' + classRow + '"><span class="bold fontExo2">' + i18n[key] + '</span>: ';
+				content += '<span class="' + classRow + '"><span class="bold fontExo2">' + (i18n[key] || key) +
+					'</span>: ';
 
-				if (!stringFormats.url(value)) {
+				if (value === 0 || value === false) {
+					content += breaklines(value);
+				} else if (!stringFormats.url(value)) {
 					content += textUrl(value, i18n.link, i18n[key]);
 				} else if (!stringFormats['date-time'](value)) {
 					content += dateTime(value);
