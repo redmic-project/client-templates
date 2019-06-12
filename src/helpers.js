@@ -142,7 +142,7 @@ define([
 			var content = '',
 				classRow = 'paddingItemInRow';
 
-			if (value !== null && value !== undefined) {
+			if (value !== null && value !== undefined && value !== '') {
 
 				content += '<span class="' + classRow + '"><span class="bold fontExo2">' + (i18n[key] || key) +
 					'</span>: ';
