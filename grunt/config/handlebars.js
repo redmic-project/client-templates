@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 						bold: true,
 						IterateJSON: true,
 						ProtocolsServiceOGC: true,
+						DownloadServiceOGC: true,
 						breaklines: true,
 						textOrSpace: true,
 						PrintProperty: true,

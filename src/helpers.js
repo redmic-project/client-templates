@@ -848,6 +848,47 @@ define([
 			return new handlebars.SafeString(content);
 		},
 
+		'DownloadServiceOGC': function(urlSource, name) {
+
+			var urlSourceSplitted = urlSource.split('/');
+			urlSourceSplitted.pop();
+
+			var workspace = urlSourceSplitted[urlSourceSplitted.length - 1];
+			urlSourceSplitted.push('ows');
+
+			var urlCommonParams = 'service=WFS&version=1.0.0&request=GetFeature&typeName=' + workspace + ':' + name,
+				urlCommonPrefix = urlSourceSplitted.join('/') + '?' + urlCommonParams,
+				content = '',
+				downloadFormats = [{
+					name: 'CSV',
+					descriptor: 'csv'
+				},{
+					name: 'Shapefile',
+					descriptor: 'shape-zip'
+				},{
+					name: 'GeoJSON',
+					descriptor: 'application/json'
+				},{
+					name: 'KML',
+					descriptor: 'application/vnd.google-earth.kml%2Bxml'
+				},{
+					name: 'GML 3.2',
+					descriptor: 'application/gml%2Bxml; version=3.2'
+				}];
+
+			for (var i = 0; i < downloadFormats.length; i++) {
+				var format = downloadFormats[i],
+					formatName = format.name,
+					descriptor = format.descriptor,
+					downloadUrl = '<span><a href="' + urlCommonPrefix + '&outputFormat=' + descriptor +
+						'" target="_blank">' + formatName + '</a></span>';
+
+				content += downloadUrl;
+			}
+
+			return new handlebars.SafeString(content);
+		},
+
 		'breaklines': breaklines,
 
 		'textOrSpace': function(text) {

@@ -78,6 +78,16 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.urlSource}}
+				<div class="row">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.download}}">{{i18n.download}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowFlex">
+						{{DownloadServiceOGC data.urlSource data.name}}
+					</div>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 </div>
