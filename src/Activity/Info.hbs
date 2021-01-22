@@ -147,6 +147,21 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.resources}}
+				{{#each data.resources}}
+					<div class="row">
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{../i18n.resource}}">{{../i18n.resource}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}}">
+							<p>{{name}}</p>
+							<p>{{description}}</p>
+							<p>{{TextURL urlResource ../i18n.link urlResource}}</p>
+							<br />
+						</div>
+					</div>
+				{{/each}}
+			{{/if}}
 		</div>
 	</div>
 </div>
