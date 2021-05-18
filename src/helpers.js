@@ -585,7 +585,7 @@ define([
 
 			var content = "",
 				contentHref = "' d-state-url=true>",
-				onePart = "<div class='row'><div class='rowLeft col-xs-5 col-sm-4 col-md-5 col-lg-6 col-xl-3'><span>",
+				onePart = "<div><div class='rowLeft col-xs-5 col-sm-4 col-md-5 col-lg-6 col-xl-3'><span>",
 				twoPart = "</span></div><div class='col-xs-7 col-sm-8 col-md-9 col-lg-10 col-xl-9'><p><a href='/catalog/",
 				threePart = "</a></p></div></div>";
 
@@ -839,7 +839,7 @@ define([
 			var content = '';
 
 			for (var i in item) {
-				content += "<div class='row rowDest'><div class='rowLeft col-xs-5 col-sm-4 col-md-4 col-lg-3 col-xl-2'>";
+				content += "<div class='rowDest'><div class='rowLeft col-xs-5 col-sm-4 col-md-4 col-lg-3 col-xl-2'>";
 				content += "<span>" + i18n.url + " " + item[i].type +
 					"</span></div><div class='col-xs-7 col-sm-8 col-md-8 col-lg-9 col-xl-10'>";
 				content += "<span>" + item[i].url + "</span></div></div>";
