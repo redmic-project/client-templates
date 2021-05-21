@@ -10,6 +10,21 @@
 				label: 'accessibility'
 			"></div>
 
+			<div data-redmic-type="select" data-redmic-model="status" data-redmic-props="
+				label: 'status',
+				includeEmptyValue: false,
+				options: [{
+					'value': 1,
+					'label': 'Sin iniciar'
+				},{
+					'value': 2,
+					'label': 'En curso'
+				},{
+					'value': 3,
+					'label': 'Concluida'
+				}]
+			"></div>
+
 			<div data-redmic-type="mapSearch" class="mapSearchInput" data-redmic-model="bbox"
 				 data-redmic-props="
 					disabled: true
@@ -27,7 +42,33 @@
 				disabled: true
 			"></div>
 
-			<div data-redmic-type="default" data-redmic-model="resourceName"></div>
+			<div data-redmic-type="filter" data-redmic-model="resourceName" data-redmic-props="
+				target: 'activityResource'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="program" data-redmic-props="
+				target: 'program'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="project" data-redmic-props="
+				target: 'project'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="organisation" data-redmic-props="
+				target: 'organisation'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="platform" data-redmic-props="
+				target: 'platform'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="document" data-redmic-props="
+				target: 'document'
+			"></div>
+
+			<div data-redmic-type="filter" data-redmic-model="contact" data-redmic-props="
+				target: 'contact'
+			"></div>
 		</fieldset>
 	</form>
 </div>
