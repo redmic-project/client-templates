@@ -199,8 +199,6 @@ module.exports = function(grunt) {
 				, 'dist/UserSector.js': 'src/User/Sector.hbs'
 				, 'dist/UserPassword.js': 'src/User/Password.hbs'
 
-				, 'dist/UserTermsAndConditions.js': 'src/User/TermsAndConditions.hbs'
-
 				, 'dist/ChartCategoryTooltip.js': 'src/Chart/CategoryTooltip.hbs'
 				, 'dist/ChartTemporalTooltip.js': 'src/Chart/TemporalTooltip.hbs'
 				, 'dist/ChartList.js': 'src/Chart/List.hbs'
