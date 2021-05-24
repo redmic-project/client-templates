@@ -13,6 +13,7 @@
 			<div data-redmic-type="select" data-redmic-model="status" data-redmic-props="
 				label: 'status',
 				includeEmptyValue: false,
+				disabled: true,
 				options: [{
 					'value': 1,
 					'label': 'Sin iniciar'
@@ -38,13 +39,13 @@
 				disabled: true
 			"></div>
 
-			<div data-redmic-type="boolean" data-redmic-model="resources" data-redmic-props="
+			<div data-redmic-type="boolean" data-redmic-model="hasResource" data-redmic-props="
 				disabled: true
 			"></div>
 
-			<div data-redmic-type="filter" data-redmic-model="resourceName" data-redmic-props="
+			<!--div data-redmic-type="filter" data-redmic-model="resource" data-redmic-props="
 				target: 'activityResource'
-			"></div>
+			"></div-->
 
 			<div data-redmic-type="filter" data-redmic-model="program" data-redmic-props="
 				target: 'program'
