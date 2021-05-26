@@ -3,31 +3,35 @@
 		<fieldset>
 			<legend>{{formTitle}}</legend>
 
-			<div data-redmic-type="dateRangeTextBox" data-redmic-model="dateLimits"></div>
-
 			<div data-redmic-type="multiSelect" data-redmic-model="accessibilityIds" data-redmic-props="
 				target: 'accessibility',
-				label: 'accessibility'
+				label: 'accessibility',
+				info: 'accessibilityFilterInfo'
+			"></div>
+
+			<div data-redmic-type="dateRangeTextBox" data-redmic-model="dateLimits" data-redmic-props="
+				info: 'dateLimitsFilterInfo'
 			"></div>
 
 			<div data-redmic-type="select" data-redmic-model="status" data-redmic-props="
-				label: 'status',
-				includeEmptyValue: false,
+				label: 'activityStatus',
+				info: 'activityStatusFilterInfo',
 				disabled: true,
 				options: [{
 					'value': 1,
-					'label': 'Sin iniciar'
+					'label': '{{Translate i18n 'activityStatusFirstValue'}}'
 				},{
 					'value': 2,
-					'label': 'En curso'
+					'label': '{{Translate i18n 'activityStatusSecondValue'}}'
 				},{
 					'value': 3,
-					'label': 'Concluida'
+					'label': '{{Translate i18n 'activityStatusThirdValue'}}'
 				}]
 			"></div>
 
 			<div data-redmic-type="mapSearch" class="mapSearchInput" data-redmic-model="bbox"
 				 data-redmic-props="
+					info: 'bboxFilterInfo',
 					disabled: true
 			"></div>
 		</fieldset>
@@ -36,39 +40,45 @@
 			<legend>{{formTitle}}</legend>
 
 			<div data-redmic-type="boolean" data-redmic-model="starred" data-redmic-props="
+				label: 'starredActivity',
+				info: 'starredFilterInfo',
 				disabled: true
 			"></div>
 
 			<div data-redmic-type="boolean" data-redmic-model="hasResource" data-redmic-props="
+				label: 'activityHasResource',
+				info: 'hasResourceFilterInfo',
 				disabled: true
 			"></div>
 
-			<!--div data-redmic-type="filter" data-redmic-model="resource" data-redmic-props="
-				target: 'activityResource'
-			"></div-->
-
 			<div data-redmic-type="filter" data-redmic-model="program" data-redmic-props="
+				info: 'programFilterInfo',
 				target: 'program'
 			"></div>
 
 			<div data-redmic-type="filter" data-redmic-model="project" data-redmic-props="
+				info: 'projectFilterInfo',
 				target: 'project'
 			"></div>
 
 			<div data-redmic-type="filter" data-redmic-model="organisation" data-redmic-props="
+				info: 'organisationFilterInfo',
 				target: 'organisation'
 			"></div>
 
-			<div data-redmic-type="filter" data-redmic-model="platform" data-redmic-props="
-				target: 'platform'
+			<div data-redmic-type="filter" data-redmic-model="contact" data-redmic-props="
+				info: 'contactFilterInfo',
+				target: 'contact'
 			"></div>
 
 			<div data-redmic-type="filter" data-redmic-model="document" data-redmic-props="
+				info: 'documentFilterInfo',
 				target: 'document'
 			"></div>
 
-			<div data-redmic-type="filter" data-redmic-model="contact" data-redmic-props="
-				target: 'contact'
+			<div data-redmic-type="filter" data-redmic-model="platform" data-redmic-props="
+				info: 'platformFilterInfo',
+				target: 'platform'
 			"></div>
 		</fieldset>
 	</form>
