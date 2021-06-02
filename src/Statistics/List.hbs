@@ -1,0 +1,78 @@
+<div class="statisticsContainer">
+	<div>
+		<span>
+			<span class="stats{{Capitalize data.name}}Icon"></span>
+			<span class="name">{{Translate i18n data.name false true}}</span>
+			<span>
+				(
+				{{#if data.stats.total}}
+					{{data.stats.total}}
+				{{else}}
+					{{data.stats}}
+				{{/if}}
+				)
+			</span>
+		</span>
+{{#if data.stats.total}}
+{{#if data.stats.independentTotal}}
+		<span>
+			<span class="statsOpenIcon"></span>
+			<span>{{i18n.opened}}</span>
+			<span> ( {{data.stats.totalOpen}} ) </span>
+		</span>
+		<span>
+			<span class="statsClosedIcon"></span>
+			<span>{{i18n.closed}}</span>
+			<span> ( {{data.stats.totalClosed}} ) </span>
+		</span>
+
+		<div>
+			<span>
+				<span class="statsAttachedIcon"></span>
+				<span>{{i18n.attached}}</span>
+				<span> ( {{data.stats.attachedTotal}} )</span>
+			</span>
+			<span>
+				<span class="statsOpenIcon"></span>
+				<span>{{i18n.opened}}</span>
+				<span> ( {{data.stats.attachedOpen}} ) </span>
+			</span>
+			<span>
+				<span class="statsClosedIcon"></span>
+				<span>{{i18n.closed}}</span>
+				<span> ( {{data.stats.attachedClosed}} ) </span>
+			</span>
+		</div>
+
+		<div>
+			<span>
+				<span class="statsIndependentIcon"></span>
+				<span>{{i18n.independent}}</span>
+				<span> ( {{data.stats.independentTotal}} )</span>
+			</span>
+			<span>
+				<span class="statsOpenIcon"></span>
+				<span>{{i18n.opened}}</span>
+				<span> ( {{data.stats.independentOpen}} ) </span>
+			</span>
+			<span>
+				<span class="statsClosedIcon"></span>
+				<span>{{i18n.closed}}</span>
+				<span> ( {{data.stats.independentClosed}} ) </span>
+			</span>
+		</div>
+{{else}}
+		<span>
+			<span class="statsOpenIcon"></span>
+			<span>{{i18n.opened}}</span>
+			<span> ( {{data.stats.attachedOpen}} ) </span>
+		</span>
+		<span>
+			<span class="statsClosedIcon"></span>
+			<span>{{i18n.closed}}</span>
+			<span> ( {{data.stats.attachedClosed}} ) </span>
+		</span>
+{{/if}}
+{{/if}}
+	</div>
+</div>

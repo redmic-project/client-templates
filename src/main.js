@@ -1,15 +1,19 @@
 define([
 	'handlebars/handlebars.min'
-	, 'templates/helpers'
+	, 'templates/Helpers/string'
+	, 'templates/Helpers/legacy'
 ], function(
 	handlebars
-	, helpers
+	, stringHelpers
+	, legacyHelpers
 ) {
 
-	for (var helperName in helpers) {
-		var helperCallback = helpers[helperName];
+	for (var stringHelperName in stringHelpers) {
+		handlebars.registerHelper(stringHelperName, stringHelpers[stringHelperName]);
+	}
 
-		handlebars.registerHelper(helperName, helperCallback);
+	for (var legacyHelperName in legacyHelpers) {
+		handlebars.registerHelper(legacyHelperName, legacyHelpers[legacyHelperName]);
 	}
 
 	return handlebars;

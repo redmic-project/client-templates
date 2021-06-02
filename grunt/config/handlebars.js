@@ -66,7 +66,8 @@ module.exports = function(grunt) {
 						Depth: true,
 						IsValidZ: true,
 						ExpandOrCollapse: true,
-						ColorRamp: true
+						ColorRamp: true,
+						Capitalize: true
 					},
 					knownHelpersOnly: true
 				}
@@ -167,7 +168,7 @@ module.exports = function(grunt) {
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'
 				, 'dist/MisidentificationList.js': 'src/Misidentification/List.hbs'
 
-				, 'dist/AdministrativeStatisticsList.js': 'src/Statistics/AdministrativeList.hbs'
+				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
 				, 'dist/StatisticsTitle.js': 'src/Statistics/Title.hbs'
 

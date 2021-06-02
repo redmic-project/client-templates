@@ -1,11 +1,17 @@
 module.exports = function(grunt) {
 
 	grunt.config('copy', {
-		rootFiles: {
+		mainFile: {
 			expand: true,
 			cwd: 'src',
-			src: '*.js',
+			src: 'main.js',
 			dest: 'dist'
+		},
+		helpers: {
+			expand: true,
+			cwd: 'src/Helpers',
+			src: '*.js',
+			dest: 'dist/Helpers'
 		}
 	});
 };
