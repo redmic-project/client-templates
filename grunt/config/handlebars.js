@@ -239,6 +239,8 @@ module.exports = function(grunt) {
 				, 'dist/ActivityCategoriesNoExist.js': 'src/ActivityCategories/NoExist.hbs'
 
 				, 'dist/RealTimeInfo.js': 'src/RealTime/Info.hbs'
+
+				, 'dist/ProductList.js': 'src/Product/List.hbs'
 			}
 		}
 	});
