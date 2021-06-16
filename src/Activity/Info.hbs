@@ -39,6 +39,17 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.themeInspire}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.themeInspire}}">{{i18n.themeInspire}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<span class="inspireIcon fr-inspire-{{data.themeInspire.code}} inspire-{{data.themeInspire.code}}"></span>
+						<span>{{data.themeInspire.name}}</span>
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.updated}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
@@ -87,16 +98,6 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.project}}
-				<div>
-					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span title="{{i18n.project}}">{{i18n.project}}</span>
-					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{data.project}}</p>
-					</div>
-				</div>
-			{{/if}}
 			{{#if data.embargo}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
@@ -134,6 +135,16 @@
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
 						<p>{{data.keywords}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.license}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.license}}">{{i18n.license}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.license}}</p>
 					</div>
 				</div>
 			{{/if}}
