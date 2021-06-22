@@ -8,10 +8,13 @@
 		{{/if}}
 		{{#if data.activityType}}
 			{{#if data.code}}
-			 | 
+			 |
 			{{/if}}
 			{{lang data.activityType}}
 		{{/if}}
-		{{StartEnd data i18n}}
+	</span>
+	<span class='badgesContainer'>
+		{{ActivityOpenStatus data i18n}}
+		{{ActivityEmbargoStatus data i18n}}
 	</span>
 </span>

@@ -9,7 +9,7 @@ define([
 	'use strict';
 
 	return {
-		'Capitalize': function(data) {
+		Capitalize: function(data) {
 
 			return new handlebars.SafeString(Utilities.capitalize(data));
 		}

@@ -191,22 +191,6 @@ define([
 			return new handlebars.SafeString(content);
 		},
 
-		'StartEnd': function(data, i18n) {
-
-			var result = '';
-			if (!data.endDate && data.startDate) {
-				result += "<i title='" + i18n.opened + "' class='fa fa-folder-open-o'></i>";
-			} else {
-				result += "<i title='" + i18n.closed + "' class='fa fa-folder-o'></i>";
-			}
-
-			if (data.embargo) {
-				result += "<i title='" + i18n.embargo + "' class='fa fa-lock redIcon'></i>";
-			}
-
-			return new handlebars.SafeString(result);
-		},
-
 		'TimeCumulative': function(time, unitTime, i18n) {
 
 			if (time) {

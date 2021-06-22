@@ -7,9 +7,9 @@ module.exports = function(grunt) {
 				amd: ['templates'],
 				compilerOptions: {
 					knownHelpers: {
+						// legacy (ir eliminando)
 						DetailsTitle: true,
 						PropertiesAtlas: true,
-						StartEnd: true,
 						TimeCumulative: true,
 						Progress: true,
 						qualityControl: true,
@@ -67,6 +67,12 @@ module.exports = function(grunt) {
 						IsValidZ: true,
 						ExpandOrCollapse: true,
 						ColorRamp: true,
+
+						// customParser
+						ActivityOpenStatus: true,
+						ActivityEmbargoStatus: true,
+
+						// string
 						Capitalize: true
 					},
 					knownHelpersOnly: true
