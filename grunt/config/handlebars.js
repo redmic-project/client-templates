@@ -70,7 +70,8 @@ module.exports = function(grunt) {
 
 						// customParser
 						ActivityOpenStatus: true,
-						ActivityEmbargoStatus: true,
+						ActivityAccessibilityStatus: true,
+						ActivityInspireTheme: true,
 
 						// string
 						Capitalize: true

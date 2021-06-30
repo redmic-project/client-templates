@@ -68,12 +68,14 @@
 
 			<div data-redmic-type="filter" data-redmic-model="contact" data-redmic-props="
 				labelAttr: '{firstName} {surname}',
+				returnFields: ['id', 'firstName', 'surname'],
 				info: 'contactFilterInfo',
 				target: 'contact'
 			"></div>
 
 			<div data-redmic-type="filter" data-redmic-model="document" data-redmic-props="
 				labelAttr: 'title',
+				returnFields: ['id', 'title'],
 				info: 'documentFilterInfo',
 				target: 'document'
 			"></div>
