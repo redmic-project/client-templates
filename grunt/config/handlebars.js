@@ -241,6 +241,7 @@ module.exports = function(grunt) {
 				, 'dist/FilterForm.js': 'src/Filter/Form.hbs'
 				, 'dist/FilterSpeciesForm.js': 'src/Filter/SpeciesForm.hbs'
 				, 'dist/FilterColorRamp.js': 'src/Filter/ColorRamp.hbs'
+				, 'dist/FilterTrashForm.js': 'src/Filter/TrashForm.hbs'
 				, 'dist/GenericViewerLayerList.js': 'src/GenericViewer/LayerList.hbs'
 
 				, 'dist/ActivityCategoriesNoExist.js': 'src/ActivityCategories/NoExist.hbs'
