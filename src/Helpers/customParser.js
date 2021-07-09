@@ -54,6 +54,30 @@ define([
 				result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
 			}
 			return new handlebars.SafeString(result);
+		},
+
+		ActivityResources: function(data, i18n) {
+
+			var result = '';
+			if (data && data.resources && data.resources.length) {
+				var title = 'activityWithResources',
+					className = title + 'Icon';
+
+				result = '<i title="' + i18n[title] + '" class="' + className + '"></i>';
+			}
+			return new handlebars.SafeString(result);
+		},
+
+		ActivityStarred: function(data, i18n) {
+
+			var result = '';
+			if (data && data.starred) {
+				var title = 'activityStarred',
+					className = title + 'Icon';
+
+				result = '<i title="' + i18n[title] + '" class="' + className + '"></i>';
+			}
+			return new handlebars.SafeString(result);
 		}
 	};
 });

@@ -72,6 +72,8 @@ module.exports = function(grunt) {
 						ActivityOpenStatus: true,
 						ActivityAccessibilityStatus: true,
 						ActivityInspireTheme: true,
+						ActivityResources: true,
+						ActivityStarred: true,
 
 						// string
 						Capitalize: true
