@@ -16,7 +16,10 @@
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.code}}">{{i18n.code}}</span>
 					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{#if data.starred}}
+							{{ActivityStarred data i18n}}
+						{{/if}}
 						<p>{{data.code}}</p>
 					</div>
 				</div>
@@ -44,8 +47,8 @@
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.themeInspire}}">{{i18n.themeInspire}}</span>
 					</div>
-					<div class="themeInspireDetailsRow {{RowColActivityCatalog 'right'}}">
-						<span class="inspireIcon fr-inspire-{{data.themeInspire.code}} inspire-{{data.themeInspire.code}}"></span>
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{ActivityInspireTheme data i18n}}
 						<span>{{data.themeInspire.name}}</span>
 					</div>
 				</div>
@@ -64,7 +67,8 @@
 				<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 					<span title="{{i18n.startDate}}">{{i18n.startDate}}</span>
 				</div>
-				<div class="{{RowColActivityCatalog 'right'}}">
+				<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+					{{ActivityOpenStatus data i18n}}
 					<p>
 						{{#if data.startDate}}
 							{{DateTime data.startDate}}
@@ -93,7 +97,8 @@
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.accessibility}}">{{i18n.accessibility}}</span>
 					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{ActivityAccessibilityStatus data i18n}}
 						<p>{{lang data.accessibility}}</p>
 					</div>
 				</div>
@@ -164,11 +169,13 @@
 						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 							<span title="{{../i18n.resource}}">{{../i18n.resource}}</span>
 						</div>
-						<div class="{{RowColActivityCatalog 'right'}}">
-							<p>{{name}}</p>
-							<p>{{description}}</p>
-							<p>{{TextURL urlResource ../i18n.link urlResource}}</p>
-							<br />
+						<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+							<i class="badgeIcon activityWithResourcesIcon"></i>
+							<div>
+								<p>{{name}}</p>
+								<p>{{description}}</p>
+								<p>{{TextURL urlResource ../i18n.link urlResource}}</p>
+							</div>
 						</div>
 					</div>
 				{{/each}}
