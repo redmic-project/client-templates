@@ -143,13 +143,23 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.license}}
+			{{#if data.licence}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span title="{{i18n.license}}">{{i18n.license}}</span>
+						<span title="{{i18n.licence}}">{{i18n.licence}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{breaklines data.license}}</p>
+						<p>{{breaklines data.licence}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.normative}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.normative}}">{{i18n.normative}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.normative}}</p>
 					</div>
 				</div>
 			{{/if}}
