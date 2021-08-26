@@ -18,6 +18,12 @@
 		<span class="propValue">{{feature.properties.site.code}}</span>
 	</div>
 {{/if}}
+{{#if feature.properties.measurements}}
+	<div>
+		<span class="propLabel">{{i18n.measurements}}: </span>
+		<span class="propValue">{{feature.properties.measurements.length}}</span>
+	</div>
+{{/if}}
 {{#if feature.properties.site.description}}
 	<div>
 		<span class="propLabel">{{i18n.description}}: </span>
