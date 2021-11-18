@@ -155,6 +155,8 @@ define([
 					content += dateTime(value);
 				} else if (!stringFormats.date(value)) {
 					content += date(value);
+				} else if (typeof value === 'string' && value.indexOf('</') !== -1) {
+					content += value;
 				} else {
 					content += breaklines(value);
 				}
