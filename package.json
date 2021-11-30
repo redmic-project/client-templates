@@ -1,13 +1,12 @@
 {
-  "name": "Templates",
-  "version": "0.11.0",
+  "name": "redmic-templates",
+  "version": "0.21.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Plantillas de Handlebars para REDMIC",
   "contributors": [
     {
-      "name": "Ignacio Lorenzo García",
-      "email": "nacho@oag-fundacion.org"
+      "name": "Ignacio Lorenzo García"
     },
     {
       "name": "Pedro E. Trujillo Brito",
@@ -18,8 +17,7 @@
       "email": "noel@redmic.es"
     },
     {
-      "name": "Carlos Alberto González Carballo",
-      "email": "carlos@redmic.es"
+      "name": "Carlos Alberto González Carballo"
     }
   ],
   "repository": {
