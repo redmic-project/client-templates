@@ -2,7 +2,7 @@
 	<div class="grid">
 		<div class="contentGrid">
 			{{#if shownOption.id}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.id}}">{{i18n.id}}</span>
 					</div>
@@ -12,11 +12,14 @@
 				</div>
 			{{/if}}
 			{{#if data.code}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.code}}">{{i18n.code}}</span>
 					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{#if data.starred}}
+							{{ActivityStarred data i18n}}
+						{{/if}}
 						<p>{{data.code}}</p>
 					</div>
 				</div>
@@ -25,7 +28,7 @@
 				{{ancestorsActivity data.ancestors i18n}}
 			{{/if}}
 			{{#if data.activityType}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.activityType}}">{{i18n.activityType}}</span>
 					</div>
@@ -39,8 +42,19 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.themeInspire}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.themeInspire}}">{{i18n.themeInspire}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{ActivityInspireTheme data i18n}}
+						<span>{{data.themeInspire.name}}</span>
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.updated}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.updated}}">{{i18n.updated}}</span>
 					</div>
@@ -49,11 +63,12 @@
 					</div>
 				</div>
 			{{/if}}
-			<div class="row">
+			<div>
 				<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 					<span title="{{i18n.startDate}}">{{i18n.startDate}}</span>
 				</div>
-				<div class="{{RowColActivityCatalog 'right'}}">
+				<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+					{{ActivityOpenStatus data i18n}}
 					<p>
 						{{#if data.startDate}}
 							{{DateTime data.startDate}}
@@ -63,7 +78,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="row">
+			<div>
 				<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 					<span title="{{i18n.endDate}}">{{i18n.endDate}}</span>
 				</div>
@@ -78,27 +93,18 @@
 				</div>
 			</div>
 			{{#if data.accessibility}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.accessibility}}">{{i18n.accessibility}}</span>
 					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
+					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+						{{ActivityAccessibilityStatus data i18n}}
 						<p>{{lang data.accessibility}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.project}}
-				<div class="row">
-					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span title="{{i18n.project}}">{{i18n.project}}</span>
-					</div>
-					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{data.project}}</p>
-					</div>
-				</div>
-			{{/if}}
 			{{#if data.embargo}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.embargo}}">{{i18n.embargo}}</span>
 					</div>
@@ -108,7 +114,7 @@
 				</div>
 			{{/if}}
 			{{#if data.scope}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.scope}}">{{i18n.scope}}</span>
 					</div>
@@ -118,7 +124,7 @@
 				</div>
 			{{/if}}
 			{{#if data.description}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.description}}">{{i18n.description}}</span>
 					</div>
@@ -128,7 +134,7 @@
 				</div>
 			{{/if}}
 			{{#if data.keywords}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.keywords}}">{{i18n.keywords}}</span>
 					</div>
@@ -137,8 +143,28 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.licence}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.licence}}">{{i18n.licence}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.licence}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.normative}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+						<span title="{{i18n.normative}}">{{i18n.normative}}</span>
+					</div>
+					<div class="{{RowColActivityCatalog 'right'}}">
+						<p>{{breaklines data.normative}}</p>
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.note}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.note}}">{{i18n.note}}</span>
 					</div>
@@ -146,6 +172,23 @@
 						<p>{{breaklines data.note}}</p>
 					</div>
 				</div>
+			{{/if}}
+			{{#if data.resources}}
+				{{#each data.resources}}
+					<div>
+						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+							<span title="{{../i18n.resource}}">{{../i18n.resource}}</span>
+						</div>
+						<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+							{{ActivityResources ../data ../i18n}}
+							<div>
+								<p>{{resourceType.name}}</p>
+								<p>{{resourceType.description}}</p>
+								<p>{{TextURL urlResource ../i18n.link urlResource}}</p>
+							</div>
+						</div>
+					</div>
+				{{/each}}
 			{{/if}}
 		</div>
 	</div>

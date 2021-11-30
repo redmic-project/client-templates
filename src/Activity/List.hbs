@@ -8,10 +8,16 @@
 		{{/if}}
 		{{#if data.activityType}}
 			{{#if data.code}}
-			 | 
+			 |
 			{{/if}}
 			{{lang data.activityType}}
 		{{/if}}
-		{{StartEnd data i18n}}
+	</span>
+	<span class='badgesContainer'>
+		{{ActivityInspireTheme data i18n}}
+		{{ActivityOpenStatus data i18n}}
+		{{ActivityAccessibilityStatus data i18n}}
+		{{ActivityResources data i18n}}
+		{{ActivityStarred data i18n}}
 	</span>
 </span>

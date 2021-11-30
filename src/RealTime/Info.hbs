@@ -2,7 +2,7 @@
 	<div class="grid">
 		<div class="contentGrid">
 			{{#if data.activityName}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span>{{i18n.activity}}</span>
 					</div>
@@ -16,7 +16,7 @@
 				</div>
 			{{/if}}
 			{{#if data.description}}
-				<div class="row">
+				<div>
 					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 						<span title="{{i18n.description}}">{{i18n.description}}</span>
 					</div>
@@ -29,7 +29,7 @@
 				{{#each data.platforms}}
 					{{#if this.platform}}
 						{{#if this.platform.name}}
-							<div class="row">
+							<div>
 								<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
 									<span>{{../i18n.platform}}</span>
 								</div>

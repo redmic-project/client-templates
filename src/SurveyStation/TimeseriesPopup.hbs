@@ -1,8 +1,8 @@
-{{#if feature.properties.site.dashboard}}
+{{#if feature.properties.measurements}}
 	<div class="flexContainerColumn">
-		<a href=/viewer/real-time-dashboard/{{feature.uuid}} d-state-url="true">
-			<i class='paddingContainerWebcam fa fa-link'></i>
-			{{i18n.goToDashboard}}
+		<a href="#charts" class="showCharts">
+			<i class='paddingContainerWebcam fa fa-bar-chart'></i>
+			{{i18n.charts}}
 		</a>
 	</div>
 {{/if}}

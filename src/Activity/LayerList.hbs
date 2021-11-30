@@ -1,0 +1,28 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.alias}}</span>
+	</span>
+	<span class='subtitle'>
+		<span class='name'>{{i18n.link}}: {{TextURL data.urlSource i18n.url data.urlSource}}</span>
+	</span>
+	<span class='subtitle'>
+		<span class='name'>{{i18n.layer}}: {{ChkIsNull data.name}}</span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.keywords}}
+			{{i18n.keywords}}: {{Array data.keywords ', '}}
+		{{/if}}
+	</span>
+	<span class='subtitle subTitleFlex'>
+		{{#if data.themeInspire}}
+			<span class='subtitleIcon'>
+				{{GroupIconInspire data.themeInspire.code i18n true}}
+			</span>
+		{{/if}}
+		{{#if data.protocols}}
+			<span class=''>
+				{{Array data.protocols ' - ' 'type'}}
+			</span>
+		{{/if}}
+	</span>
+</span>

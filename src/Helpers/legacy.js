@@ -155,6 +155,8 @@ define([
 					content += dateTime(value);
 				} else if (!stringFormats.date(value)) {
 					content += date(value);
+				} else if (typeof value === 'string' && value.indexOf('</') !== -1) {
+					content += value;
 				} else {
 					content += breaklines(value);
 				}
@@ -189,22 +191,6 @@ define([
 			}
 
 			return new handlebars.SafeString(content);
-		},
-
-		'StartEnd': function(data, i18n) {
-
-			var result = '';
-			if (!data.endDate && data.startDate) {
-				result += "<i title='" + i18n.opened + "' class='fa fa-folder-open-o'></i>";
-			} else {
-				result += "<i title='" + i18n.closed + "' class='fa fa-folder-o'></i>";
-			}
-
-			if (data.embargo) {
-				result += "<i title='" + i18n.embargo + "' class='fa fa-lock redIcon'></i>";
-			}
-
-			return new handlebars.SafeString(result);
 		},
 
 		'TimeCumulative': function(time, unitTime, i18n) {
@@ -585,7 +571,7 @@ define([
 
 			var content = "",
 				contentHref = "' d-state-url=true>",
-				onePart = "<div class='row'><div class='rowLeft col-xs-5 col-sm-4 col-md-5 col-lg-6 col-xl-3'><span>",
+				onePart = "<div><div class='rowLeft col-xs-5 col-sm-4 col-md-5 col-lg-6 col-xl-3'><span>",
 				twoPart = "</span></div><div class='col-xs-7 col-sm-8 col-md-9 col-lg-10 col-xl-9'><p><a href='/catalog/",
 				threePart = "</a></p></div></div>";
 
@@ -839,10 +825,51 @@ define([
 			var content = '';
 
 			for (var i in item) {
-				content += "<div class='row rowDest'><div class='rowLeft col-xs-5 col-sm-4 col-md-4 col-lg-3 col-xl-2'>";
+				content += "<div class='rowDest'><div class='rowLeft col-xs-5 col-sm-4 col-md-4 col-lg-3 col-xl-2'>";
 				content += "<span>" + i18n.url + " " + item[i].type +
 					"</span></div><div class='col-xs-7 col-sm-8 col-md-8 col-lg-9 col-xl-10'>";
 				content += "<span>" + item[i].url + "</span></div></div>";
+			}
+
+			return new handlebars.SafeString(content);
+		},
+
+		'DownloadServiceOGC': function(urlSource, name) {
+
+			var urlSourceSplitted = urlSource.split('/');
+			urlSourceSplitted.pop();
+
+			var workspace = urlSourceSplitted[urlSourceSplitted.length - 1];
+			urlSourceSplitted.push('ows');
+
+			var urlCommonParams = 'service=WFS&version=1.0.0&request=GetFeature&typeName=' + workspace + ':' + name,
+				urlCommonPrefix = urlSourceSplitted.join('/') + '?' + urlCommonParams,
+				content = '',
+				downloadFormats = [{
+					name: 'CSV',
+					descriptor: 'csv'
+				},{
+					name: 'Shapefile',
+					descriptor: 'shape-zip'
+				},{
+					name: 'GeoJSON',
+					descriptor: 'application/json'
+				},{
+					name: 'KML',
+					descriptor: 'application/vnd.google-earth.kml%2Bxml'
+				},{
+					name: 'GML 3.2',
+					descriptor: 'application/gml%2Bxml; version=3.2'
+				}];
+
+			for (var i = 0; i < downloadFormats.length; i++) {
+				var format = downloadFormats[i],
+					formatName = format.name,
+					descriptor = format.descriptor,
+					downloadUrl = '<span><a href="' + urlCommonPrefix + '&outputFormat=' + descriptor +
+						'" target="_blank">' + formatName + '</a></span>';
+
+				content += downloadUrl;
 			}
 
 			return new handlebars.SafeString(content);

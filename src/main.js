@@ -1,15 +1,25 @@
 define([
 	'handlebars/handlebars.min'
-	, 'templates/helpers'
+	, 'templates/Helpers/customParser'
+	, 'templates/Helpers/string'
+	, 'templates/Helpers/legacy'
 ], function(
 	handlebars
-	, helpers
+	, customParserHelpers
+	, stringHelpers
+	, legacyHelpers
 ) {
 
-	for (var helperName in helpers) {
-		var helperCallback = helpers[helperName];
+	for (var customParserHelperName in customParserHelpers) {
+		handlebars.registerHelper(customParserHelperName, customParserHelpers[customParserHelperName]);
+	}
 
-		handlebars.registerHelper(helperName, helperCallback);
+	for (var stringHelperName in stringHelpers) {
+		handlebars.registerHelper(stringHelperName, stringHelpers[stringHelperName]);
+	}
+
+	for (var legacyHelperName in legacyHelpers) {
+		handlebars.registerHelper(legacyHelperName, legacyHelpers[legacyHelperName]);
 	}
 
 	return handlebars;

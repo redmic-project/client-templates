@@ -1,11 +1,14 @@
 <span class='spanTemplate'>
-	<span class='title' title='{{ChkIsNull data.site.name}}'>
+	<span class='title' title='{{i18n.name}}'>
 		<span class='name'>{{ChkIsNull data.site.name}}</span>
 	</span>
-	<span class='subtitle' title='{{ChkIsNull data.site.code}}'>
+	<span class='subtitle' title='{{i18n.code}}'>
 		{{ChkIsNull data.site.code}}
 	</span>
-	<span class='subtitle' title='[Lng:{{data.coordinates.[0]}} - Lat:{{data.coordinates.[1]}}]'>
-		[Lng:{{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}]
+	<span class='subtitle' title='{{i18n.coordinates}}'>
+		[Lng: {{data.coordinates.[0]}} - Lat: {{data.coordinates.[1]}}]
+	</span>
+	<span class='subtitle' title='{{i18n.measurements}}'>
+		{{i18n.measurements}}: {{ChkIsNull data.measurements.length}}
 	</span>
 </span>

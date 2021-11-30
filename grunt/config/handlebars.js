@@ -7,9 +7,9 @@ module.exports = function(grunt) {
 				amd: ['templates'],
 				compilerOptions: {
 					knownHelpers: {
+						// legacy (ir eliminando)
 						DetailsTitle: true,
 						PropertiesAtlas: true,
-						StartEnd: true,
 						TimeCumulative: true,
 						Progress: true,
 						qualityControl: true,
@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 						bold: true,
 						IterateJSON: true,
 						ProtocolsServiceOGC: true,
+						DownloadServiceOGC: true,
 						breaklines: true,
 						textOrSpace: true,
 						PrintProperty: true,
@@ -65,7 +66,17 @@ module.exports = function(grunt) {
 						Depth: true,
 						IsValidZ: true,
 						ExpandOrCollapse: true,
-						ColorRamp: true
+						ColorRamp: true,
+
+						// customParser
+						ActivityOpenStatus: true,
+						ActivityAccessibilityStatus: true,
+						ActivityInspireTheme: true,
+						ActivityResources: true,
+						ActivityStarred: true,
+
+						// string
+						Capitalize: true
 					},
 					knownHelpersOnly: true
 				}
@@ -83,6 +94,7 @@ module.exports = function(grunt) {
 				, 'dist/ActivityInfo.js': 'src/Activity/Info.hbs'
 				, 'dist/ActivityList.js': 'src/Activity/List.hbs'
 				, 'dist/ActivityFilter.js': 'src/Activity/Filter.hbs'
+				, 'dist/ActivityLayerList.js': 'src/Activity/LayerList.hbs'
 				, 'dist/ActivityTypeInfo.js': 'src/ActivityType/Info.hbs'
 				, 'dist/ActivityTypeList.js': 'src/ActivityType/List.hbs'
 				, 'dist/ActivityTypeDetails.js': 'src/ActivityType/Details.hbs'
@@ -111,6 +123,7 @@ module.exports = function(grunt) {
 				, 'dist/OrganisationInfo.js': 'src/Organisation/Info.hbs'
 				, 'dist/OrganisationList.js': 'src/Organisation/List.hbs'
 				, 'dist/OrganisationSet.js': 'src/Organisation/Set.hbs'
+				, 'dist/ResourceSet.js': 'src/Resource/Set.hbs'
 				, 'dist/MetricsDefinitionInfo.js': 'src/MetricsDefinition/Info.hbs'
 				, 'dist/MetricsDefinitionList.js': 'src/MetricsDefinition/List.hbs'
 				, 'dist/DocumentFilter.js': 'src/Document/Filter.hbs'
@@ -164,7 +177,7 @@ module.exports = function(grunt) {
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'
 				, 'dist/MisidentificationList.js': 'src/Misidentification/List.hbs'
 
-				, 'dist/AdministrativeStatisticsList.js': 'src/Statistics/AdministrativeList.hbs'
+				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
 				, 'dist/StatisticsTitle.js': 'src/Statistics/Title.hbs'
 
@@ -181,6 +194,7 @@ module.exports = function(grunt) {
 				, 'dist/InfrastructureAttributesList.js': 'src/Infrastructure/AttributesList.hbs'
 
 				, 'dist/SurveyStationPopup.js': 'src/SurveyStation/Popup.hbs'
+				, 'dist/SurveyStationTimeseriesPopup.js': 'src/SurveyStation/TimeseriesPopup.hbs'
 				, 'dist/SurveyStationList.js': 'src/SurveyStation/List.hbs'
 				, 'dist/SurveyStationDataList.js': 'src/SurveyStation/DataList.hbs'
 				, 'dist/SurveyStationDashboard.js': 'src/SurveyStation/Dashboard.hbs'
@@ -195,8 +209,6 @@ module.exports = function(grunt) {
 				, 'dist/UserName.js': 'src/User/Name.hbs'
 				, 'dist/UserSector.js': 'src/User/Sector.hbs'
 				, 'dist/UserPassword.js': 'src/User/Password.hbs'
-
-				, 'dist/UserTermsAndConditions.js': 'src/User/TermsAndConditions.hbs'
 
 				, 'dist/ChartCategoryTooltip.js': 'src/Chart/CategoryTooltip.hbs'
 				, 'dist/ChartTemporalTooltip.js': 'src/Chart/TemporalTooltip.hbs'
@@ -222,7 +234,6 @@ module.exports = function(grunt) {
 				, 'dist/ProtocolsSet.js': 'src/Protocols/Set.hbs'
 
 				, 'dist/WhatIsRedmicLongTermChallenge.js': 'src/WhatIsRedmic/LongTermChallenge.hbs'
-				, 'dist/WhatIsRedmicSystemArchitecture.js': 'src/WhatIsRedmic/SystemArchitecture.hbs'
 				, 'dist/WhatIsRedmicInfoType.js': 'src/WhatIsRedmic/InfoType.hbs'
 				, 'dist/WhatIsRedmicUserType.js': 'src/WhatIsRedmic/UserType.hbs'
 				, 'dist/WhatIsRedmicDataPolicy.js': 'src/WhatIsRedmic/DataPolicy.hbs'
@@ -237,6 +248,8 @@ module.exports = function(grunt) {
 				, 'dist/ActivityCategoriesNoExist.js': 'src/ActivityCategories/NoExist.hbs'
 
 				, 'dist/RealTimeInfo.js': 'src/RealTime/Info.hbs'
+
+				, 'dist/ProductList.js': 'src/Product/List.hbs'
 			}
 		}
 	});
