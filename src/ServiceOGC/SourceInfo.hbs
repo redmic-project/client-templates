@@ -1,0 +1,132 @@
+<div class="content">
+	<div class="grid">
+		<div class="contentGrid">
+			{{#if data.title}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.title}}">{{i18n.title}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.title}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.name}}
+				<div class="rowDest">
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.nameLayer}}">{{i18n.nameLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.name}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.abstractLayer}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.abstractLayer}}">{{i18n.abstractLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.abstractLayer}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.srs}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.srs}}">{{i18n.srs}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{Keyword data.srs}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.stylesLayer}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.styleLayer}}">{{i18n.styleLayer}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>
+						{{#each data.stylesLayer}}
+							{{#if @index}}
+								|
+							{{/if}}
+							{{this.name}}
+						{{/each}}
+						</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.keywords}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.keywords}}">{{i18n.keywords}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{Keyword data.keywords}}</p>
+					</div>
+				</div>
+			{{/if}}
+			<div>
+				<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+					<span title="{{i18n.queryable}}">{{i18n.queryable}}</span>
+				</div>
+				<div class="{{RowColServiceOGCCatalog 'right'}}">
+					<p>
+						{{#if data.abstractLayer}}
+							{{i18n.enabled}}
+						{{/if}}
+						{{#unless data.abstractLayer}}
+							{{i18n.disabled}}
+						{{/unless}}
+					</p>
+				</div>
+			</div>
+			{{#if data.formats}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.formats}}">{{i18n.formats}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{ArrayString data.formats}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.attribution}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.attribution}}">{{i18n.attribution}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{ServiceOGCAttribution data.attribution}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.contact}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.contact}}">{{i18n.contact}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowFlex">
+						{{#if data.contact.organization}}<p>{{data.contact.organization}}</p>{{/if}}
+						{{#if data.contact.name}}<p>{{data.contact.name}}</p>{{/if}}
+						{{#if data.contact.address}}<p>{{data.contact.address}}</p>{{/if}}
+						{{#if data.contact.email}}<p>{{Email data.contact.email}}</p>{{/if}}
+						{{#if data.contact.phone}}<p>{{data.contact.phone}}</p>{{/if}}
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.urlSource}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.urlSource}}">{{i18n.urlSource}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						{{data.urlSource}}
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

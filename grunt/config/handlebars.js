@@ -74,6 +74,7 @@ module.exports = function(grunt) {
 						ActivityInspireTheme: true,
 						ActivityResources: true,
 						ActivityStarred: true,
+						ServiceOGCAttribution: true,
 
 						// string
 						Capitalize: true
@@ -153,6 +154,7 @@ module.exports = function(grunt) {
 				, 'dist/ServiceOGCAtlasDetails.js': 'src/ServiceOGC/AtlasDetails.hbs'
 				, 'dist/ServiceOGCTitle.js': 'src/ServiceOGC/Title.hbs'
 				, 'dist/ServiceOGCInfo.js': 'src/ServiceOGC/Info.hbs'
+				, 'dist/ServiceOGCSourceInfo.js': 'src/ServiceOGC/SourceInfo.hbs'
 				, 'dist/ServiceOGCImage.js': 'src/ServiceOGC/Image.hbs'
 				, 'dist/TaxonList.js': 'src/Taxon/List.hbs'
 				, 'dist/PlaceNamesList.js': 'src/PlaceNames/List.hbs'

@@ -4,77 +4,89 @@
 			{{#if data.protocols}}
 				{{ProtocolsServiceOGC data.protocols i18n}}
 			{{/if}}
-			{{#if data.name}}
-				<div class="rowDest">
+			{{#if data.alias}}
+				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.nameLayer}}">{{i18n.nameLayer}}</span>
+						<span title="{{i18n.alias}}">{{i18n.alias}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{data.name}}</p>
+						<p>{{data.alias}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.srs}}
+			{{#if data.description}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.srs}}">{{i18n.srs}}</span>
+						<span title="{{i18n.description}}">{{i18n.description}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{Keyword data.srs}}</p>
+						<p>{{data.description}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.formats}}
+			{{#if data.styles}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.formats}}">{{i18n.formats}}</span>
+						<span title="{{i18n.style}}">{{i18n.style}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{ArrayString data.formats}}</p>
+						<p>{{Keyword data.styles}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.styleLayer}}
+			{{#if data.themeInspire}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.styleLayer}}">{{i18n.styleLayer}}</span>
+						<span title="{{i18n.themeInspire}}">{{i18n.themeInspire}}</span>
 					</div>
-					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{data.styleLayer.name}}</p>
+					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowWithBadge">
+						{{ActivityInspireTheme data i18n}}
+						<span>{{data.themeInspire.name}}</span>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.keyword}}
+			{{#if data.updated}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.keywords}}">{{i18n.keywords}}</span>
+						<span title="{{i18n.updated}}">{{i18n.updated}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{Keyword data.keyword}}</p>
+						<p>{{DateTime data.updated}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.abstractLayer}}
+			{{#if data.inserted}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.abstractLayer}}">{{i18n.abstractLayer}}</span>
+						<span title="{{i18n.updated}}">{{i18n.inserted}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}}">
-						<p>{{data.abstractLayer}}</p>
+						<p>{{DateTime data.inserted}}</p>
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.contact}}
+			<div>
+				<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+					<span title="{{i18n.shownInAtlas}}">{{i18n.shownInAtlas}}</span>
+				</div>
+				<div class="{{RowColServiceOGCCatalog 'right'}}">
+					<p>
+						{{#if data.atlas}}
+							{{i18n.enabled}}
+						{{/if}}
+						{{#unless data.atlas}}
+							{{i18n.disabled}}
+						{{/unless}}
+					</p>
+				</div>
+			</div>
+			{{#if data.refresh}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
-						<span title="{{i18n.contact}}">{{i18n.contact}}</span>
+						<span title="{{i18n.layerRefreshInterval}}">{{i18n.layerRefreshInterval}}</span>
 					</div>
-					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowFlex">
-						{{#if data.contact.organization}}<p>{{data.contact.organization}}</p>{{/if}}
-						{{#if data.contact.name}}<p>{{data.contact.name}}</p>{{/if}}
-						{{#if data.contact.address}}<p>{{data.contact.address}}</p>{{/if}}
-						{{#if data.contact.email}}<p>{{Email data.contact.email}}</p>{{/if}}
-						{{#if data.contact.phone}}<p>{{data.contact.phone}}</p>{{/if}}
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+						<p>{{data.refresh}} {{i18n.seconds}}</p>
 					</div>
 				</div>
 			{{/if}}

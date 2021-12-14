@@ -78,6 +78,28 @@ define([
 				result = '<i title="' + i18n[title] + '" class="' + className + '"></i>';
 			}
 			return new handlebars.SafeString(result);
+		},
+
+		ServiceOGCAttribution: function(attribution) {
+
+			var result;
+
+			if (typeof attribution === 'string') {
+				result = attribution;
+			} else if (attribution && typeof attribution === 'object') {
+				var href = attribution.onlineResource,
+					text = attribution.title;
+
+				if (!text) {
+					result = '';
+				} else if (!href) {
+					result = text;
+				} else {
+					result = '<a href="' + href + '" target="_blank" title="' + href + '">' + text + '</a>';
+				}
+			}
+
+			return new handlebars.SafeString(result);
 		}
 	};
 });
