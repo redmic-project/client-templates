@@ -234,6 +234,7 @@ module.exports = function(grunt) {
 				, 'dist/ThematicTypeSet.js': 'src/ThematicType/Set.hbs'
 
 				, 'dist/ProtocolsSet.js': 'src/Protocols/Set.hbs'
+				, 'dist/DownloadsSet.js': 'src/Downloads/Set.hbs'
 
 				, 'dist/WhatIsRedmicLongTermChallenge.js': 'src/WhatIsRedmic/LongTermChallenge.hbs'
 				, 'dist/WhatIsRedmicInfoType.js': 'src/WhatIsRedmic/InfoType.hbs'
