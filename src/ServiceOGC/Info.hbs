@@ -34,6 +34,33 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.timeDefinition}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.timeDefinition}}">{{i18n.timeDefinition}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+					{{#if data.timeDefinition.startDate}}
+						<p>
+							<span>{{i18n.dimensionFrom}}: </span>
+							<span>{{data.timeDefinition.startDate}}</span>
+						</p>
+					{{/if}}
+					{{#if data.timeDefinition.endDate}}
+						<p>
+							<span>{{i18n.dimensionTo}}: </span>
+							<span>{{data.timeDefinition.endDate}}</span>
+						</p>
+					{{/if}}
+					{{#if data.timeDefinition.interval}}
+						<p>
+							<span>{{i18n.interval}}: </span>
+							<span>{{data.timeDefinition.interval}}</span>
+						</p>
+					{{/if}}
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.themeInspire}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
@@ -90,13 +117,17 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.urlSource}}
+			{{#if data.downloads}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
 						<span title="{{i18n.download}}">{{i18n.download}}</span>
 					</div>
 					<div class="{{RowColServiceOGCCatalog 'right'}} detailsRowFlex">
-						{{DownloadServiceOGC data.urlSource data.name}}
+						{{#each data.downloads}}
+							<span>
+								<a href="{{this.url}}" target="_blank">{{this.name}}</a>
+							</span>
+						{{/each}}
 					</div>
 				</div>
 			{{/if}}

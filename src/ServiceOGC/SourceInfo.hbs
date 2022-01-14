@@ -58,6 +58,66 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#if data.timeDimension}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.timeDimension}}">{{i18n.timeDimension}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+					{{#if data.timeDimension.value}}
+						<p>
+							<span>{{i18n.availableValues}}: </span>
+							<span>{{data.timeDimension.value}}</span>
+						</p>
+					{{/if}}
+					{{#if data.timeDimension.defaultValue}}
+						<p>
+							<span>{{i18n.defaultValue}}: </span>
+							<span>{{data.timeDimension.defaultValue}}</span>
+						</p>
+					{{/if}}
+					<p>
+					{{#if data.timeDimension.units}}
+						<span>{{i18n.dimensionUnits}}: </span>
+						<span>{{data.timeDimension.units}}</span>
+					{{/if}}
+					{{#if data.timeDimension.unitSymbol}}
+						<span> ({{data.timeDimension.unitSymbol}})</span>
+					{{/if}}
+					</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.elevationDimension}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
+						<span title="{{i18n.elevationDimension}}">{{i18n.elevationDimension}}</span>
+					</div>
+					<div class="{{RowColServiceOGCCatalog 'right'}}">
+					{{#if data.elevationDimension.value}}
+						<p>
+							<span>{{i18n.availableValues}}: </span>
+							<span>{{data.elevationDimension.value}}</span>
+						</p>
+					{{/if}}
+					{{#if data.elevationDimension.defaultValue}}
+						<p>
+							<span>{{i18n.defaultValue}}: </span>
+							<span>{{data.elevationDimension.defaultValue}}</span>
+						</p>
+					{{/if}}
+					<p>
+					{{#if data.elevationDimension.units}}
+						<span>{{i18n.dimensionUnits}}: </span>
+						<span>{{data.elevationDimension.units}}</span>
+					{{/if}}
+					{{#if data.elevationDimension.unitSymbol}}
+						<span> ({{data.elevationDimension.unitSymbol}})</span>
+					{{/if}}
+					</p>
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.keywords}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColServiceOGCCatalog 'left'}}">
