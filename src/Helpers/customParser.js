@@ -1,7 +1,9 @@
 define([
-	'handlebars/handlebars.min'
+	'dojo/_base/lang'
+	, 'handlebars/handlebars.min'
 ], function(
-	handlebars
+	lang
+	, handlebars
 ) {
 
 	'use strict';
@@ -100,6 +102,50 @@ define([
 			}
 
 			return new handlebars.SafeString(result);
+		},
+
+		ServiceOGCLegend: function(layer) {
+
+			var imgClass = 'detailsPhoto',
+				noImgUrl = '/resources/images/noIMG.png',
+				legendOptsParam = 'legend_options=fontAntiAliasing:true;dpi:100',
+				imgUrl;
+
+			if (!layer || !(layer.legend || layer.stylesLayer)) {
+				imgUrl = noImgUrl;
+			} else if (layer.legend) {
+				imgUrl = layer.legend + '&' + legendOptsParam;
+			} else {
+				var fixedStyles = layer.styles,
+					firstStyle;
+
+				if (fixedStyles) {
+					var firstFixedStyleName = fixedStyles.split(',')[0],
+						firstStyleNameSplit = firstFixedStyleName.split(':'),
+						styleWithoutWorkspace = firstStyleNameSplit[firstStyleNameSplit.length - 1];
+
+					var stylesFound = layer.stylesLayer.filter(lang.partial(function(style, item) {
+
+						return item.name === style;
+					}, styleWithoutWorkspace));
+
+					if (stylesFound.length) {
+						firstStyle = stylesFound[0];
+					} else {
+						imgUrl = noImgUrl;
+					}
+				} else {
+					firstStyle = layer.stylesLayer[0];
+				}
+
+				if (firstStyle) {
+					imgUrl = firstStyle.url + '&' + legendOptsParam;
+				}
+			}
+
+			var imgElement = '<img src="' + imgUrl + '" class="' + imgClass + '" />';
+
+			return new handlebars.SafeString(imgElement);
 		}
 	};
 });

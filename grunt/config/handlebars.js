@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 						qualityControl: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Legend: true,
 						Image: true,
 						URL: true,
 						UrlWebcam: true,
@@ -75,6 +74,7 @@ module.exports = function(grunt) {
 						ActivityResources: true,
 						ActivityStarred: true,
 						ServiceOGCAttribution: true,
+						ServiceOGCLegend: true,
 
 						// string
 						Capitalize: true
