@@ -108,7 +108,7 @@ define([
 
 			var imgClass = 'detailsPhoto',
 				noImgUrl = '/resources/images/noIMG.png',
-				legendOptsParam = 'legend_options=fontAntiAliasing:true;dpi:100',
+				legendOptsParam = 'legend_options=fontAntiAliasing:true',
 				imgUrl;
 
 			if (!layer || !(layer.legend || layer.stylesLayer)) {
