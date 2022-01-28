@@ -331,31 +331,6 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'Legend': function(url) {
-
-			var content;
-
-			if (url) {
-				var params = {
-					legend_options: "fontAntiAliasing:true;dpi:100"
-				};
-
-				var paramsStr = L.Util.getParamString(params);
-
-				if (url.indexOf("?") >= 0) {
-					paramsStr = "&" + paramsStr.substr(1, paramsStr.length);
-				}
-
-				url = url + paramsStr;
-
-				content = "<img src='" + url + "' class='detailsPhoto' /><br>";
-			} else {
-				content = "<img src='/resources/images/noIMG.png' class='detailsPhoto' /><br>";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
 		'Image': function(image, urlDefault) {
 
 			var content;
@@ -829,47 +804,6 @@ define([
 				content += "<span>" + i18n.url + " " + item[i].type +
 					"</span></div><div class='col-xs-7 col-sm-8 col-md-8 col-lg-9 col-xl-10'>";
 				content += "<span>" + item[i].url + "</span></div></div>";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
-		'DownloadServiceOGC': function(urlSource, name) {
-
-			var urlSourceSplitted = urlSource.split('/');
-			urlSourceSplitted.pop();
-
-			var workspace = urlSourceSplitted[urlSourceSplitted.length - 1];
-			urlSourceSplitted.push('ows');
-
-			var urlCommonParams = 'service=WFS&version=1.0.0&request=GetFeature&typeName=' + workspace + ':' + name,
-				urlCommonPrefix = urlSourceSplitted.join('/') + '?' + urlCommonParams,
-				content = '',
-				downloadFormats = [{
-					name: 'CSV',
-					descriptor: 'csv'
-				},{
-					name: 'Shapefile',
-					descriptor: 'shape-zip'
-				},{
-					name: 'GeoJSON',
-					descriptor: 'application/json'
-				},{
-					name: 'KML',
-					descriptor: 'application/vnd.google-earth.kml%2Bxml'
-				},{
-					name: 'GML 3.2',
-					descriptor: 'application/gml%2Bxml; version=3.2'
-				}];
-
-			for (var i = 0; i < downloadFormats.length; i++) {
-				var format = downloadFormats[i],
-					formatName = format.name,
-					descriptor = format.descriptor,
-					downloadUrl = '<span><a href="' + urlCommonPrefix + '&outputFormat=' + descriptor +
-						'" target="_blank">' + formatName + '</a></span>';
-
-				content += downloadUrl;
 			}
 
 			return new handlebars.SafeString(content);

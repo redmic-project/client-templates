@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 						qualityControl: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Legend: true,
 						Image: true,
 						URL: true,
 						UrlWebcam: true,
@@ -74,6 +73,8 @@ module.exports = function(grunt) {
 						ActivityInspireTheme: true,
 						ActivityResources: true,
 						ActivityStarred: true,
+						ServiceOGCAttribution: true,
+						ServiceOGCLegend: true,
 
 						// string
 						Capitalize: true
@@ -153,6 +154,7 @@ module.exports = function(grunt) {
 				, 'dist/ServiceOGCAtlasDetails.js': 'src/ServiceOGC/AtlasDetails.hbs'
 				, 'dist/ServiceOGCTitle.js': 'src/ServiceOGC/Title.hbs'
 				, 'dist/ServiceOGCInfo.js': 'src/ServiceOGC/Info.hbs'
+				, 'dist/ServiceOGCSourceInfo.js': 'src/ServiceOGC/SourceInfo.hbs'
 				, 'dist/ServiceOGCImage.js': 'src/ServiceOGC/Image.hbs'
 				, 'dist/TaxonList.js': 'src/Taxon/List.hbs'
 				, 'dist/PlaceNamesList.js': 'src/PlaceNames/List.hbs'
@@ -232,6 +234,7 @@ module.exports = function(grunt) {
 				, 'dist/ThematicTypeSet.js': 'src/ThematicType/Set.hbs'
 
 				, 'dist/ProtocolsSet.js': 'src/Protocols/Set.hbs'
+				, 'dist/DownloadsSet.js': 'src/Downloads/Set.hbs'
 
 				, 'dist/WhatIsRedmicLongTermChallenge.js': 'src/WhatIsRedmic/LongTermChallenge.hbs'
 				, 'dist/WhatIsRedmicInfoType.js': 'src/WhatIsRedmic/InfoType.hbs'
