@@ -75,6 +75,7 @@ module.exports = function(grunt) {
 						ActivityStarred: true,
 						ServiceOGCAttribution: true,
 						ServiceOGCLegend: true,
+						ServiceOGCImageList: true,
 
 						// string
 						Capitalize: true
@@ -171,9 +172,10 @@ module.exports = function(grunt) {
 				, 'dist/CitationList.js': 'src/Citation/List.hbs'
 				, 'dist/CitationListExpand.js': 'src/Citation/ListExpand.hbs'
 				, 'dist/WormsList.js': 'src/Worms/List.hbs'
-				, 'dist/AtlasSecundaryList.js': 'src/Atlas/SecundaryList.hbs'
+				, 'dist/AtlasSecondaryList.js': 'src/Atlas/SecondaryList.hbs'
 				, 'dist/AtlasList.js': 'src/Atlas/List.hbs'
 				, 'dist/AtlasPrimaryList.js': 'src/Atlas/PrimaryList.hbs'
+				, 'dist/AtlasRedpromarSecondaryList.js': 'src/Atlas/RedpromarSecondaryList.hbs'
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'
 				, 'dist/CountryList.js': 'src/Country/List.hbs'
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'

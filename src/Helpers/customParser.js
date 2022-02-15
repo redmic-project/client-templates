@@ -146,6 +146,23 @@ define([
 			var imgElement = '<img src="' + imgUrl + '" class="' + imgClass + '" />';
 
 			return new handlebars.SafeString(imgElement);
+		},
+
+		ServiceOGCImageList: function(images) {
+
+			var containerClass = 'imageListContainer',
+				imgClass = 'imageListElement',
+				imagesSplit = images.split(','),
+				imageElementList = '';
+
+			for (var i = 0; i < imagesSplit.length; i++) {
+				var imageSrc = imagesSplit[i];
+				imageElementList += '<img src="' + imageSrc + '" class="' + imgClass + '" />';
+			}
+
+			var imagesContainer = '<div class="' + containerClass + '">' + imageElementList + '</div>';
+
+			return new handlebars.SafeString(imagesContainer);
 		}
 	};
 });
