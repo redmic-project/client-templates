@@ -701,6 +701,10 @@ define([
 
 		'toFixed': function(number, digits) {
 
+			if (typeof number !== 'number') {
+				return number;
+			}
+
 			if (digits === undefined) {
 				digits = 0;
 			}
