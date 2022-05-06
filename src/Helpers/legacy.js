@@ -1,6 +1,6 @@
 define([
 	'dojo/i18n!app/nls/translation'
-	, 'handlebars/handlebars.min'
+	, 'handlebars/handlebars.runtime.min'
 	, 'moment/moment.min'
 	, 'redmic/base/Credentials'
 	, 'redmic/validation/stringFormats'

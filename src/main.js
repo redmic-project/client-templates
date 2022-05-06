@@ -1,5 +1,5 @@
 define([
-	'handlebars/handlebars.min'
+	'handlebars/handlebars.runtime.min'
 	, 'templates/Helpers/customParser'
 	, 'templates/Helpers/string'
 	, 'templates/Helpers/legacy'

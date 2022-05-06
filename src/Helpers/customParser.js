@@ -1,6 +1,6 @@
 define([
 	'dojo/_base/lang'
-	, 'handlebars/handlebars.min'
+	, 'handlebars/handlebars.runtime.min'
 ], function(
 	lang
 	, handlebars
