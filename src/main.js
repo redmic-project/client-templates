@@ -1,10 +1,12 @@
 define([
-	'handlebars/handlebars.runtime.min'
+	'dojo/aspect'
+	, 'handlebars/handlebars.runtime.min'
 	, 'templates/Helpers/customParser'
 	, 'templates/Helpers/string'
 	, 'templates/Helpers/legacy'
 ], function(
-	handlebars
+	aspect
+	, handlebars
 	, customParserHelpers
 	, stringHelpers
 	, legacyHelpers
@@ -21,6 +23,16 @@ define([
 	for (var legacyHelperName in legacyHelpers) {
 		handlebars.registerHelper(legacyHelperName, legacyHelpers[legacyHelperName]);
 	}
+
+	aspect.before(handlebars, 'template', function(templateContext, templateOptions) {
+
+		aspect.before(templateContext, 'main', function(config) {
+
+			// anula seguridad innecesaria, la escritura de templates está bajo nuestro control
+			config.protoAccessControl.properties.defaultValue = true;
+			config.protoAccessControl.methods.defaultValue = true;
+		});
+	});
 
 	return handlebars;
 });
