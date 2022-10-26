@@ -1,9 +1,11 @@
 define([
 	'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
+	, 'redmic/base/Credentials'
 ], function(
 	lang
 	, handlebars
+	, Credentials
 ) {
 
 	'use strict';
@@ -163,6 +165,56 @@ define([
 			var imagesContainer = '<div class="' + containerClass + '">' + imageElementList + '</div>';
 
 			return new handlebars.SafeString(imagesContainer);
+		},
+
+		ItemEnabledStatus: function(data, i18n) {
+
+			var result = '';
+			if (!data.enabled) {
+				result = '<i title="' + i18n.disabled + '" class="itemDisabledIcon"></i>';
+			}
+
+			return new handlebars.SafeString(result);
+		},
+
+		DocumentInternalUrlStatus: function(data, i18n) {
+
+			var pdfUrl = data.internalUrl,
+				privatePdf = data.privateInternalUrl,
+				result = '';
+
+			if (!(!pdfUrl || (privatePdf && Credentials.get('userRole') !== 'ROLE_ADMINISTRATOR'))) {
+				if (privatePdf) {
+					result = '<i title="' + i18n.privateInternalUrl + '" class="documentPrivateInternalUrlIcon"></i>';
+				} else {
+					result = '<i title="' + i18n.internalUrl + '" class="documentInternalUrlIcon"></i>';
+				}
+			}
+
+			return new handlebars.SafeString(result);
+		},
+
+		DocumentUrl: function(data, i18n) {
+
+			var externalUrl = data.url,
+				result = '';
+
+			if (externalUrl && externalUrl.length) {
+				var domainRegex = /([\w\-.]+)\//ig,
+					regexExecResults = domainRegex.exec(externalUrl),
+					domain = regexExecResults && regexExecResults[1];
+
+				var text = domain || i18n.link,
+					textPrefix = '<span>' + i18n.viewExternalUrl + '</span>',
+					linkParams = 'href="' + externalUrl + '" target="_blank" title="' + externalUrl + '"',
+					textLink = '<a ' + linkParams + '>' + text + '</a>',
+					icon = '<i title="' + externalUrl + '" class="documentExternalUrlIcon"></i>',
+					iconLink = '<a ' + linkParams + '>' + icon + '</a>';
+
+				result = iconLink + textPrefix + ' ' + textLink;
+			}
+
+			return new handlebars.SafeString(result);
 		}
 	};
 });

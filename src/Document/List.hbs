@@ -18,4 +18,12 @@
 	<span class='title'>
 		{{ChkIsNull data.title}}
 	</span>
+	<span class='badgesContainer'>
+		{{#unless data.enabled}}
+			{{ItemEnabledStatus data i18n}}
+		{{/unless}}
+		{{#if data.internalUrl}}
+			{{DocumentInternalUrlStatus data i18n}}
+		{{/if}}
+	</span>
 </span>

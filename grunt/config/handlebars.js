@@ -76,6 +76,9 @@ module.exports = function(grunt) {
 						ServiceOGCAttribution: true,
 						ServiceOGCLegend: true,
 						ServiceOGCImageList: true,
+						ItemEnabledStatus: true,
+						DocumentInternalUrlStatus: true,
+						DocumentUrl: true,
 
 						// string
 						Capitalize: true
