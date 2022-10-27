@@ -199,10 +199,16 @@ define([
 			var externalUrl = data.url,
 				result = '';
 
+
 			if (externalUrl && externalUrl.length) {
-				var domainRegex = /([\w\-.]+)\//ig,
-					regexExecResults = domainRegex.exec(externalUrl),
-					domain = regexExecResults && regexExecResults[1];
+				var domain;
+				try {
+					domain = new URL(externalUrl).hostname;
+				} catch (e) {
+					if (e instanceof TypeError) {
+						console.error('Received invalid document external URL: %s', externalUrl);
+					}
+				}
 
 				var text = domain || i18n.link,
 					textPrefix = '<span>' + i18n.viewExternalUrl + '</span>',
