@@ -1,4 +1,4 @@
-{{ImageDetailsPublic data.organisation.logo}}
+{{Image data.organisation.logo}}
 <span class='spanTemplate'>
 	<span class='title'>
 		{{data.organisation.name}}{{#if data.organisation.acronym}} ({{data.organisation.acronym}}){{/if}}
@@ -8,7 +8,7 @@
 	</span>
 	<span class='subtitle'>
 		{{#if data.startDate}}
-			{{Date data.startDate}} - 
+			{{Date data.startDate}} -
 		{{/if}}
 
 		{{#if data.endDate}}

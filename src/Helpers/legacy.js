@@ -331,7 +331,7 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'Image': function(image, urlDefault) {
+		'Imagea': function(image, urlDefault) {
 
 			var content;
 			if (image && (Credentials.get("userRole") && (Credentials.get("userRole") != "ROLE_GUEST"))) {
@@ -627,48 +627,6 @@ define([
 			result = this.i18n[result] ? this.i18n[result] : item;
 
 			return new handlebars.SafeString(result);
-		},
-
-		'ImageDetails': function(image, accessToken, iconOrClass) {
-
-			var content = "<img src='";
-
-			if (image && (Credentials.get("userRole") && (Credentials.get("userRole") != "ROLE_GUEST"))) {
-				if (accessToken && Credentials.get("accessToken")) {
-					image += "?access_token=" + Credentials.get("accessToken");
-				}
-
-				content += image;
-			} else {
-				content += "/resources/images/noIMG.png";
-			}
-
-			if (iconOrClass && typeof iconOrClass === 'string') {
-				content += "' class='" + iconOrClass;
-			}
-
-			content += "'/><br>";
-
-			return new handlebars.SafeString(content);
-		},
-
-		'ImageDetailsPublic': function(image, iconOrClass) {
-
-			var content = "<img src='";
-
-			if (image) {
-				content += image;
-			} else {
-				content += "/resources/images/noIMG.png";
-			}
-
-			if (iconOrClass && typeof iconOrClass === 'string') {
-				content += "' class='" + iconOrClass;
-			}
-
-			content += "'/><br>";
-
-			return new handlebars.SafeString(content);
 		},
 
 		'ChkIsNull': function(data) {

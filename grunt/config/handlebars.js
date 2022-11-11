@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 						qualityControl: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Image: true,
 						URL: true,
 						UrlWebcam: true,
 						TextURL: true,
@@ -40,8 +39,6 @@ module.exports = function(grunt) {
 						Translate: true,
 						ChartsHierarchicalListParse: true,
 						TranslateUncapitalize: true,
-						ImageDetails: true,
-						ImageDetailsPublic: true,
 						ChkIsNull: true,
 						Status: true,
 						PDFHref: true,
@@ -79,6 +76,7 @@ module.exports = function(grunt) {
 						ItemEnabledStatus: true,
 						DocumentInternalUrlStatus: true,
 						DocumentUrl: true,
+						Image: true,
 
 						// string
 						Capitalize: true

@@ -221,6 +221,29 @@ define([
 			}
 
 			return new handlebars.SafeString(result);
+		},
+
+		Image: function(imagePath, useCredentials) {
+
+			var imgSrc;
+			if (!imagePath) {
+				imgSrc = '/resources/images/noIMG.png';
+			} else if (imagePath.indexOf('/') !== 0) {
+				imgSrc = imagePath;
+			} else {
+				// TODO se reemplaza la terminación de la ruta al servidor porque las imágenes ya
+				// la contienen. Cuando se corrija esta circunstancia, eliminar el reemplazo
+				var imgSrcPrefix = envApiUrl.replace('/api', '');
+				imgSrc = imgSrcPrefix + imagePath;
+
+				if (useCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
+					imgSrc += '?access_token=' + Credentials.get('accessToken');
+				}
+			}
+
+			var imgItem = '<img src="' + imgSrc + '"/><br>';
+
+			return new handlebars.SafeString(imgItem);
 		}
 	};
 });
