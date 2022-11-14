@@ -209,6 +209,7 @@ module.exports = function(grunt) {
 
 				, 'dist/UserTitle.js': 'src/User/Title.hbs'
 				, 'dist/UserImage.js': 'src/User/Image.hbs'
+				, 'dist/UserTopbarImage.js': 'src/User/TopbarImage.hbs'
 				, 'dist/UserTopbarMenu.js': 'src/User/TopbarMenu.hbs'
 				, 'dist/UserEmail.js': 'src/User/Email.hbs'
 				, 'dist/UserName.js': 'src/User/Name.hbs'

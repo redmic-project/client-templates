@@ -236,7 +236,8 @@ define([
 				var imgSrcPrefix = envApiUrl.replace('/api', '');
 				imgSrc = imgSrcPrefix + imagePath;
 
-				if (useCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
+				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
+				if (mustUseCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
 					imgSrc += '?access_token=' + Credentials.get('accessToken');
 				}
 			}

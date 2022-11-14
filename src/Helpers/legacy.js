@@ -331,21 +331,6 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'Imagea': function(image, urlDefault) {
-
-			var content;
-			if (image && (Credentials.get("userRole") && (Credentials.get("userRole") != "ROLE_GUEST"))) {
-				content = "<img src='" + image + "?access_token=" + Credentials.get("accessToken") +
-				"' width='100%' class='detailsPhoto' /><br>";
-			} else if (!(urlDefault instanceof Object)) {
-				content = "<img src='" + urlDefault + "' width='100%' class='detailsPhoto' /><br>";
-			} else {
-				content = "<img src='/resources/images/noIMG.png' width='100%' class='detailsPhoto' /><br>";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
 		'URL': function(url) {
 
 			if (url) {
