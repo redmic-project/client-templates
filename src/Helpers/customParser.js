@@ -1,9 +1,11 @@
 define([
-	'dojo/_base/lang'
+	'app/redmicConfig'
+	, 'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
 	, 'redmic/base/Credentials'
 ], function(
-	lang
+	redmicConfig
+	, lang
 	, handlebars
 	, Credentials
 ) {
@@ -233,7 +235,7 @@ define([
 			} else {
 				// TODO se reemplaza la terminación de la ruta al servidor porque las imágenes ya
 				// la contienen. Cuando se corrija esta circunstancia, eliminar el reemplazo
-				var imgSrcPrefix = envApiUrl.replace('/api', '');
+				var imgSrcPrefix = redmicConfig.getEnvVariableValue('envApiUrl').replace('/api', '');
 				imgSrc = imgSrcPrefix + imagePath;
 
 				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
