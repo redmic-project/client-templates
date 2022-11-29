@@ -1,6 +1,6 @@
 define([
 	'dojo/i18n!app/nls/translation'
-	, 'handlebars/handlebars.min'
+	, 'handlebars/handlebars.runtime.min'
 	, 'moment/moment.min'
 	, 'redmic/base/Credentials'
 	, 'redmic/validation/stringFormats'
@@ -331,21 +331,6 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'Image': function(image, urlDefault) {
-
-			var content;
-			if (image && (Credentials.get("userRole") && (Credentials.get("userRole") != "ROLE_GUEST"))) {
-				content = "<img src='" + image + "?access_token=" + Credentials.get("accessToken") +
-				"' width='100%' class='detailsPhoto' /><br>";
-			} else if (!(urlDefault instanceof Object)) {
-				content = "<img src='" + urlDefault + "' width='100%' class='detailsPhoto' /><br>";
-			} else {
-				content = "<img src='/resources/images/noIMG.png' width='100%' class='detailsPhoto' /><br>";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
 		'URL': function(url) {
 
 			if (url) {
@@ -629,48 +614,6 @@ define([
 			return new handlebars.SafeString(result);
 		},
 
-		'ImageDetails': function(image, accessToken, iconOrClass) {
-
-			var content = "<img src='";
-
-			if (image && (Credentials.get("userRole") && (Credentials.get("userRole") != "ROLE_GUEST"))) {
-				if (accessToken && Credentials.get("accessToken")) {
-					image += "?access_token=" + Credentials.get("accessToken");
-				}
-
-				content += image;
-			} else {
-				content += "/resources/images/noIMG.png";
-			}
-
-			if (iconOrClass && typeof iconOrClass === 'string') {
-				content += "' class='" + iconOrClass;
-			}
-
-			content += "'/><br>";
-
-			return new handlebars.SafeString(content);
-		},
-
-		'ImageDetailsPublic': function(image, iconOrClass) {
-
-			var content = "<img src='";
-
-			if (image) {
-				content += image;
-			} else {
-				content += "/resources/images/noIMG.png";
-			}
-
-			if (iconOrClass && typeof iconOrClass === 'string') {
-				content += "' class='" + iconOrClass;
-			}
-
-			content += "'/><br>";
-
-			return new handlebars.SafeString(content);
-		},
-
 		'ChkIsNull': function(data) {
 
 			if (data) {
@@ -700,6 +643,10 @@ define([
 		},
 
 		'toFixed': function(number, digits) {
+
+			if (typeof number !== 'number') {
+				return number;
+			}
 
 			if (digits === undefined) {
 				digits = 0;

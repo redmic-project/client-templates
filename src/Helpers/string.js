@@ -1,5 +1,5 @@
 define([
-	'handlebars/handlebars.min'
+	'handlebars/handlebars.runtime.min'
 	, 'RWidgets/Utilities'
 ], function(
 	handlebars

@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 						qualityControl: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Image: true,
 						URL: true,
 						UrlWebcam: true,
 						TextURL: true,
@@ -40,8 +39,6 @@ module.exports = function(grunt) {
 						Translate: true,
 						ChartsHierarchicalListParse: true,
 						TranslateUncapitalize: true,
-						ImageDetails: true,
-						ImageDetailsPublic: true,
 						ChkIsNull: true,
 						Status: true,
 						PDFHref: true,
@@ -75,6 +72,11 @@ module.exports = function(grunt) {
 						ActivityStarred: true,
 						ServiceOGCAttribution: true,
 						ServiceOGCLegend: true,
+						ServiceOGCImageList: true,
+						ItemEnabledStatus: true,
+						DocumentInternalUrlStatus: true,
+						DocumentUrl: true,
+						Image: true,
 
 						// string
 						Capitalize: true
@@ -171,9 +173,10 @@ module.exports = function(grunt) {
 				, 'dist/CitationList.js': 'src/Citation/List.hbs'
 				, 'dist/CitationListExpand.js': 'src/Citation/ListExpand.hbs'
 				, 'dist/WormsList.js': 'src/Worms/List.hbs'
-				, 'dist/AtlasSecundaryList.js': 'src/Atlas/SecundaryList.hbs'
+				, 'dist/AtlasSecondaryList.js': 'src/Atlas/SecondaryList.hbs'
 				, 'dist/AtlasList.js': 'src/Atlas/List.hbs'
 				, 'dist/AtlasPrimaryList.js': 'src/Atlas/PrimaryList.hbs'
+				, 'dist/AtlasRedpromarSecondaryList.js': 'src/Atlas/RedpromarSecondaryList.hbs'
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'
 				, 'dist/CountryList.js': 'src/Country/List.hbs'
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'
@@ -206,6 +209,7 @@ module.exports = function(grunt) {
 
 				, 'dist/UserTitle.js': 'src/User/Title.hbs'
 				, 'dist/UserImage.js': 'src/User/Image.hbs'
+				, 'dist/UserTopbarImage.js': 'src/User/TopbarImage.hbs'
 				, 'dist/UserTopbarMenu.js': 'src/User/TopbarMenu.hbs'
 				, 'dist/UserEmail.js': 'src/User/Email.hbs'
 				, 'dist/UserName.js': 'src/User/Name.hbs'

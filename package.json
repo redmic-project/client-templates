@@ -1,6 +1,6 @@
 {
   "name": "redmic-templates",
-  "version": "0.21.0",
+  "version": "0.23.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Plantillas de Handlebars para REDMIC",
@@ -26,19 +26,18 @@
   },
   "private": true,
   "devDependencies": {
-    "glob": "^7.1.1",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-handlebars": "^1.0.0",
-    "grunt-git": "^1.0.4",
-    "grunt-shell": "^2.1.0",
-    "handlebars": "^4.0.6",
-    "load-grunt-tasks": "^3.5.2"
+    "glob": "8.0.3",
+    "grunt": "1.5.3",
+    "grunt-contrib-clean": "2.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-handlebars": "3.0.0",
+    "grunt-git": "1.1.1",
+    "grunt-shell": "4.0.0",
+    "load-grunt-tasks": "5.1.0"
   },
   "engines": {
-    "node": ">=4.4",
-    "npm": ">=3.10"
+    "node": ">=14.0",
+    "npm": ">=6.14"
   },
   "license": "Apache-2.0"
 }

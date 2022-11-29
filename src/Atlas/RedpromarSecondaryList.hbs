@@ -1,0 +1,55 @@
+<span class='spanTemplate'>
+	{{#if data.properties.taxondescription}}
+	<span class='subtitle'>
+		{{bold i18n.scientificName}}: <span class="scientificName">{{data.properties.taxondescription}}</span>
+	</span>
+	{{/if}}
+	{{#if data.properties.collectorname}}
+	<span class='subtitle'>
+		{{bold i18n.author}}: {{data.properties.collectorname}}
+	</span>
+	{{/if}}
+	{{#if data.properties.date}}
+	<span class='subtitle'>
+		{{bold i18n.date}}: {{DateTime data.properties.date}}
+	</span>
+	{{/if}}
+	{{#if data.geometry.coordinates}}
+	<span class='subtitle'>
+		{{bold i18n.x}}: {{toFixed data.geometry.coordinates.[0] 5}}
+	</span>
+	<span class='subtitle'>
+		{{bold i18n.y}}: {{toFixed data.geometry.coordinates.[1] 5}}
+	</span>
+	{{/if}}
+	{{#if data.properties.code}}
+	<span class='subtitle'>
+		{{bold i18n.code}}: {{data.properties.code}}
+	</span>
+	{{/if}}
+	{{#if data.properties.remark}}
+	<span class='subtitle'>
+		{{bold i18n.remark}}: {{data.properties.remark}}
+	</span>
+	{{/if}}
+	{{#if data.properties.specimencount}}
+	<span class='subtitle'>
+		{{bold i18n.count}}: {{data.properties.specimencount}}
+	</span>
+	{{/if}}
+	{{#if data.properties.z}}
+	<span class='subtitle'>
+		{{bold i18n.z}}: {{data.properties.z}}
+	</span>
+	{{/if}}
+	{{#if data.properties.taxonid}}
+	<span class='subtitle'>
+		{{bold i18n.taxonid}}: {{data.properties.taxonid}}
+	</span>
+	{{/if}}
+	{{#if data.properties.images}}
+	<span class='subtitle'>
+		{{ServiceOGCImageList data.properties.images}}
+	</span>
+	{{/if}}
+</span>

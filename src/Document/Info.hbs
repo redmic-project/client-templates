@@ -89,5 +89,38 @@
 					</div>
 				</div>
 			{{/if}}
+			{{#unless data.enabled}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColBibliography 'left'}}">
+						<span title="{{i18n.enabled}}">{{i18n.enabled}}</span>
+					</div>
+					<div class="{{RowColBibliography 'right'}} detailsRowWithBadge">
+						{{ItemEnabledStatus data i18n}}
+						<p>{{i18n.disabled}}</p>
+					</div>
+				</div>
+			{{/unless}}
+			{{#if data.internalUrl}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColBibliography 'left'}}">
+						<span title="{{i18n.internalDocument}}">{{i18n.internalDocument}}</span>
+					</div>
+					<div class="{{RowColBibliography 'right'}} detailsRowWithBadge">
+						{{DocumentInternalUrlStatus data i18n}}
+						<p>{{i18n.internalDocument}}</p>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.url}}
+				<div>
+					<div class="rowLeft inlineRow {{RowColBibliography 'left'}}">
+						<span title="{{i18n.url}}">{{i18n.url}}</span>
+					</div>
+					<div class="{{RowColBibliography 'right'}} detailsRowWithBadge">
+						{{DocumentUrl data i18n}}
+					</div>
+				</div>
+			{{/if}}
 		</div>
+	</div>
 </div>

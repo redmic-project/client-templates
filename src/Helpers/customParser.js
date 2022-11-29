@@ -1,9 +1,13 @@
 define([
-	'dojo/_base/lang'
-	, 'handlebars/handlebars.min'
+	'app/redmicConfig'
+	, 'dojo/_base/lang'
+	, 'handlebars/handlebars.runtime.min'
+	, 'redmic/base/Credentials'
 ], function(
-	lang
+	redmicConfig
+	, lang
 	, handlebars
+	, Credentials
 ) {
 
 	'use strict';
@@ -146,6 +150,103 @@ define([
 			var imgElement = '<img src="' + imgUrl + '" class="' + imgClass + '" />';
 
 			return new handlebars.SafeString(imgElement);
+		},
+
+		ServiceOGCImageList: function(images) {
+
+			var containerClass = 'imageListContainer',
+				imgClass = 'imageListElement',
+				imagesSplit = images.split(','),
+				imageElementList = '';
+
+			for (var i = 0; i < imagesSplit.length; i++) {
+				var imageSrc = imagesSplit[i];
+				imageElementList += '<img src="' + imageSrc + '" class="' + imgClass + '" />';
+			}
+
+			var imagesContainer = '<div class="' + containerClass + '">' + imageElementList + '</div>';
+
+			return new handlebars.SafeString(imagesContainer);
+		},
+
+		ItemEnabledStatus: function(data, i18n) {
+
+			var result = '';
+			if (!data.enabled) {
+				result = '<i title="' + i18n.disabled + '" class="itemDisabledIcon"></i>';
+			}
+
+			return new handlebars.SafeString(result);
+		},
+
+		DocumentInternalUrlStatus: function(data, i18n) {
+
+			var pdfUrl = data.internalUrl,
+				privatePdf = data.privateInternalUrl,
+				result = '';
+
+			if (!(!pdfUrl || (privatePdf && Credentials.get('userRole') !== 'ROLE_ADMINISTRATOR'))) {
+				if (privatePdf) {
+					result = '<i title="' + i18n.privateInternalUrl + '" class="documentPrivateInternalUrlIcon"></i>';
+				} else {
+					result = '<i title="' + i18n.internalUrl + '" class="documentInternalUrlIcon"></i>';
+				}
+			}
+
+			return new handlebars.SafeString(result);
+		},
+
+		DocumentUrl: function(data, i18n) {
+
+			var externalUrl = data.url,
+				result = '';
+
+
+			if (externalUrl && externalUrl.length) {
+				var domain;
+				try {
+					domain = new URL(externalUrl).hostname;
+				} catch (e) {
+					if (e instanceof TypeError) {
+						console.error('Received invalid document external URL: %s', externalUrl);
+					}
+				}
+
+				var text = domain || i18n.link,
+					textPrefix = '<span>' + i18n.viewExternalUrl + '</span>',
+					linkParams = 'href="' + externalUrl + '" target="_blank" title="' + externalUrl + '"',
+					textLink = '<a ' + linkParams + '>' + text + '</a>',
+					icon = '<i title="' + externalUrl + '" class="documentExternalUrlIcon"></i>',
+					iconLink = '<a ' + linkParams + '>' + icon + '</a>';
+
+				result = iconLink + textPrefix + ' ' + textLink;
+			}
+
+			return new handlebars.SafeString(result);
+		},
+
+		Image: function(imagePath, useCredentials) {
+
+			var imgSrc;
+			if (!imagePath) {
+				imgSrc = '/resources/images/noIMG.png';
+			} else if (imagePath.indexOf('/') !== 0) {
+				imgSrc = imagePath;
+			} else {
+				// TODO se reemplaza la terminación de la ruta al servidor porque las imágenes ya
+				// la contienen. Cuando se corrija esta circunstancia, eliminar el reemplazo
+				var imgSrcPrefix = redmicConfig.getEnvVariableValue('envApiUrl').replace('/api', '');
+				imgSrc = imgSrcPrefix + imagePath;
+
+				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
+				if (mustUseCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
+					imgSrc += '?access_token=' + Credentials.get('accessToken');
+				}
+			}
+
+			var imgItem = '<img src="' + imgSrc + '"/><br>';
+
+			return new handlebars.SafeString(imgItem);
 		}
 	};
 });
