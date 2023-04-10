@@ -89,7 +89,7 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#unless data.enabled}}
+			{{#if (PropertyIsDefinedAndFalse data 'enabled')}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColBibliography 'left'}}">
 						<span title="{{i18n.enabled}}">{{i18n.enabled}}</span>
@@ -99,7 +99,7 @@
 						<p>{{i18n.disabled}}</p>
 					</div>
 				</div>
-			{{/unless}}
+			{{/if}}
 			{{#if data.internalUrl}}
 				<div>
 					<div class="rowLeft inlineRow {{RowColBibliography 'left'}}">

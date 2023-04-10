@@ -79,7 +79,10 @@ module.exports = function(grunt) {
 						Image: true,
 
 						// string
-						Capitalize: true
+						Capitalize: true,
+
+						// subExpression
+						PropertyIsDefinedAndFalse: true
 					},
 					knownHelpersOnly: true
 				}

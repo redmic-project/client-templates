@@ -3,12 +3,14 @@ define([
 	, 'handlebars/handlebars.runtime.min'
 	, 'templates/Helpers/customParser'
 	, 'templates/Helpers/string'
+	, 'templates/Helpers/subExpression'
 	, 'templates/Helpers/legacy'
 ], function(
 	aspect
 	, handlebars
 	, customParserHelpers
 	, stringHelpers
+	, subExpressionHelpers
 	, legacyHelpers
 ) {
 
@@ -18,6 +20,10 @@ define([
 
 	for (var stringHelperName in stringHelpers) {
 		handlebars.registerHelper(stringHelperName, stringHelpers[stringHelperName]);
+	}
+
+	for (var subExpressionHelperName in subExpressionHelpers) {
+		handlebars.registerHelper(subExpressionHelperName, subExpressionHelpers[subExpressionHelperName]);
 	}
 
 	for (var legacyHelperName in legacyHelpers) {
