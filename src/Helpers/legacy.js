@@ -3,14 +3,12 @@ define([
 	, 'handlebars/handlebars.runtime.min'
 	, 'moment/moment.min'
 	, 'redmic/base/Credentials'
-	, 'redmic/validation/stringFormats'
 	, 'RWidgets/Utilities'
 ], function(
 	i18n
 	, handlebars
 	, moment
 	, Credentials
-	, stringFormats
 	, Utilities
 ) {
 
@@ -59,140 +57,9 @@ define([
 			}
 
 			return new handlebars.SafeString(result);
-		},
-		breaklines = function (text) {
-
-			text = handlebars.Utils.escapeExpression(text);
-			text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
-
-			return new handlebars.SafeString(text);
-		},
-		textUrl = function (url, text, title) {
-
-			return new handlebars.SafeString("<a href='" + url + "' target='_blank' title='" + title + "'>" + text + "</a>");
-		},
-		dateTime = function (dateTime) {
-
-			if (dateTime) {
-				var format = dojoConfig.locale === "en" ? "MM/DD/YYYY HH:mm:ss" : "DD/MM/YYYY HH:mm:ss",
-					formatted = moment(dateTime).format(format);
-
-				return new handlebars.SafeString(formatted);
-			}
-		},
-		date = function (date) {
-
-			if (date) {
-				var format = dojoConfig.locale === "en" ? "MM/DD/YYYY" : "DD/MM/YYYY",
-					formatted = moment(date).format(format);
-
-				return new handlebars.SafeString(formatted);
-			}
-		},
-		addWebcam = function (url, notHref) {
-
-			var content = "",
-				classContainer = 'containerImageOrWebcam fWidth fHeight',
-				link = "<a href=" + url + " target='_blank' title=''>" +
-					"<i class='paddingContainerWebcam fa fa-link'></i> " + Utilities.capitalize(i18n.link) + "</a>";
-
-			if (url.includes("youtube")) {
-				var urlFormat = url;
-
-				urlFormat += '?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1';
-
-				urlFormat = urlFormat.replace('watch?v=', 'embed/');
-
-				content = "<iframe class='" + classContainer + "' src=" + urlFormat + " allowfullscreen></iframe>";
-			}
-
-			if (isImage(url)) {
-				content = "<a href=" + url + " target='_blank' title=''>";
-				content += "<img class='" + classContainer + " loadingByImg' src=" + url + " title='" + url +
-					"' onerror=\"this.src = '/resources/images/noIMG.png';this.style='max-width: 20rem;'\"" +
-					" onload=\"this.classList.remove('loadingByImg');\"></img></a>";
-			}
-
-			if (!content && notHref) {
-				return;
-			}
-
-			if (!notHref) {
-				content += link;
-			}
-
-			return new handlebars.SafeString(content);
-		},
-		isImage = function(value) {
-
-			var typeFormats = ["jpg", "cgi"],
-				checkImage = false;
-
-			for (var i = 0; i < typeFormats.length; i++) {
-				if (value.includes(typeFormats[i])) {
-					checkImage = true;
-					break;
-				}
-			}
-
-			return checkImage;
-		},
-		propToAtlas = function(key, value) {
-
-			var content = '',
-				classRow = 'paddingItemInRow';
-
-			if (value !== null && value !== undefined && value !== '') {
-
-				content += '<span class="' + classRow + '"><span class="bold fontExo2">' + (i18n[key] || key) +
-					'</span>: ';
-
-				if (value === 0 || value === false) {
-					content += breaklines(value);
-				} else if (!stringFormats.url(value)) {
-					content += textUrl(value, i18n.link, i18n[key]);
-				} else if (!stringFormats['date-time'](value)) {
-					content += dateTime(value);
-				} else if (!stringFormats.date(value)) {
-					content += date(value);
-				} else if (typeof value === 'string' && value.indexOf('</') !== -1) {
-					content += value;
-				} else {
-					content += breaklines(value);
-				}
-
-				content += '</span>';
-			}
-
-			return content;
 		};
 
 	return {
-		'PropertiesAtlas': function(data) {
-
-			var content = '',
-				props = data.properties || data,
-				value = props.url;
-
-			if (value && !stringFormats.url(value)) {
-				var imageOrWebcam = addWebcam(value, true);
-				if (imageOrWebcam) {
-					content = '<span class="paddingItemInRow">' + imageOrWebcam + '</span>';
-				}
-			}
-
-			if (data.geometry && data.geometry.type && data.geometry.type === 'Point') {
-				content += propToAtlas('x', data.geometry.coordinates[0]);
-				content += propToAtlas('y', data.geometry.coordinates[1]);
-			}
-
-			for (var key in props) {
-				content += propToAtlas(key, props[key]);
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
 		'TimeCumulative': function(time, unitTime, i18n) {
 
 			if (time) {
@@ -282,18 +149,6 @@ define([
 			}
 		},
 
-		'qualityControl': function(data, i18n) {
-
-			// TODO no se esta usando actualmente porque no esta implementado
-
-			var result = '';
-			if (!data.qualityControl) {
-				result += "<i title='" + i18n.qualityControl + "' class='fa fa-check greenIcon'></i>";
-			}
-
-			return new handlebars.SafeString(result);
-		},
-
 		'GroupIcon': function(icon) {
 
 			if (icon) {
@@ -331,25 +186,6 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'URL': function(url) {
-
-			if (url) {
-				return new handlebars.SafeString("<a href=" + url + " target='_blank' title='" + url + "'>" + url + "</a>");
-			}
-		},
-
-		'UrlWebcam': addWebcam,
-
-		'TextURL': textUrl,
-
-		'Icon': function(url, type) {
-
-			if (type === 'PDF') {
-				return new handlebars.SafeString("<a href=" + url + "?access_token=" + Credentials.get("accessToken") +
-					" target='_blank' title='" + type + "'><div class='detailsBottomBarButton pdfLogo'></div></a>");
-			}
-		},
-
 		'Href': function(href, id) {
 
 			var content = "href='" + href;
@@ -359,24 +195,6 @@ define([
 			}
 
 			return new handlebars.SafeString(content + "' d-state-url=true");
-		},
-
-		'Badge': function(url, classBadge, title, label, subLabel, aphia) {
-
-			var content = '';
-
-			if (url) {
-				content += "<a href=" + url + " target='_blank' class='noDecoratedLink' title='" + title + "'>";
-			}
-
-			content += "<div class='badge " + classBadge + "'><span class='badgeLabel'>" + label +
-				"</span><span class='badgeSubLabel'>(" + subLabel + ": " + aphia + ")</span></div>";
-
-			if (url) {
-				content += "</a>";
-			}
-
-			return new handlebars.SafeString(content);
 		},
 
 		'Email': function(email) {
@@ -405,26 +223,6 @@ define([
 			}
 
 			return new handlebars.SafeString(content);
-		},
-
-		'Hierarchy': function(data) {
-
-			var ord = ["kingdom", "phylum", "subphylum", "class", "order", "family", "genus", "species", "subspecies", "variety"],
-				content = '';
-
-			for (var i = 0; i < ord.length; i++) {
-				if (data[ord[i]]) {
-					if (content.length > 0) {
-						content += " > ";
-					}
-
-					content += data[ord[i]].scientificName;
-				}
-			}
-
-			if (content.length > 0) {
-				return new handlebars.SafeString("<span>" + content + "</span>");
-			}
 		},
 
 		'listSeparate': function(data, separate, path) {
@@ -488,19 +286,6 @@ define([
 			}
 		},
 
-		'URLDetails': function(url) {
-
-			var content;
-
-			if (url) {
-				content = url + "?access_token=" + Credentials.get("accessToken");
-			} else {
-				content = "";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
 		'ancestorsSpecies': function(data) {
 
 			var rankList = ["Kingdom", "Phylum", "Subphylum", "Class", "Order", "Family", "Genus", "Species", "Subspecies", "Variety"],
@@ -558,21 +343,6 @@ define([
 
 			return new handlebars.SafeString(content);
 		},
-
-		'insertButton': function() {
-
-			var content = '';
-
-			for (var item in this.listButton) {
-				content += "<i class='fa " + this.listButton[item].icon + " iconList'></i>";
-			}
-
-			return new handlebars.SafeString(content);
-		},
-
-		'Date': date,
-
-		'DateTime': dateTime,
 
 		'lang': function(data) {
 
@@ -721,13 +491,6 @@ define([
 			return new handlebars.SafeString(content);
 		},
 
-		'bold': function(text) {
-
-			var boldClass = "bold";
-
-			return new handlebars.SafeString('<span class="' + boldClass + '">' + text + '</span>');
-		},
-
 		'IterateJSON': function(obj) {
 
 			// TODO creo que mejor la versión descomentada (respetando json pero con saltos de linea)
@@ -756,17 +519,6 @@ define([
 			return new handlebars.SafeString(content);
 		},
 
-		'breaklines': breaklines,
-
-		'textOrSpace': function(text) {
-
-			if (text) {
-				return new handlebars.SafeString(text);
-			}
-
-			return new handlebars.SafeString('<br>');
-		},
-
 		'PrintProperty': function(data, property, separate) {
 
 			if (data[property]) {
@@ -786,22 +538,6 @@ define([
 			}
 
 			return new handlebars.SafeString(result);
-		},
-
-		'concat': function() {
-
-			var result = "";
-
-			for (var i = 0; i < arguments.length - 1; i++) {
-				result += arguments[i];
-			}
-
-			return new handlebars.SafeString(result);
-		},
-
-		'showBoolean': function(value) {
-
-			return new handlebars.SafeString(value ? i18n.yes : i18n.no);
 		},
 
 		'reverse': function(/*Array*/ value) {
