@@ -242,6 +242,7 @@ module.exports = function(grunt) {
 				, 'dist/WhatIsRedmicInteroperability.js': 'src/WhatIsRedmic/Interoperability.hbs'
 
 				, 'dist/FilterForm.js': 'src/Filter/Form.hbs'
+				, 'dist/FilterServiceOGCForm.js': 'src/Filter/ServiceOGCForm.hbs'
 				, 'dist/FilterSpeciesForm.js': 'src/Filter/SpeciesForm.hbs'
 				, 'dist/FilterColorRamp.js': 'src/Filter/ColorRamp.hbs'
 				, 'dist/GenericViewerLayerList.js': 'src/GenericViewer/LayerList.hbs'
