@@ -9,32 +9,20 @@ module.exports = function(grunt) {
 					knownHelpers: {
 						// legacy (ir eliminando)
 						DetailsTitle: true,
-						PropertiesAtlas: true,
 						TimeCumulative: true,
 						Progress: true,
-						qualityControl: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						URL: true,
-						UrlWebcam: true,
-						TextURL: true,
-						Icon: true,
 						Href: true,
-						Badge: true,
 						Email: true,
 						Array: true,
-						Hierarchy: true,
 						listSeparate: true,
 						RowColBibliography: true,
 						RowColActivityCatalog: true,
 						RowColSpeciesCatalog: true,
 						RowColServiceOGCCatalog: true,
-						URLDetails: true,
 						ancestorsSpecies: true,
 						ancestorsActivity: true,
-						insertButton: true,
-						Date: true,
-						DateTime: true,
 						lang: true,
 						Translate: true,
 						ChartsHierarchicalListParse: true,
@@ -46,16 +34,11 @@ module.exports = function(grunt) {
 						Keyword: true,
 						ArrayString: true,
 						Classifications: true,
-						bold: true,
 						IterateJSON: true,
 						ProtocolsServiceOGC: true,
 						DownloadServiceOGC: true,
-						breaklines: true,
-						textOrSpace: true,
 						PrintProperty: true,
 						SafeUrl: true,
-						concat: true,
-						showBoolean: true,
 						reverse: true,
 						PathLength: true,
 						Parents: true,
@@ -77,9 +60,20 @@ module.exports = function(grunt) {
 						DocumentInternalUrlStatus: true,
 						DocumentUrl: true,
 						Image: true,
+						AtlasProperties: true,
 
 						// string
-						Capitalize: true
+						bold: true,
+						Boolean: true,
+						breaklines: true,
+						Capitalize: true,
+						concat: true,
+						Date: true,
+						DateTime: true,
+						TextURL: true,
+
+						// subExpression
+						PropertyIsDefinedAndFalse: true
 					},
 					knownHelpersOnly: true
 				}
@@ -248,6 +242,7 @@ module.exports = function(grunt) {
 				, 'dist/WhatIsRedmicInteroperability.js': 'src/WhatIsRedmic/Interoperability.hbs'
 
 				, 'dist/FilterForm.js': 'src/Filter/Form.hbs'
+				, 'dist/FilterServiceOGCForm.js': 'src/Filter/ServiceOGCForm.hbs'
 				, 'dist/FilterSpeciesForm.js': 'src/Filter/SpeciesForm.hbs'
 				, 'dist/FilterColorRamp.js': 'src/Filter/ColorRamp.hbs'
 				, 'dist/GenericViewerLayerList.js': 'src/GenericViewer/LayerList.hbs'

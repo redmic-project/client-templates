@@ -3,11 +3,13 @@ define([
 	, 'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
 	, 'redmic/base/Credentials'
+	, 'redmic/validation/stringFormats'
 ], function(
 	redmicConfig
 	, lang
 	, handlebars
 	, Credentials
+	, stringFormats
 ) {
 
 	'use strict';
@@ -247,6 +249,108 @@ define([
 			var imgItem = '<img src="' + imgSrc + '"/><br>';
 
 			return new handlebars.SafeString(imgItem);
+		},
+
+		AtlasProperties: function(data, i18n) {
+
+			// TODO esto hay que revisarlo, es un monstruo con utilidad dudosa
+			var addWebcam = function (url, notHref) {
+
+				var content = "",
+					classContainer = 'containerImageOrWebcam fWidth fHeight',
+					link = "<a href=" + url + " target='_blank' title=''>" +
+						"<i class='paddingContainerWebcam fa fa-link'></i> " + Utilities.capitalize(i18n.link) + "</a>";
+
+				if (url.includes("youtube")) {
+					var urlFormat = url;
+
+					urlFormat += '?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1';
+
+					urlFormat = urlFormat.replace('watch?v=', 'embed/');
+
+					content = "<iframe class='" + classContainer + "' src=" + urlFormat + " allowfullscreen></iframe>";
+				}
+
+				if (isImage(url)) {
+					content = "<a href=" + url + " target='_blank' title=''>";
+					content += "<img class='" + classContainer + " loadingByImg' src=" + url + " title='" + url +
+						"' onerror=\"this.src = '/resources/images/noIMG.png';this.style='max-width: 20rem;'\"" +
+						" onload=\"this.classList.remove('loadingByImg');\"></img></a>";
+				}
+
+				if (!content && notHref) {
+					return;
+				}
+
+				if (!notHref) {
+					content += link;
+				}
+
+				return new handlebars.SafeString(content);
+			},
+			isImage = function(value) {
+
+				var typeFormats = ["jpg", "cgi"],
+					checkImage = false;
+
+				for (var i = 0; i < typeFormats.length; i++) {
+					if (value.includes(typeFormats[i])) {
+						checkImage = true;
+						break;
+					}
+				}
+
+				return checkImage;
+			},
+			atlasProperty = function(key, value, i18n) {
+
+				if (value === null || value === undefined || value === '') {
+					return '';
+				}
+
+				var content = '<span class="paddingItemInRow"><span class="bold fontExo2">' + (i18n[key] || key) +
+					'</span>: ';
+
+				if (value === 0 || value === false) {
+					content += handlebars.helpers.breaklines(value);
+				} else if (!stringFormats.url(value)) {
+					content += handlebars.helpers.TextURL(value, i18n.link, i18n[key]);
+				} else if (!stringFormats['date-time'](value)) {
+					content += handlebars.helpers.DateTime(value);
+				} else if (!stringFormats.date(value)) {
+					content += handlebars.helpers.Date(value);
+				} else if (typeof value === 'string' && value.indexOf('</') !== -1) {
+					content += value;
+				} else {
+					content += handlebars.helpers.breaklines(value);
+				}
+
+				content += '</span>';
+
+				return content;
+			};
+
+			var content = '',
+				props = data.properties || data,
+				value = props.url;
+
+			if (value && !stringFormats.url(value)) {
+				var imageOrWebcam = addWebcam(value, true);
+				if (imageOrWebcam) {
+					content = '<span class="paddingItemInRow">' + imageOrWebcam + '</span>';
+				}
+			}
+
+			if (data.geometry && data.geometry.type && data.geometry.type === 'Point') {
+				content += atlasProperty('x', data.geometry.coordinates[0], i18n);
+				content += atlasProperty('y', data.geometry.coordinates[1], i18n);
+			}
+
+			for (var key in props) {
+				content += atlasProperty(key, props[key], i18n);
+			}
+
+			return new handlebars.SafeString(content);
 		}
 	};
 });

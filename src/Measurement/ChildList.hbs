@@ -101,7 +101,7 @@
 						<span title="{{i18n.derivedData}}">{{i18n.derivedData}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{showBoolean data.derivedData}}</p>
+						<p>{{Boolean data.derivedData i18n}}</p>
 					</div>
 				</div>
 				<div>
@@ -109,7 +109,7 @@
 						<span title="{{i18n.isSerial}}">{{i18n.isSerial}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<p>{{showBoolean data.isSerial}}</p>
+						<p>{{Boolean data.isSerial i18n}}</p>
 					</div>
 				</div>
 				{{#if data.isSerial}}
@@ -118,7 +118,7 @@
 							<span title="{{i18n.isRegularity}}">{{i18n.isRegularity}}</span>
 						</div>
 						<div class="{{RowColActivityCatalog 'right'}}">
-							<p>{{showBoolean data.isRegularity}}</p>
+							<p>{{Boolean data.isRegularity i18n}}</p>
 						</div>
 					</div>
 					<div>
