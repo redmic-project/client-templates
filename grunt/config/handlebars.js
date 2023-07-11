@@ -184,6 +184,7 @@ module.exports = function(grunt) {
 				, 'dist/RecoverySet.js': 'src/Recovery/Set.hbs'
 				, 'dist/DefaultList.js': 'src/Default/List.hbs'
 				, 'dist/DefaultDetailsTitle.js': 'src/Default/DetailsTitle.hbs'
+				, 'dist/DefaultEmbeddedContent.js': 'src/Default/EmbeddedContent.hbs'
 
 				, 'dist/AreaPopup.js': 'src/Area/Popup.hbs'
 				, 'dist/AreaList.js': 'src/Area/List.hbs'
@@ -196,7 +197,6 @@ module.exports = function(grunt) {
 				, 'dist/SurveyStationTimeseriesPopup.js': 'src/SurveyStation/TimeseriesPopup.hbs'
 				, 'dist/SurveyStationList.js': 'src/SurveyStation/List.hbs'
 				, 'dist/SurveyStationDataList.js': 'src/SurveyStation/DataList.hbs'
-				, 'dist/SurveyStationDashboard.js': 'src/SurveyStation/Dashboard.hbs'
 
 				, 'dist/ObjectCollectionPopup.js': 'src/ObjectCollection/Popup.hbs'
 				, 'dist/ObjectCollectionList.js': 'src/ObjectCollection/List.hbs'
