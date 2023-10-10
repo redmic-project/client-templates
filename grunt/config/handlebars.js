@@ -121,6 +121,7 @@ module.exports = function(grunt) {
 				, 'dist/OrganisationList.js': 'src/Organisation/List.hbs'
 				, 'dist/OrganisationSet.js': 'src/Organisation/Set.hbs'
 				, 'dist/ResourceSet.js': 'src/Resource/Set.hbs'
+				, 'dist/EmbeddedContentSet.js': 'src/EmbeddedContent/Set.hbs'
 				, 'dist/MetricsDefinitionInfo.js': 'src/MetricsDefinition/Info.hbs'
 				, 'dist/MetricsDefinitionList.js': 'src/MetricsDefinition/List.hbs'
 				, 'dist/DocumentFilter.js': 'src/Document/Filter.hbs'
