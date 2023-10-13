@@ -18,7 +18,6 @@
     "type": "git",
     "url": "https://gitlab.com/redmic-project/client/templates.git"
   },
-  "private": true,
   "devDependencies": {
     "glob": "8.0.3",
     "grunt": "1.5.3",
@@ -29,7 +28,9 @@
     "grunt-shell": "4.0.0",
     "load-grunt-tasks": "5.1.0"
   },
-  "files": ["dist", "yarn.lock"],
+  "publishConfig": {
+    "files": ["dist", "yarn.lock"]
+  },
   "engines": {
     "node": ">=14.0",
     "npm": ">=6.14"
