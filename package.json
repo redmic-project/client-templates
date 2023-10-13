@@ -1,6 +1,6 @@
 {
   "name": "redmic-templates",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Plantillas de Handlebars para REDMIC",
@@ -29,6 +29,7 @@
     "grunt-shell": "4.0.0",
     "load-grunt-tasks": "5.1.0"
   },
+  "files": ["dist", "yarn.lock"],
   "engines": {
     "node": ">=14.0",
     "npm": ">=6.14"
