@@ -1,0 +1,7 @@
+include:
+  - project: 'redmic-project/gitlab-ci-templates'
+    ref: master
+    file: '/deployment-package/npm-deployment.yml'
+
+stages:
+  - deploy
