@@ -19,8 +19,8 @@
     "url": "https://gitlab.com/redmic-project/client/templates.git"
   },
   "devDependencies": {
-    "glob": "8.0.3",
-    "grunt": "1.5.3",
+    "glob": "10.3.10",
+    "grunt": "1.6.1",
     "grunt-contrib-clean": "2.0.1",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-handlebars": "3.0.0",
@@ -30,8 +30,8 @@
   },
   "files": ["dist"],
   "engines": {
-    "node": ">=14.0",
-    "npm": ">=6.14"
+    "node": ">=16.0",
+    "npm": ">=8.19"
   },
   "license": "Apache-2.0"
 }
