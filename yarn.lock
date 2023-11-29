@@ -136,14 +136,6 @@ chalk@^1.1.1:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-3.0.0.tgz#3f73c2bf526591f574cc492c51e2456349f844e4"
-  integrity sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
 chalk@^4.1.1, chalk@~4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
@@ -295,14 +287,6 @@ flagged-respawn@^1.0.1:
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-1.0.1.tgz#e7de6f1279ddd9ca9aac8a5971d618606b3aab41"
   integrity sha512-lNaHNVymajmk0OJMBn8fVUAU1BtDeKIqKoVhk4xAALB57aALg6b4W0MfJ/cUE0g9YBXy5XhSlPIpYIJ7HaY/3Q==
 
-flopmang@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/flopmang/-/flopmang-1.0.0.tgz#22c82f12b537d5d440d5f0ad87ac39109ff31e26"
-  integrity sha512-WQsI7/o5g8NC/VCKbAJQcxSm77k1hd5beC0qikWOvz9iDqwKiwB0xfSGIgAOpHck00enCiJKUrzsGN775FQzdw==
-  dependencies:
-    underscore "^1.9.1"
-    underscore.string "^3.3.5"
-
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -429,13 +413,6 @@ grunt-contrib-handlebars@3.0.0:
     handlebars "^4.7.7"
     nsdeclare "0.1.0"
 
-grunt-git@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/grunt-git/-/grunt-git-1.1.1.tgz#50c315e6647ec77c841c387f6ad050a49a415f10"
-  integrity sha512-PiqCEuh3K9H+BheQozaQ8LCoO1hjS6MzQuany4IpIY4A/d/U9omQdpI70asf+bWeCU3eQTI2wEk8vqeG5Ktzvg==
-  dependencies:
-    flopmang "^1.0.0"
-
 grunt-known-options@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/grunt-known-options/-/grunt-known-options-2.0.0.tgz#cac641e897f9a0a680b8c9839803d35f3325103c"
@@ -471,15 +448,6 @@ grunt-legacy-util@~2.0.1:
     lodash "~4.17.21"
     underscore.string "~3.3.5"
     which "~2.0.2"
-
-grunt-shell@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-shell/-/grunt-shell-4.0.0.tgz#9b04a18a59c3113f24391a3fb5625320538cbd1c"
-  integrity sha512-dHFy8VZDfWGYLTeNvIHze4PKXGvIlDWuN0UE7hUZstTQeiEyv1VmW1MaDYQ3X5tE3bCi3bEia1gGKH8z/f1czQ==
-  dependencies:
-    chalk "^3.0.0"
-    npm-run-path "^2.0.0"
-    strip-ansi "^6.0.1"
 
 grunt@1.6.1:
   version "1.6.1"
@@ -792,13 +760,6 @@ nopt@~4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-npm-run-path@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
-  integrity sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
-  dependencies:
-    path-key "^2.0.0"
-
 nsdeclare@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/nsdeclare/-/nsdeclare-0.1.0.tgz#10daa153642382d3cf2c01a916f4eb20a128b19f"
@@ -896,11 +857,6 @@ path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
-
-path-key@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
-  integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-key@^3.1.0:
   version "3.1.1"
@@ -1025,6 +981,7 @@ sprintf-js@~1.0.2:
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -1043,6 +1000,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     strip-ansi "^7.0.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -1097,18 +1055,13 @@ unc-path-regex@^0.1.2:
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
   integrity sha1-5z3T17DXxe2G+6xrCufYxqadUPo=
 
-underscore.string@^3.3.5, underscore.string@~3.3.5:
+underscore.string@~3.3.5:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-3.3.6.tgz#ad8cf23d7423cb3b53b898476117588f4e2f9159"
   integrity sha512-VoC83HWXmCrF6rgkyxS9GHv8W9Q5nhMKho+OadDJGzL2oDYbYEppBaCMH6pFlwLeqj2QS+hhkw2kpXkSdD1JxQ==
   dependencies:
     sprintf-js "^1.1.1"
     util-deprecate "^1.0.2"
-
-underscore@^1.9.1:
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.2.tgz#276cea1e8b9722a8dbed0100a407dda572125881"
-  integrity sha512-ekY1NhRzq0B08g4bGuX4wd2jZx5GnKz6mKSqFL4nqBlfyMGiG10gDFhDTMEfYmDL6Jy0FUIZp7wiRB+0BP7J2g==
 
 util-deprecate@^1.0.2:
   version "1.0.2"
