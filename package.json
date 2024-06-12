@@ -3,7 +3,7 @@
   "version": "0.25.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
-  "description": "Plantillas de Handlebars para REDMIC",
+  "description": "Handlebars templates for REDMIC",
   "contributors": [
     {
       "name": "Pedro E. Trujillo Brito",
@@ -19,7 +19,7 @@
     "url": "https://gitlab.com/redmic-project/client/templates.git"
   },
   "devDependencies": {
-    "glob": "10.3.10",
+    "glob": "10.4.1",
     "grunt": "1.6.1",
     "grunt-contrib-clean": "2.0.1",
     "grunt-contrib-copy": "1.0.0",
