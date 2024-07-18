@@ -476,9 +476,9 @@ define([
 				content += '<div><span class="propValue paddingLeftRow"> - ' + item.type.name;
 
 				if (item.startDate) {
-					content += ' (' + date(item.startDate).string + ' - ' ;
+					content += ' (' + handlebars.helpers.Date(item.startDate).string + ' - ' ;
 					if (item.endDate) {
-						content += date(item.endDate).string;
+						content += handlebars.helpers.Date(item.endDate).string;
 					} else {
 						content += '   ';
 					}
