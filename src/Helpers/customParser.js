@@ -1,5 +1,5 @@
 define([
-	'app/redmicConfig'
+	'src/redmicConfig'
 	, 'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
 	, 'redmic/base/Credentials'
