@@ -2,8 +2,8 @@ define([
 	'src/redmicConfig'
 	, 'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
-	, 'redmic/base/Credentials'
-	, 'redmic/validation/stringFormats'
+	, 'src/util/Credentials'
+	, 'src/util/stringFormats'
 ], function(
 	redmicConfig
 	, lang

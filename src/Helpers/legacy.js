@@ -2,7 +2,7 @@ define([
 	'dojo/i18n!app/nls/translation'
 	, 'handlebars/handlebars.runtime.min'
 	, 'moment/moment.min'
-	, 'redmic/base/Credentials'
+	, 'src/util/Credentials'
 	, 'RWidgets/Utilities'
 ], function(
 	i18n
