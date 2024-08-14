@@ -2,12 +2,14 @@ define([
 	'src/redmicConfig'
 	, 'dojo/_base/lang'
 	, 'handlebars/handlebars.runtime.min'
+	, 'moment/moment.min'
 	, 'src/util/Credentials'
 	, 'src/util/stringFormats'
 ], function(
 	redmicConfig
 	, lang
 	, handlebars
+	, moment
 	, Credentials
 	, stringFormats
 ) {
@@ -18,7 +20,7 @@ define([
 		ActivityOpenStatus: function(data, i18n) {
 
 			var result;
-			if (!data.endDate) {
+			if (!data.endDate || moment().isBefore(data.endDate)) {
 				result = '<i title="' + i18n.opened + '" class="activityInProgressIcon"></i>';
 			} else {
 				result = '<i title="' + i18n.closed + '" class="activityConcludedIcon"></i>';
