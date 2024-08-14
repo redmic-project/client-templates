@@ -113,7 +113,7 @@ define([
 		ServiceOGCLegend: function(layer) {
 
 			var imgClass = 'detailsPhoto',
-				noImgUrl = '/resources/images/noIMG.png',
+				noImgUrl = '/res/images/noIMG.png',
 				legendOptsParam = 'legend_options=forceLabels:on;fontAntiAliasing:true',
 				imgUrl;
 
@@ -231,7 +231,7 @@ define([
 
 			var imgSrc;
 			if (!imagePath) {
-				imgSrc = '/resources/images/noIMG.png';
+				imgSrc = '/res/images/noIMG.png';
 			} else if (imagePath.indexOf('/') !== 0) {
 				imgSrc = imagePath;
 			} else {
@@ -274,7 +274,7 @@ define([
 				if (isImage(url)) {
 					content = "<a href=" + url + " target='_blank' title=''>";
 					content += "<img class='" + classContainer + " loadingByImg' src=" + url + " title='" + url +
-						"' onerror=\"this.src = '/resources/images/noIMG.png';this.style='max-width: 20rem;'\"" +
+						"' onerror=\"this.src = '/res/images/noIMG.png';this.style='max-width: 20rem;'\"" +
 						" onload=\"this.classList.remove('loadingByImg');\"></img></a>";
 				}
 
