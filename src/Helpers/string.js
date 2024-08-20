@@ -25,7 +25,7 @@ define([
 
 		breaklines: function(text) {
 
-			var textResult = handlebars.Utils.escapeExpression(text).replace(/(\r\n|\n|\r)/gm, '<br>');
+			var textResult = handlebars.Utils.escapeExpression(text).replace(/(\r\n|\n|\r|\\r\\n|\\n|\\r)/gm, '<br>');
 
 			return new handlebars.SafeString(textResult);
 		},
