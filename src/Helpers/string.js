@@ -10,6 +10,18 @@ define([
 
 	'use strict';
 
+	var _dateFormat = function(value, mainFormat, altFormat) {
+
+		if (!value) {
+			return;
+		}
+
+		var format = ['en'].includes(dojoConfig.locale) ? altFormat : mainFormat,
+			formatted = moment(value).format(format);
+
+		return new handlebars.SafeString(formatted);
+	};
+
 	return {
 		bold: function(text) {
 
@@ -48,26 +60,12 @@ define([
 
 		'Date': function(value) {
 
-			if (!value) {
-				return;
-			}
-
-			var format = dojoConfig.locale === 'en' ? 'MM/DD/YYYY' : 'DD/MM/YYYY',
-				formatted = moment(value).format(format);
-
-			return new handlebars.SafeString(formatted);
+			return _dateFormat(value, 'DD/MM/YYYY', 'MM/DD/YYYY');
 		},
 
 		DateTime: function(value) {
 
-			if (!value) {
-				return;
-			}
-
-			var format = dojoConfig.locale === 'en' ? 'MM/DD/YYYY HH:mm:ss' : 'DD/MM/YYYY HH:mm:ss',
-				formatted = moment(value).format(format);
-
-			return new handlebars.SafeString(formatted);
+			return _dateFormat(value, 'DD/MM/YYYY HH:mm:ss', 'MM/DD/YYYY HH:mm:ss');
 		},
 
 		TextURL: function(url, text, title) {

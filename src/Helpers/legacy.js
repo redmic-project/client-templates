@@ -528,10 +528,9 @@ define([
 
 		'SafeUrl': function(url, text, title) {
 
-			var userRole = Credentials.get("userRole"),
-				result;
+			var result;
 
-			if (userRole === "ROLE_ADMINISTRATOR" || userRole === "ROLE_OAG" || userRole === "ROLE_COLLABORATOR") {
+			if (Credentials.userIsEditor()) {
 				result = "<a href=" + url + " target='_blank' title='" + title + "'>" + text + "</a>";
 			} else {
 				result = text;

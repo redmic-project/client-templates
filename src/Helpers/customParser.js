@@ -189,7 +189,7 @@ define([
 				privatePdf = data.privateInternalUrl,
 				result = '';
 
-			if (!(!pdfUrl || (privatePdf && Credentials.get('userRole') !== 'ROLE_ADMINISTRATOR'))) {
+			if (pdfUrl && (!privatePdf || Credentials.userIsEditor())) {
 				if (privatePdf) {
 					result = '<i title="' + i18n.privateInternalUrl + '" class="documentPrivateInternalUrlIcon"></i>';
 				} else {
@@ -243,7 +243,7 @@ define([
 				imgSrc = imgSrcPrefix + imagePath;
 
 				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
-				if (mustUseCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
+				if (mustUseCredentials && !Credentials.userIsGuest()) {
 					imgSrc += '?access_token=' + Credentials.get('accessToken');
 				}
 			}
