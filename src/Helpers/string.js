@@ -70,11 +70,20 @@ define([
 
 		TextURL: function(url, text, title) {
 
-			var titleAttr = title || url,
-				content = text || url;
+			var content = text,
+				titleAttr = title;
 
-			return new handlebars.SafeString('<a href="' + url + '" target="_blank" title="' + titleAttr + '">' +
-				content + '</a>');
+			if (!content || typeof content !== 'string') {
+				content = url;
+			}
+
+			if (!titleAttr || typeof titleAttr !== 'string') {
+				titleAttr = url;
+			}
+
+			var urlString = '<a href="' + url + '" target="_blank" title="' + titleAttr + '">' + content + '</a>';
+
+			return new handlebars.SafeString(urlString);
 		}
 	};
 });
