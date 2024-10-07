@@ -1,7 +1,7 @@
 define([
 	'dojo/i18n!app/nls/translation'
-	, 'handlebars/handlebars.runtime.min'
-	, 'moment/moment.min'
+	, 'handlebars'
+	, 'moment'
 	, 'src/util/Credentials'
 	, 'RWidgets/Utilities'
 ], function(

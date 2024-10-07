@@ -1,6 +1,6 @@
 define([
 	'dojo/aspect'
-	, 'handlebars/handlebars.runtime.min'
+	, 'handlebars'
 	, 'templates/Helpers/customParser'
 	, 'templates/Helpers/string'
 	, 'templates/Helpers/subExpression'

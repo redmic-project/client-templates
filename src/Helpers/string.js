@@ -1,6 +1,6 @@
 define([
-	'handlebars/handlebars.runtime.min'
-	, 'moment/moment.min'
+	'handlebars'
+	, 'moment'
 	, 'RWidgets/Utilities'
 ], function(
 	handlebars

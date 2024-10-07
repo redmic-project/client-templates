@@ -1,8 +1,8 @@
 define([
 	'src/redmicConfig'
 	, 'dojo/_base/lang'
-	, 'handlebars/handlebars.runtime.min'
-	, 'moment/moment.min'
+	, 'handlebars'
+	, 'moment'
 	, 'src/util/Credentials'
 	, 'src/util/stringFormats'
 ], function(
