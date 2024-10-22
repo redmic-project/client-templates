@@ -181,7 +181,6 @@ module.exports = function(grunt) {
 
 				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
-				, 'dist/StatisticsTitle.js': 'src/Statistics/Title.hbs'
 
 				, 'dist/SpecimenTagSet.js': 'src/SpecimenTag/Set.hbs'
 				, 'dist/RecoverySet.js': 'src/Recovery/Set.hbs'
