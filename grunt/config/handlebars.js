@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 						ActivityInspireTheme: true,
 						ActivityResources: true,
 						ActivityStarred: true,
+						OgcServiceProvider: true,
 						ServiceOGCAttribution: true,
 						ServiceOGCLegend: true,
 						ServiceOGCImageList: true,
@@ -172,6 +173,7 @@ module.exports = function(grunt) {
 				, 'dist/WormsList.js': 'src/Worms/List.hbs'
 				, 'dist/AtlasSecondaryList.js': 'src/Atlas/SecondaryList.hbs'
 				, 'dist/AtlasList.js': 'src/Atlas/List.hbs'
+				, 'dist/AtlasMixedList.js': 'src/Atlas/MixedList.hbs'
 				, 'dist/AtlasPrimaryList.js': 'src/Atlas/PrimaryList.hbs'
 				, 'dist/AtlasRedpromarSecondaryList.js': 'src/Atlas/RedpromarSecondaryList.hbs'
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'

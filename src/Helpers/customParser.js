@@ -90,6 +90,20 @@ define([
 			return new handlebars.SafeString(result);
 		},
 
+		OgcServiceProvider: function(data, i18n) {
+
+			var value, classNames;
+			if (data && data.atlas) {
+				value = 'providedByAtlas';
+				classNames = 'fr-world';
+			} else {
+				value = 'providedByView';
+				classNames = 'fa-bug';
+			}
+			var result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
+			return new handlebars.SafeString(result);
+		},
+
 		ServiceOGCAttribution: function(attribution) {
 
 			var result;

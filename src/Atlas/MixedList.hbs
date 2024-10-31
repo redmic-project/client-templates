@@ -1,0 +1,14 @@
+<span class='spanTemplate'>
+	<span class='title'>
+		<span class='name'>{{ChkIsNull data.originalItem.title}} </span>
+	</span>
+	<span class='subtitle'>
+		{{#if data.originalItem.alias}}
+			{{ChkIsNull data.originalItem.alias}}
+		{{/if}}
+	</span>
+	<span class='badgesContainer'>
+		{{OgcServiceProvider data.originalItem}}
+		{{ActivityInspireTheme data.originalItem i18n}}
+	</span>
+</span>
