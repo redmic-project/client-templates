@@ -98,7 +98,7 @@ define([
 				classNames = 'fr-world';
 			} else {
 				value = 'providedByView';
-				classNames = 'fa-bug';
+				classNames = 'fr-layers';
 			}
 			var result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
 			return new handlebars.SafeString(result);
