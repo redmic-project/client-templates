@@ -1,6 +1,6 @@
 {
   "name": "@redmic-project/templates",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Handlebars templates for REDMIC",
