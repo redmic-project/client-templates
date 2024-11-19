@@ -1,13 +1,15 @@
 define([
-	'app/redmicConfig'
+	'src/redmicConfig'
 	, 'dojo/_base/lang'
-	, 'handlebars/handlebars.runtime.min'
-	, 'redmic/base/Credentials'
-	, 'redmic/validation/stringFormats'
+	, 'handlebars'
+	, 'moment'
+	, 'src/util/Credentials'
+	, 'src/util/stringFormats'
 ], function(
 	redmicConfig
 	, lang
 	, handlebars
+	, moment
 	, Credentials
 	, stringFormats
 ) {
@@ -18,7 +20,7 @@ define([
 		ActivityOpenStatus: function(data, i18n) {
 
 			var result;
-			if (!data.endDate) {
+			if (!data.endDate || moment().isBefore(data.endDate)) {
 				result = '<i title="' + i18n.opened + '" class="activityInProgressIcon"></i>';
 			} else {
 				result = '<i title="' + i18n.closed + '" class="activityConcludedIcon"></i>';
@@ -88,6 +90,20 @@ define([
 			return new handlebars.SafeString(result);
 		},
 
+		OgcServiceProvider: function(data, i18n) {
+
+			var value, classNames;
+			if (data && data.atlas) {
+				value = 'providedByAtlas';
+				classNames = 'fr-world';
+			} else {
+				value = 'providedByView';
+				classNames = 'fr-layers';
+			}
+			var result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
+			return new handlebars.SafeString(result);
+		},
+
 		ServiceOGCAttribution: function(attribution) {
 
 			var result;
@@ -113,7 +129,7 @@ define([
 		ServiceOGCLegend: function(layer) {
 
 			var imgClass = 'detailsPhoto',
-				noImgUrl = '/resources/images/noIMG.png',
+				noImgUrl = '/res/images/noIMG.png',
 				legendOptsParam = 'legend_options=forceLabels:on;fontAntiAliasing:true',
 				imgUrl;
 
@@ -187,7 +203,7 @@ define([
 				privatePdf = data.privateInternalUrl,
 				result = '';
 
-			if (!(!pdfUrl || (privatePdf && Credentials.get('userRole') !== 'ROLE_ADMINISTRATOR'))) {
+			if (pdfUrl && (!privatePdf || Credentials.userIsEditor())) {
 				if (privatePdf) {
 					result = '<i title="' + i18n.privateInternalUrl + '" class="documentPrivateInternalUrlIcon"></i>';
 				} else {
@@ -231,7 +247,7 @@ define([
 
 			var imgSrc;
 			if (!imagePath) {
-				imgSrc = '/resources/images/noIMG.png';
+				imgSrc = '/res/images/noIMG.png';
 			} else if (imagePath.indexOf('/') !== 0) {
 				imgSrc = imagePath;
 			} else {
@@ -241,7 +257,7 @@ define([
 				imgSrc = imgSrcPrefix + imagePath;
 
 				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
-				if (mustUseCredentials && Credentials.get('userRole') !== 'ROLE_GUEST') {
+				if (mustUseCredentials && !Credentials.userIsGuest()) {
 					imgSrc += '?access_token=' + Credentials.get('accessToken');
 				}
 			}
@@ -274,7 +290,7 @@ define([
 				if (isImage(url)) {
 					content = "<a href=" + url + " target='_blank' title=''>";
 					content += "<img class='" + classContainer + " loadingByImg' src=" + url + " title='" + url +
-						"' onerror=\"this.src = '/resources/images/noIMG.png';this.style='max-width: 20rem;'\"" +
+						"' onerror=\"this.src = '/res/images/noIMG.png';this.style='max-width: 20rem;'\"" +
 						" onload=\"this.classList.remove('loadingByImg');\"></img></a>";
 				}
 

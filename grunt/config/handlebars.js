@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 						ActivityInspireTheme: true,
 						ActivityResources: true,
 						ActivityStarred: true,
+						OgcServiceProvider: true,
 						ServiceOGCAttribution: true,
 						ServiceOGCLegend: true,
 						ServiceOGCImageList: true,
@@ -95,8 +96,10 @@ module.exports = function(grunt) {
 				, 'dist/ActivityTypeInfo.js': 'src/ActivityType/Info.hbs'
 				, 'dist/ActivityTypeList.js': 'src/ActivityType/List.hbs'
 				, 'dist/ActivityTypeDetails.js': 'src/ActivityType/Details.hbs'
+				, 'dist/AnimalInfo.js': 'src/Animal/Info.hbs'
 				, 'dist/AnimalList.js': 'src/Animal/List.hbs'
 				, 'dist/AnimalListExpand.js': 'src/Animal/ListExpand.hbs'
+				, 'dist/AnimalSpecimenTag.js': 'src/Animal/SpecimenTag.hbs'
 				, 'dist/TrackingPrimaryList.js': 'src/Tracking/PrimaryList.hbs'
 				, 'dist/TrackingSecondaryList.js': 'src/Tracking/SecondaryList.hbs'
 				, 'dist/TrackingPlatformList.js': 'src/Tracking/PlatformList.hbs'
@@ -170,6 +173,7 @@ module.exports = function(grunt) {
 				, 'dist/WormsList.js': 'src/Worms/List.hbs'
 				, 'dist/AtlasSecondaryList.js': 'src/Atlas/SecondaryList.hbs'
 				, 'dist/AtlasList.js': 'src/Atlas/List.hbs'
+				, 'dist/AtlasMixedList.js': 'src/Atlas/MixedList.hbs'
 				, 'dist/AtlasPrimaryList.js': 'src/Atlas/PrimaryList.hbs'
 				, 'dist/AtlasRedpromarSecondaryList.js': 'src/Atlas/RedpromarSecondaryList.hbs'
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'
@@ -179,7 +183,6 @@ module.exports = function(grunt) {
 
 				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
-				, 'dist/StatisticsTitle.js': 'src/Statistics/Title.hbs'
 
 				, 'dist/SpecimenTagSet.js': 'src/SpecimenTag/Set.hbs'
 				, 'dist/RecoverySet.js': 'src/Recovery/Set.hbs'

@@ -1,8 +1,8 @@
 define([
 	'dojo/i18n!app/nls/translation'
-	, 'handlebars/handlebars.runtime.min'
-	, 'moment/moment.min'
-	, 'redmic/base/Credentials'
+	, 'handlebars'
+	, 'moment'
+	, 'src/util/Credentials'
 	, 'RWidgets/Utilities'
 ], function(
 	i18n
@@ -476,9 +476,9 @@ define([
 				content += '<div><span class="propValue paddingLeftRow"> - ' + item.type.name;
 
 				if (item.startDate) {
-					content += ' (' + date(item.startDate).string + ' - ' ;
+					content += ' (' + handlebars.helpers.Date(item.startDate).string + ' - ' ;
 					if (item.endDate) {
-						content += date(item.endDate).string;
+						content += handlebars.helpers.Date(item.endDate).string;
 					} else {
 						content += '   ';
 					}
@@ -528,10 +528,9 @@ define([
 
 		'SafeUrl': function(url, text, title) {
 
-			var userRole = Credentials.get("userRole"),
-				result;
+			var result;
 
-			if (userRole === "ROLE_ADMINISTRATOR" || userRole === "ROLE_OAG" || userRole === "ROLE_COLLABORATOR") {
+			if (Credentials.userIsEditor()) {
 				result = "<a href=" + url + " target='_blank' title='" + title + "'>" + text + "</a>";
 			} else {
 				result = text;

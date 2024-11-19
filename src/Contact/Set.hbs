@@ -3,11 +3,14 @@
 		{{data.contact.firstName}} {{data.contact.surname}}
 	</span>
 	<span class='subtitle'>
-		{{data.organisation.acronym}} - {{lang data.role}}
+		{{data.organisation.name}}{{#if data.organisation.acronym}} ({{data.organisation.acronym}}){{/if}}
+	</span>
+	<span class='subtitle'>
+		{{lang data.role}}
 	</span>
 	<span class='subtitle'>
 		{{#if data.startDate}}
-			{{Date data.startDate}} - 
+			{{Date data.startDate}} -
 		{{/if}}
 
 		{{#if data.endDate}}
