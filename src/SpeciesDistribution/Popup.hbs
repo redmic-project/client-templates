@@ -32,9 +32,12 @@
 		<div>
 			<span class="propLabel">{{i18n.validAs}}: </span>
 			{{#if feature.properties.taxon.validAs.scientificName}}
-				<a {{Href '/catalog/species-info/' feature.properties.taxon.validAs.id}} class='cursive'>
-					{{feature.properties.taxon.validAs.scientificName}}
-				</a>
+				<span class='cursive'>
+					{{TextURL
+						(concat '/catalog/species-info/' feature.properties.taxon.validAs.id)
+						feature.properties.taxon.validAs.scientificName
+						i18n.checkSpeciesAtCatalog}}
+				</span>
 			{{/if}}
 			{{#if feature.properties.taxon.validAs.authorship}}
 				<span>{{feature.properties.taxon.validAs.authorship}}</span>

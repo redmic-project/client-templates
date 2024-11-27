@@ -13,7 +13,6 @@ module.exports = function(grunt) {
 						Progress: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Href: true,
 						Email: true,
 						Array: true,
 						listSeparate: true,

@@ -3,6 +3,11 @@
 		<span class='name'>{{ChkIsNull data.name}} </span>
 	</span>
 	<span class='subtitle'>
-		{{data.taxon.scientificName}}
+		{{#if data.taxon}}
+			{{data.taxon.scientificName}}
+		{{/if}}
+		{{#if data.taxonomy}}
+			{{data.taxonomy.scientificName}}
+		{{/if}}
 	</span>
 </span>

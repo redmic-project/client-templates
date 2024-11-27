@@ -186,17 +186,6 @@ define([
 			return new handlebars.SafeString(content + "'></i>");
 		},
 
-		'Href': function(href, id) {
-
-			var content = "href='" + href;
-
-			if (id) {
-				content += id;
-			}
-
-			return new handlebars.SafeString(content + "' d-state-url=true");
-		},
-
 		'Email': function(email) {
 
 			if (email) {

@@ -70,18 +70,22 @@ define([
 
 		TextURL: function(url, text, title) {
 
-			var content = text,
-				titleAttr = title;
+			var titleAttr = (title && typeof title === 'string') ? title : url;
 
-			if (!content || typeof content !== 'string') {
-				content = url;
+			var attrs = 'href="' + url + '" title="' + titleAttr + '" ';
+
+			var urlPrefix = typeof url === 'object' ? url.string[0] : url[0],
+				isInternal = urlPrefix === '/';
+
+			if (isInternal) {
+				attrs += 'd-state-url=true';
+			} else {
+				attrs += 'target="_blank"';
 			}
 
-			if (!titleAttr || typeof titleAttr !== 'string') {
-				titleAttr = url;
-			}
+			var content = (text && typeof text === 'string') ? text : url;
 
-			var urlString = '<a href="' + url + '" target="_blank" title="' + titleAttr + '">' + content + '</a>';
+			var urlString = '<a ' + attrs + '>' + content + '</a>';
 
 			return new handlebars.SafeString(urlString);
 		}
