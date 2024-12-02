@@ -1,11 +1,25 @@
 <span class='spanTemplate'>
-	<span class='title' title='{{ChkIsNull data.name}}'>
-		<span class='name'>{{ChkIsNull data.name}}</span>
+	<span class='title' title='{{i18n.date}}'>
+		{{DateTime data.date}}
 	</span>
-	<span class='subtitle' title='{{ChkIsNull data.code}}'>
-		{{ChkIsNull data.code}}
-	</span>
-	<span class='subtitle' title='{{ChkIsNull data.date}}'>
-		{{ChkIsNull data.date}}
-	</span>
+	<span class='subtitle'>
+		{{#if data.observationDTO.animal}}
+		{{TextURL
+			(concat '/catalog/animal-info/' data.observationDTO.animal.id)
+			data.observationDTO.animal.name
+			i18n.checkAnimalAtCatalog}}
+		{{/if}}
+		{{#if data.observationDTO.taxonomy}}
+		<span class='cursive'>
+			- {{TextURL
+				(concat 'https://redpromar.org/species/' data.observationDTO.taxonomy.id)
+				data.observationDTO.taxonomy.scientificName
+				i18n.checkSpeciesAtCatalog}}
+		</span>
+		{{/if}}
+		{{#if data.observationDTO.device}}
+		<span title='{{i18n.device}}'>
+			- {{ChkIsNull data.observationDTO.device.name}} ({{ChkIsNull data.observationDTO.device.model}})
+		</span>
+		{{/if}}
 </span>
