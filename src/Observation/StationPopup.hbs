@@ -1,3 +1,12 @@
+{{#if feature.properties.measurements}}
+	<div class="flexContainerColumn">
+		<a href="#activityFixedObservationSeriesList" class="showObservations">
+			<i class='paddingContainerWebcam fa fa-database'></i>
+			{{i18n.charts}}
+		</a>
+	</div>
+{{/if}}
+
 {{#if feature.properties.site.name}}
 	<div>
 		<span class="propLabel">{{i18n.name}}: </span>
