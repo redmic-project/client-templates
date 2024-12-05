@@ -8,6 +8,8 @@
 			(concat '/catalog/animal-info/' data.observation.animal.id)
 			data.observation.animal.name
 			i18n.checkAnimalAtCatalog}}
+		{{else}}
+			{{data.observation.note}}
 		{{/if}}
 		{{#if data.observation.taxonomy}}
 		<span class='cursive'>
@@ -19,7 +21,7 @@
 		{{/if}}
 		{{#if data.observation.device}}
 		<span title='{{i18n.device}}'>
-			- {{ChkIsNull data.observation.device.name}} ({{ChkIsNull data.observation.device.model}})
+			- {{data.observation.device.name}} ({{data.observation.device.model}})
 		</span>
 		{{/if}}
 </span>
