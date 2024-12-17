@@ -204,6 +204,7 @@ module.exports = function(grunt) {
 				, 'dist/ObjectCollectionPopup.js': 'src/ObjectCollection/Popup.hbs'
 				, 'dist/ObjectCollectionList.js': 'src/ObjectCollection/List.hbs'
 
+				, 'dist/ObservationFilterForm.js': 'src/Observation/FilterForm.hbs'
 				, 'dist/ObservationStationPopup.js': 'src/Observation/StationPopup.hbs'
 				, 'dist/ObservationStationList.js': 'src/Observation/StationList.hbs'
 				, 'dist/ObservationRegisterList.js': 'src/Observation/RegisterList.hbs'
