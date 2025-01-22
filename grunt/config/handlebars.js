@@ -178,7 +178,6 @@ module.exports = function(grunt) {
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'
 				, 'dist/CountryList.js': 'src/Country/List.hbs'
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'
-				, 'dist/MisidentificationList.js': 'src/Misidentification/List.hbs'
 
 				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
