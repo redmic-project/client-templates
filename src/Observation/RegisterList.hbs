@@ -19,6 +19,12 @@
 				i18n.checkSpeciesAtCatalog}}
 		</span>
 		{{/if}}
+		{{#if data.observation.animal}}
+		- {{TextURL
+			(concat '/catalog/organisation-info/' data.observation.organisation.id)
+			data.observation.organisation.name
+			i18n.checkOrganisationAtCatalog}}
+		{{/if}}
 		{{#if data.observation.device}}
 		<span title='{{i18n.device}}'>
 			- {{data.observation.device.name}} ({{data.observation.device.model}})
