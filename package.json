@@ -23,7 +23,7 @@
     "postinstall": "grunt build"
   },
   "devDependencies": {
-    "glob": "11.0.0",
+    "glob": "11.0.1",
     "grunt": "1.6.1",
     "grunt-contrib-clean": "2.0.1",
     "grunt-contrib-copy": "1.0.0",
@@ -32,7 +32,7 @@
   },
   "files": ["dist"],
   "engines": {
-    "node": ">=20.16",
+    "node": ">=20.18",
     "npm": ">=10.8"
   },
   "license": "Apache-2.0"
