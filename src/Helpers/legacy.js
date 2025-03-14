@@ -599,11 +599,6 @@ define([
 			}
 
 			return new handlebars.SafeString(content);
-		},
-
-		'DetailsTitle': function(data) {
-
-			return new handlebars.SafeString(data.title ? data.title : data.name);
 		}
 	};
 });

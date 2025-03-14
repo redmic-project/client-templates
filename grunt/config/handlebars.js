@@ -8,7 +8,6 @@ module.exports = function(grunt) {
 				compilerOptions: {
 					knownHelpers: {
 						// legacy (ir eliminando)
-						DetailsTitle: true,
 						TimeCumulative: true,
 						Progress: true,
 						GroupIcon: true,
