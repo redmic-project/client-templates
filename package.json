@@ -1,6 +1,6 @@
 {
   "name": "@redmic-project/templates",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "author": "REDMIC",
   "homepage": "https://gitlab.com/redmic-project/client/templates/blob/master/README.md",
   "description": "Handlebars templates for REDMIC",
@@ -30,7 +30,9 @@
     "grunt-contrib-handlebars": "3.0.0",
     "load-grunt-tasks": "5.1.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=20.18",
     "npm": ">=10.8"
