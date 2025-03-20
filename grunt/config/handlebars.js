@@ -8,12 +8,10 @@ module.exports = function(grunt) {
 				compilerOptions: {
 					knownHelpers: {
 						// legacy (ir eliminando)
-						DetailsTitle: true,
 						TimeCumulative: true,
 						Progress: true,
 						GroupIcon: true,
 						GroupIconInspire: true,
-						Href: true,
 						Email: true,
 						Array: true,
 						listSeparate: true,
@@ -179,7 +177,6 @@ module.exports = function(grunt) {
 				, 'dist/DomainList.js': 'src/Domain/List.hbs'
 				, 'dist/CountryList.js': 'src/Country/List.hbs'
 				, 'dist/SelectionList.js': 'src/Selection/List.hbs'
-				, 'dist/MisidentificationList.js': 'src/Misidentification/List.hbs'
 
 				, 'dist/StatisticsList.js': 'src/Statistics/List.hbs'
 				, 'dist/NotificationList.js': 'src/Notification/List.hbs'
@@ -204,6 +201,11 @@ module.exports = function(grunt) {
 
 				, 'dist/ObjectCollectionPopup.js': 'src/ObjectCollection/Popup.hbs'
 				, 'dist/ObjectCollectionList.js': 'src/ObjectCollection/List.hbs'
+
+				, 'dist/ObservationFilterForm.js': 'src/Observation/FilterForm.hbs'
+				, 'dist/ObservationStationPopup.js': 'src/Observation/StationPopup.hbs'
+				, 'dist/ObservationStationList.js': 'src/Observation/StationList.hbs'
+				, 'dist/ObservationRegisterList.js': 'src/Observation/RegisterList.hbs'
 
 				, 'dist/UserTitle.js': 'src/User/Title.hbs'
 				, 'dist/UserImage.js': 'src/User/Image.hbs'

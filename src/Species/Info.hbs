@@ -71,9 +71,12 @@
 					</div>
 					<div class="{{RowColSpeciesCatalog 'right'}}">
 						<p>
-							<a {{Href '/catalog/species-info/' data.validAs.id}} class='cursive'>
-								{{data.validAs.scientificName}}
-							</a>
+							<span class='cursive'>
+								{{TextURL
+									(concat '/catalog/species-info/' data.validAs.id)
+									data.validAs.scientificName
+									i18n.checkSpeciesAtCatalog}}
+							</span>
 							<span> {{data.validAs.authorship}} </span>
 						</p>
 					</div>

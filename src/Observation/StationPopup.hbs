@@ -1,0 +1,66 @@
+{{#if feature.properties.measurements}}
+	<div class="flexContainerColumn">
+		<a href="#activityFixedObservationSeriesList" class="showObservations">
+			<i class='paddingContainerWebcam fa fa-database'></i>
+			{{i18n.charts}}
+		</a>
+	</div>
+{{/if}}
+
+{{#if feature.properties.site.name}}
+	<div>
+		<span class="propLabel">{{i18n.name}}: </span>
+		<span class="propValue">{{feature.properties.site.name}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.site.owner}}
+	<div>
+		<span class="propLabel">{{i18n.owner}}: </span>
+		<span class="propValue">{{lang feature.properties.site.owner}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.site.code}}
+	<div>
+		<span class="propLabel">{{i18n.code}}: </span>
+		<span class="propValue">{{feature.properties.site.code}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.measurements.[0].dataDefinition.z}}
+	<div>
+		<span class="propLabel">{{i18n.depth}}: </span>
+		<span class="propValue">{{feature.properties.measurements.[0].dataDefinition.z}}m</span>
+	</div>
+{{/if}}
+
+{{#if feature.geometry.coordinates}}
+	<div>
+		<span class="propLabel">Lon:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[0] 5}}  </span>
+		<span class="propLabel">Lat:</span>
+		<span class="propValue">{{toFixed feature.geometry.coordinates.[1] 5}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.site.description}}
+	<div>
+		<span class="propLabel">{{i18n.description}}: </span>
+		<span class="propValue">{{breaklines feature.properties.site.description}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.inserted}}
+	<div>
+		<span class="propLabel">{{i18n.inserted}}: </span>
+		<span class="propValue">{{DateTime feature.properties.inserted}}</span>
+	</div>
+{{/if}}
+
+{{#if feature.properties.updated}}
+	<div>
+		<span class="propLabel">{{i18n.updated}}: </span>
+		<span class="propValue">{{DateTime feature.properties.updated}}</span>
+	</div>
+{{/if}}

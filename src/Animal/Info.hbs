@@ -10,9 +10,12 @@
 						<span title="{{i18n.scientificName}}">{{i18n.scientificName}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<span><a {{Href '/catalog/species-info/' data.taxon.id}} class='cursive'>
-							{{data.taxon.scientificName}}
-						</a></span>
+						<span class='cursive'>
+							{{TextURL
+								(concat '/catalog/species-info/' data.taxon.id)
+								data.taxon.scientificName
+								i18n.checkSpeciesAtCatalog}}
+						</span>
 					</div>
 				</div>
 				{{#if data.taxon.authorship}}
@@ -32,21 +35,14 @@
 						<span title="{{i18n.scientificName}}">{{i18n.scientificName}}</span>
 					</div>
 					<div class="{{RowColActivityCatalog 'right'}}">
-						<a {{Href 'https://redpromar.org/species/' data.taxonomy.id}} class='cursive'>
-							<span>{{data.taxonomy.scientific_name}}</span>
-						</a>
+						<span class='cursive'>
+							{{TextURL
+								(concat 'https://redpromar.org/species/' data.taxonomy.id)
+								data.taxonomy.scientificName
+								i18n.checkSpeciesAtCatalog}}
+						</span>
 					</div>
 				</div>
-				{{#if data.taxonomy.authority}}
-					<div>
-						<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-							<span title="{{i18n.authorship}}">{{i18n.authorship}}</span>
-						</div>
-						<div class="{{RowColActivityCatalog 'right'}}">
-							<span>{{data.taxonomy.authority}}</span>
-						</div>
-					</div>
-				{{/if}}
 			{{/if}}
 			{{#if data.description}}
 				<div>

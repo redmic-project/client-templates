@@ -1,0 +1,35 @@
+<span class='spanTemplate'>
+	<span class='title' title='{{i18n.date}}'>
+		{{DateTime data.date}}
+	</span>
+	<span class='subtitle'>
+		{{#if data.observation}}
+			{{#if data.observation.animal}}
+			{{TextURL
+				(concat '/catalog/animal-info/' data.observation.animal.id)
+				data.observation.animal.name
+				i18n.checkAnimalAtCatalog}}
+			{{/if}}
+			{{#if data.observation.taxonomy}}
+			<span class='cursive'>
+				- {{TextURL
+					(concat 'https://redpromar.org/species/' data.observation.taxonomy.id)
+					data.observation.taxonomy.scientificName
+					i18n.checkSpeciesAtCatalog}}
+			</span>
+			{{/if}}
+			{{#if data.observation.organisation}}
+			- {{TextURL
+				(concat '/catalog/organisation-info/' data.observation.organisation.id)
+				data.observation.organisation.name
+				i18n.checkOrganisationAtCatalog}}
+			{{/if}}
+			{{#if data.observation.device}}
+			<span title='{{i18n.device}}'>
+				- {{data.observation.device.name}} ({{data.observation.device.model}})
+			</span>
+			{{/if}}
+		{{else}}
+			{{data.remark}}
+		{{/if}}
+</span>

@@ -11,19 +11,23 @@
 					</div>
 				</div>
 			{{/if}}
-			{{#if data.code}}
-				<div>
-					<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
-						<span title="{{i18n.code}}">{{i18n.code}}</span>
-					</div>
-					<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
-						{{#if data.starred}}
-							{{ActivityStarred data i18n}}
-						{{/if}}
-						<p>{{data.code}}</p>
-					</div>
+			<div>
+				<div class="rowLeft inlineRow {{RowColActivityCatalog 'left'}}">
+					<span title="{{i18n.code}}">{{i18n.code}}</span>
 				</div>
-			{{/if}}
+				<div class="{{RowColActivityCatalog 'right'}} detailsRowWithBadge">
+					{{#if data.starred}}
+						{{ActivityStarred data i18n}}
+					{{/if}}
+					<p>
+						{{#if data.code}}
+							{{data.code}}
+						{{else}}
+							-
+						{{/if}}
+					</p>
+				</div>
+			</div>
 			{{#if data.ancestors}}
 				{{ancestorsActivity data.ancestors i18n}}
 			{{/if}}
