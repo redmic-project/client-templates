@@ -245,24 +245,24 @@ define([
 
 		Image: function(imagePath, useCredentials) {
 
-			var imgSrc;
+			let imgSrc;
 			if (!imagePath) {
 				imgSrc = '/res/images/noIMG.png';
 			} else if (imagePath.indexOf('/') !== 0) {
 				imgSrc = imagePath;
 			} else {
-				// TODO se reemplaza la terminación de la ruta al servidor porque las imágenes ya
-				// la contienen. Cuando se corrija esta circunstancia, eliminar el reemplazo
-				var imgSrcPrefix = redmicConfig.getEnvVariableValue('envApiUrl').replace('/api', '');
-				imgSrc = imgSrcPrefix + imagePath;
+				let imgSrcPrefix = redmicConfig.getEnvVariableValue('envApiUrl'),
+					imgSrcSuffix = imagePath.replace('/api', '');
 
-				var mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
+				imgSrc = imgSrcPrefix + imgSrcSuffix;
+
+				const mustUseCredentials = useCredentials && typeof useCredentials === 'boolean';
 				if (mustUseCredentials && !Credentials.userIsGuest()) {
 					imgSrc += '?access_token=' + Credentials.get('accessToken');
 				}
 			}
 
-			var imgItem = '<img src="' + imgSrc + '"/><br>';
+			const imgItem = '<img src="' + imgSrc + '"/><br>';
 
 			return new handlebars.SafeString(imgItem);
 		},
