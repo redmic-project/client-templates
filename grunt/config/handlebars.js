@@ -82,7 +82,6 @@ module.exports = function(grunt) {
 				, 'dist/UnitList.js': 'src/Unit/List.hbs'
 				, 'dist/AccessList.js': 'src/Access/List.hbs'
 				, 'dist/UnitFilter.js': 'src/Unit/Filter.hbs'
-				, 'dist/InitialTitle.js': 'src/Initial/Title.hbs'
 				, 'dist/InitialInfo.js': 'src/Initial/Info.hbs'
 				, 'dist/TimeSeriesDefinitionInfo.js': 'src/TimeSeriesDefinition/Info.hbs'
 				, 'dist/TimeSeriesDefinitionList.js': 'src/TimeSeriesDefinition/List.hbs'
@@ -207,7 +206,6 @@ module.exports = function(grunt) {
 				, 'dist/ObservationStationList.js': 'src/Observation/StationList.hbs'
 				, 'dist/ObservationRegisterList.js': 'src/Observation/RegisterList.hbs'
 
-				, 'dist/UserTitle.js': 'src/User/Title.hbs'
 				, 'dist/UserImage.js': 'src/User/Image.hbs'
 				, 'dist/UserTopbarImage.js': 'src/User/TopbarImage.hbs'
 				, 'dist/UserTopbarMenu.js': 'src/User/TopbarMenu.hbs'
