@@ -92,15 +92,18 @@ define([
 
 		OgcServiceProvider: function(data, i18n) {
 
-			var value, classNames;
-			if (data && data.atlas) {
-				value = 'providedByAtlas';
-				classNames = 'fr-world';
-			} else {
+			let value, classNames;
+
+			if (data?.providedByView) {
 				value = 'providedByView';
 				classNames = 'fr-layers';
+			} else {
+				value = 'providedByAtlas';
+				classNames = 'fr-world';
 			}
-			var result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
+
+			const result = `<i title="${i18n[value]}" class="${classNames}"></i>`;
+
 			return new handlebars.SafeString(result);
 		},
 
