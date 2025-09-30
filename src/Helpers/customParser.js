@@ -270,6 +270,16 @@ define([
 			return new handlebars.SafeString(imgItem);
 		},
 
+		ObservationMissingRegister: function(data, i18n) {
+
+			const text = data?.remark ?? '',
+				className = 'missingRegisterIcon',
+				title = i18n.unknownDevice,
+				message = `${text} <i class="${className}" title="${title}"></i>`;
+
+			return new handlebars.SafeString(message);
+		},
+
 		AtlasProperties: function(data, i18n) {
 
 			// TODO esto hay que revisarlo, es un monstruo con utilidad dudosa

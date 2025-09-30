@@ -59,6 +59,7 @@ module.exports = function(grunt) {
 						DocumentInternalUrlStatus: true,
 						DocumentUrl: true,
 						Image: true,
+						ObservationMissingRegister: true,
 						AtlasProperties: true,
 
 						// string
