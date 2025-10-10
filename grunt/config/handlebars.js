@@ -61,6 +61,8 @@ module.exports = function(grunt) {
 						Image: true,
 						ObservationMissingRegister: true,
 						AtlasProperties: true,
+						Length: true,
+						AcousticDetectionCounters: true,
 
 						// string
 						bold: true,
@@ -257,6 +259,8 @@ module.exports = function(grunt) {
 				, 'dist/RealTimeInfo.js': 'src/RealTime/Info.hbs'
 
 				, 'dist/ProductList.js': 'src/Product/List.hbs'
+				, 'dist/AcousticDetectionList.js': 'src/AcousticDetection/List.hbs'
+				, 'dist/AcousticDetectionPopup.js': 'src/AcousticDetection/Popup.hbs'
 			}
 		}
 	});
