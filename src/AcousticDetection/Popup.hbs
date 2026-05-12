@@ -1,0 +1,39 @@
+{{#if feature.properties}}
+<div class='mainTitle'>{{feature.properties.name}}</div>
+
+<div class="">
+{{#each feature.properties.organisations}}
+	{{#if @first}}
+	<span class="title">{{../i18n.organisations}}</span>
+	<span>[{{Length ../feature.properties.organisations}}]</span>
+	<ul class="">
+	{{/if}}
+		<li class="">
+		{{TextURL (concat '/catalog/organisation-info/' @key) this ../i18n.checkOrganisationAtCatalog}}
+		</li>
+	{{#if @last}}
+	</ul>
+	{{/if}}
+{{/each}}
+</div>
+
+<div class="">
+{{#each feature.properties.species}}
+	{{#if @first}}
+	<span class="title">{{../i18n.species}}</span>
+	<span>[{{Length ../feature.properties.species}}]</span>
+	<ul class="">
+	{{/if}}
+		<li class="">
+		{{TextURL (concat 'https://redpromar.org/species/' @key) this ../i18n.checkSpeciesAtCatalog}}
+		</li>
+	{{#if @last}}
+	</ul>
+	{{/if}}
+{{/each}}
+</div>
+
+{{AcousticDetectionCounters feature.properties i18n}}
+{{else}}
+<span>{{i18n.noData}}</span>
+{{/if}}

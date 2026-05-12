@@ -1,15 +1,15 @@
 define([
-	'src/redmicConfig'
-	, 'dojo/_base/lang'
+	'dojo/_base/lang'
 	, 'handlebars'
 	, 'moment'
+	, 'src/redmicConfig'
 	, 'src/util/Credentials'
 	, 'src/util/stringFormats'
 ], function(
-	redmicConfig
-	, lang
+	lang
 	, handlebars
 	, moment
+	, redmicConfig
 	, Credentials
 	, stringFormats
 ) {
@@ -92,15 +92,18 @@ define([
 
 		OgcServiceProvider: function(data, i18n) {
 
-			var value, classNames;
-			if (data && data.atlas) {
-				value = 'providedByAtlas';
-				classNames = 'fr-world';
-			} else {
+			let value, classNames;
+
+			if (data?.providedByView) {
 				value = 'providedByView';
 				classNames = 'fr-layers';
+			} else {
+				value = 'providedByAtlas';
+				classNames = 'fr-world';
 			}
-			var result = '<i title="' + i18n[value] + '" class="' + classNames + '"></i>';
+
+			const result = `<i title="${i18n[value]}" class="${classNames}"></i>`;
+
 			return new handlebars.SafeString(result);
 		},
 
@@ -265,6 +268,54 @@ define([
 			const imgItem = '<img src="' + imgSrc + '"/><br>';
 
 			return new handlebars.SafeString(imgItem);
+		},
+
+		ObservationMissingRegister: function(data, i18n) {
+
+			const text = data?.remark ?? '',
+				className = 'missingRegisterIcon',
+				title = i18n.unknownDevice,
+				message = `${text} <i class="${className}" title="${title}"></i>`;
+
+			return new handlebars.SafeString(message);
+		},
+
+		Length: function(data) {
+
+			if (!data) {
+				return 0;
+			}
+
+			if (data instanceof Array || typeof data === 'string') {
+				return data.length;
+			}
+
+			if (typeof data === 'object') {
+				return Object.keys(data).length;
+			}
+
+			return new handlebars.SafeString('?');
+		},
+
+		AcousticDetectionCounters: function(data, i18n) {
+
+			const receptors = data?.totalReceptors ?? 0,
+				animals = data?.totalAnimals ?? 0,
+				detections = data?.totalDetections ?? 0;
+
+			const receptorsCounter = `<div><i title="${i18n.totalReceptors}" class="acousticReceptorsIcon">
+				</i><span>${receptors}</span></div>`;
+
+			const animalsCounter = `<div><i title="${i18n.totalAnimals}" class="acousticAnimalsIcon">
+				</i><span>${animals}</span></div>`;
+
+			const detectionsCounter = `<div><i title="${i18n.totalDetections}" class="acousticDetectionsIcon">
+				</i><span>${detections}</span></div>`;
+
+			const result = `<div class="badgesContainer badgesWithCounters">
+				${receptorsCounter}${animalsCounter}${detectionsCounter}</div>`;
+
+			return new handlebars.SafeString(result);
 		},
 
 		AtlasProperties: function(data, i18n) {
